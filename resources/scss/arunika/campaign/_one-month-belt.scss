@@ -1,0 +1,58 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+
+.as-belt {
+  background: var(--as-color-blue-dark);
+  color: var(--as-color-white);
+  padding: 3rem 1rem;
+
+  @include screen(desktopLarge) {
+    padding: 0;
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+
+    @include screen(desktopLarge) {
+      flex-direction: row;
+      gap: 3.5rem;
+    }
+  }
+
+  &-content {
+    padding-right: 0;
+
+    @include screen(desktop) {
+      padding-right: 2.5rem;
+    }
+
+    &__title {
+      @include font-size('24');
+      margin-bottom: 0.5rem;
+    }
+
+    &__description {
+      @include font-size('14');
+    }
+  }
+
+  &__image {
+   
+    height: auto;
+    max-width: 100%;
+  }
+
+  &__button {
+    width: 100%;
+
+    @include screen(desktop) {
+      width: 25%;
+    }
+  }
+}

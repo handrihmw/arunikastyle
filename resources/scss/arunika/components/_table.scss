@@ -1,0 +1,394 @@
+@use '../mixins/breakpoint' as *;
+
+.as-table {
+  border: 1px solid #d9dee3;
+  border-collapse: separate;
+  border-left: 0;
+  border-radius: 12px;
+  border-spacing: 0px;
+
+  thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    border-collapse: separate;
+
+    &:first-child {
+      tr {
+        &:first-child {
+          th {
+            &:first-child {
+              border-radius: 12px 0 0 0;
+            }
+
+            &:last-child {
+              border-radius: 0 12px 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      tr {
+        &:last-child {
+          th {
+            &:first-child {
+              border-radius: 0 0 0 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
+
+  th {
+    &:first-child {
+      text-align: left;
+      vertical-align: top;
+      border-left: 1px solid #d9dee3;
+    }
+  }
+
+  td {
+    &:first-child {
+      text-align: left;
+      vertical-align: top;
+      border-left: 1px solid #d9dee3;
+    }
+
+    border-top: 1px solid #d9dee3;
+  }
+
+  tbody {
+    &:first-child {
+      tr {
+        &:first-child {
+          td {
+            &:first-child {
+              border-radius: 12px 0 0 0;
+            }
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      tr {
+        &:last-child {
+          td {
+            &:first-child {
+              border-radius: 0 0 0 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__header {
+    bottom: -2px;
+    background: #fff;
+    padding: 4px;
+    position: relative;
+  }
+
+  &__wrapper {
+    &>.dataTables_wrapper {
+      &>.dataTables_filter {
+        text-align: center;
+
+        &>label {
+          color: #3a4166;
+          font-family: 'NunitoSansRegular', sans-serif;
+          font-size: .9rem;
+          margin: 0;
+
+          &>input[type="search"] {
+            background-image: url("../images/2021/arunika/icon/magnifier.svg");
+            background-repeat: no-repeat;
+            background-position: 300px;
+            border: 1px solid rgba(0, 24, 51, 0.16);
+            border-radius: 30px;
+            color: rgba(58, 65, 102, 0.7);
+            font-family: 'NunitoSansRegular', sans-serif;
+            font-size: clamp(0.875rem, 4vw, 1rem);
+            height: 48px;
+            margin-bottom: 3rem;
+            padding: 16px 15px;
+            width: 340px;
+
+            @media only screen and(max-width: 320px) {
+              background-position: 200px;
+              width: 250px;
+            }
+
+            @media (min-width: 321px) and (max-width: 376px) {
+              background-position: 250px;
+              width: 300px;
+            }
+
+            @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+              background-position: 450px;
+              width: 500px;
+            }
+
+           @include screen(desktop) {
+              background-position: 490px;
+              width: 540px;
+            }
+          }
+        }
+      }
+
+      &>.dataTables_paginate {
+        position: relative;
+        margin-top: 50px;
+        text-align: center;
+
+        &>span {
+          right: 94px;
+          top: 3px;
+
+          &>* {
+            color: rgba(58, 65, 102, 0.5);
+            font-family: 'NunitoSansRegular', sans-serif;
+            font-size: clamp(0.875rem, 2vw, 1rem);
+            padding: 0 2px;
+          }
+
+          &> :not(:first-child) {
+            margin-left: 14px;
+
+           @include screen(mobile) {
+              margin-left: 6px;
+            }
+          }
+
+          &> :last-child {
+            margin-right: 14px;
+
+           @include screen(mobile) {
+              margin-left: 6px;
+            }
+          }
+
+          &>a,
+          &>button {
+            background-color: #fff;
+            border: 1px solid #f3f4f6;
+            border-radius: 6px;
+            color: #546071;
+            cursor: pointer;
+            font-weight: 600;
+            padding: 8px 14px;
+
+            &:hover {
+              background-color: #f5faff;
+              border: 1px solid #f5faff;
+            }
+
+           @include screen(mobile) {
+              padding: 6px 8px;
+            }
+          }
+
+          &>.current {
+            background-color: #007aff;
+            border: 1px solid #007aff;
+            border-radius: 6px;
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 14px;
+
+            &:hover {
+              background-color: var(--as-color-blue-dark);
+              border: 1px solid var(--as-color-blue-dark);
+            }
+
+           @include screen(mobile) {
+              padding: 6px 8px;
+            }
+          }
+        }
+
+        &>a,
+        &>button {
+          background-color: #fff;
+          border: 1px solid #f3f4f6;
+          border-radius: 6px;
+          color: #29384e;
+          cursor: pointer;
+          font-weight: 600;
+          padding: 10px;
+
+          &.disabled * {
+            opacity: 20%;
+          }
+
+          &:hover {
+            background-color: #f5faff;
+            border: 1px solid #f5faff;
+          }
+
+         @include screen(mobile) {
+            padding: 6px;
+          }
+
+          &:first-child {
+            margin-right: 14px;
+
+           @include screen(mobile) {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__name {
+    color: #007aff;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(0.875rem, 4vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    line-height: 1.625rem;
+    padding: 30px 0 10px 20px;
+    width: 460px;
+
+   @include screen(mobile) {
+      width: 200px;
+    }
+
+    &::before {
+      border-radius: 7px;
+      background-color: #f3f4f6;
+      content: '';
+      display: inline-block;
+      height: 12px;
+      left: 0;
+      margin-right: 10px;
+      position: relative;
+      top: 3px;
+      width: 64px;
+
+     @include screen(mobile) {
+        display: none;
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        display: none;
+      }
+
+    }
+  }
+
+  &__price {
+    color: #546071;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(0.75rem, 2vw, 1.125rem);
+    letter-spacing: 0.005em;
+    line-height: 1.625rem;
+    padding: 10px 0 10px 20px;
+    width: 220px;
+
+   @include screen(mobile) {
+      width: 150px;
+    }
+  }
+
+  &__action {
+    text-align: end;
+    padding: 20px;
+    width: 220px;
+
+   @include screen(mobile) {
+      width: 150px;
+    }
+
+    &-button {
+      padding: 8px 20px;
+
+     @include screen(mobile) {
+        font-size: 0.875rem;
+        min-width: auto;
+        width: 5rem;
+      }
+    }
+  }
+}
+
+.as-arrow-right {
+  &::before {
+    content: url("../images/2021/arunika/ico/arrow-right.svg");
+    padding-left: 6px;
+    padding-right: 6px;
+    position: relative;
+    top: 2px;
+    transition: all 0.6s;
+
+   @include screen(mobile) {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+}
+
+.as-arrow-left {
+  &::before {
+    content: url("../images/2021/arunika/ico/arrow-left.svg");
+    padding-left: 6px;
+    padding-right: 6px;
+    position: relative;
+    top: 2px;
+    transition: all 0.6s;
+
+   @include screen(mobile) {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+}
+
+#domain-prices-table_wrapper {
+  .paging_simple_numbers {
+    .disabled {
+      .as-arrow-left {
+        content: url("../images/2021/arunika/ico/arrow-left-disabled.svg");
+        cursor: not-allowed;
+        padding-left: 6px;
+        padding-right: 6px;
+        position: relative;
+        top: 2px;
+        transition: all 0.6s;
+
+       @include screen(mobile) {
+          padding-left: 4px;
+          padding-right: 4px;
+        }
+      }
+
+      .as-arrow-right {
+        content: url("../images/2021/arunika/ico/arrow-right-disabled.svg");
+        cursor: not-allowed;
+        padding-left: 6px;
+        padding-right: 6px;
+        position: relative;
+        top: 2px;
+        transition: all 0.6s;
+
+       @include screen(mobile) {
+          padding-left: 4px;
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+}

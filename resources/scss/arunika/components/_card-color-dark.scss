@@ -1,0 +1,40 @@
+@use '../mixins/breakpoint' as *;
+
+.as-card-dark {
+  background-color: #fff;
+  border-radius: 24px;
+  height: auto;
+  margin: 20px 10px;
+  padding: 1.625rem;
+
+  &:hover {
+    box-shadow: 0 3px 20px rgba(35, 44, 79, 0.05);
+  }
+
+ @include screen(mobile) {
+    margin: 10px;
+  }
+
+  &__icon {
+    height: 32px;
+    width: 32px;
+  }
+
+  &__title {
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1.625rem;
+    margin-top: 20px;
+    margin-bottom: 14px;
+  }
+
+  &__description {
+    color: #535961;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(0.875rem, 5vw, 1rem);
+    letter-spacing: 0.005em;
+    line-height: 1.5rem;
+  }
+}

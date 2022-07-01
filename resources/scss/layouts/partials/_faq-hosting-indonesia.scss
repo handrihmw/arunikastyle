@@ -1,0 +1,97 @@
+.faq {
+  padding: 100px 0;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2.063rem;
+    text-align: center;
+  }
+
+  &__list {
+    max-width: 770px;
+    margin: 60px auto 0;
+
+    &--item {
+      border-bottom: 1px solid rgba(17, 26, 104, .1);
+      position: relative;
+      padding: 30px;
+
+      &::before {
+        content: url("../../images/2019/hosting-faq/icon-ellipse.svg");
+        left: 0;
+        position: absolute;
+        top: 30px;
+      }
+
+      >a::after {
+        content: url("../../images/2019/hosting-faq/icon-minus.svg");
+        position: absolute;
+        right: 0;
+        top: 30px;
+      }
+
+      >a.collapsed::after {
+        content: url("../../images/2019/hosting-faq/icon-plus.svg");
+        position: absolute;
+        right: 0;
+        top: 30px;
+      }
+
+      &-question {
+        color: #3a4166;
+        display: block;
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: 1.125rem;
+        font-weight: unset;
+        text-align: left;
+
+        &:hover {
+          color: #1b1e21;
+        }
+      }
+
+      &-answer {
+        cursor: default;
+        font-size: 1rem;
+        opacity: .7;
+        line-height: 2em;
+        text-align: left;
+        margin-top: 20px;
+
+        a {
+          color: #007bff;
+          &:hover {
+            color: darken(#007bff, 10%);
+            text-decoration: none;
+          }
+        }
+      }
+
+      &-answers {
+        cursor: default;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin-bottom: 0;
+        margin-top: 10px;
+        padding-left: 0;
+
+        &-title {
+          cursor: default;
+          font-family: 'NunitoSansBold', sans-serif;
+          font-size: 1rem;
+          line-height: 2em;
+          text-align: left;
+          opacity: .7;
+        }
+
+        &-description {
+          font-size: 1rem;
+          line-height: 2em;
+          text-align: left;
+          opacity: .7;
+        }
+      }
+    }
+  }
+}

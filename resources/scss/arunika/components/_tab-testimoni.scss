@@ -1,0 +1,171 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-testimoni {
+  background-color: #f5faff;
+  margin: 100px 0;
+  padding-top: 40px;
+
+ @include screen(mobile) {
+    margin: 50px 0;
+    padding: 20px;
+  }
+
+  &__container {
+    margin-bottom: 90px;
+  }
+
+  &__content {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 30px;
+    padding: 2rem 0;
+  }
+
+  &__blockquote {
+    blockquote {
+      font: inherit;
+      padding: 1em 0 0 0;
+      position: relative;
+    }
+
+    blockquote::before {
+      content: "‘‘";
+      color: #007aff;
+      font: 700 10em/2em sans-serif;
+      left: -0.05em;
+      position: absolute;
+      right: unset;
+      top: -0.75em;
+    }
+  }
+
+  &__quote {
+    color: #717b8a;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    letter-spacing: 0.02em;
+    line-height: 2.875rem;
+    margin: 4rem 3rem 4rem 0;
+
+   @include screen(mobile) {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin: 3rem 2rem 3rem 0;
+    }
+
+    &--long-text {
+      @include font-size('18');
+    }
+  }
+
+  &__image {
+    border-radius: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__about {
+    color: #29384e;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.25rem, 5vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    line-height: 1.625rem;
+    margin: 2rem 3rem;
+    text-align: center;
+
+   @include screen(mobile) {
+      margin: 2rem;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      line-height: 2rem;
+      padding: 0 60px;
+    }
+
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      margin: 0 2rem;
+    }
+  }
+
+  &__button {
+    padding: 0.75rem 3rem;
+    text-align: start;
+    text-transform: uppercase;
+
+   @include screen(mobile) {
+      margin-bottom: 40px;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__navigation {
+    color: #535961;
+    display: grid;
+    text-decoration: none;
+
+    &.active {
+      color: #29384e;
+
+      &:after {
+        background-color: #29384e;
+        bottom: 0;
+        content: "";
+        height: 2px;
+        left: 0;
+        transition: transform 0.3s;
+        width: 80%;
+
+       @include screen(mobile) {
+          width: 100%;
+        }
+      }
+    }
+
+   @include screen(mobile) {
+      margin-bottom: 2rem;
+    }
+
+    &--title {
+      font-family: "NunitoSansBold", sans-serif;
+      font-size: clamp(1.25rem, 5vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.688rem;
+      margin-bottom: 0.625rem;
+
+     @include screen(mobile) {
+        margin-bottom: 0;
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        margin-top: 2rem;
+      }
+    }
+
+    &--role {
+      font-family: "NunitoSansRegular", sans-serif;
+      font-size: clamp(0.875rem, 5vw, 1rem);
+      letter-spacing: 0.005em;
+      line-height: 1.5rem;
+      margin-bottom: 1.5rem;
+
+     @include screen(mobile) {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &:hover {
+      color: #29384e;
+      text-decoration: none;
+    }
+  }
+}

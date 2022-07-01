@@ -1,0 +1,48 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.campaign-promo-koinworks-belt,
+.as-belt-top {
+  background: var(--as-color-blue-dark);
+  color: var(--as-color-white);
+  height: auto;
+  width: 100%;
+
+  @include screen(desktop) {
+    height: 75px;
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 18px 0;
+
+    @include screen(desktop) {
+      flex-direction: row;
+      gap: 1.5rem;
+      padding: 12px 0;
+    }
+  }
+
+  &__title {
+    @include font-size('16');
+    text-align: center;
+
+    @include screen(desktop) {
+      text-align: left;
+    }
+  }
+
+  &__button {
+    max-height: 180px;
+    width: auto;
+
+    @include screen(desktop) {
+      max-width: 250px;
+    }
+  }
+}

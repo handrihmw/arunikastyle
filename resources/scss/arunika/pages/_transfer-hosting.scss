@@ -1,0 +1,186 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero";
+@import "../components/hero-center";
+
+/* Arunika Header */
+@import "../components/header";
+
+/* Arunika Section */
+@import "../components/section-white";
+@import "../components/section-center-blue";
+
+/* Arunika Modal */
+@import "../components/modal";
+
+/* Arunika Spinner */
+@import "../components/spinner";
+
+.transfer-hosting {
+    min-height: 600px;
+
+   @include screen(desktop) {
+        height: 600px;
+    }
+}
+
+.transfer-hosting-form {
+    &__label {
+        @include font-size('16');
+        color: var(--as-color-primary);
+        display: block;
+        font-weight: 600;
+        margin-top: 28px;
+        text-align: left;
+    }
+
+    &__input {
+        @include font-size('16');
+        border: 1px solid #C4C4C4;
+        border-radius: 24px;
+        box-sizing: border-box;
+        color: var(--as-color-primary);
+        padding: 12px 32px;
+    }
+
+    &__select {
+        @include font-size('16');
+        border: 1px solid #C4C4C4;
+        border-radius: 24px;
+        box-sizing: border-box;
+        color: var(--as-color-primary);
+        
+        &--selectmonster {
+            visibility: hidden;
+        }
+    }
+}
+
+#duration {
+  @include screen(mobile) {
+        height: 95px;
+    }
+}
+
+.select{
+    @include font-size('16');
+    color: var(--as-color-primary);
+    cursor: pointer;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.styledSelect {
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 24, 51, 0.16);
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 7px 32px;
+    position: absolute;
+    text-align: left;
+    top: 0px;
+    width: 100%;
+
+    &.active {
+        background: #eee;
+    }
+
+    &:after{
+        content: "\f078"; 
+        font-family: "Font Awesome 5 Free";
+        font-size: 14px;
+        font-weight: 900;
+        position: absolute;
+        right: 30px;
+        top: 20px;
+        transform: translateY(-50%);
+    }
+}
+
+.options{ 
+    background-color: #fff;
+    border: 1px solid #C4C4C4;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    display: none;left:0;
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 999;
+
+    & li{ 
+        border-bottom: 1px solid #C4C4C4;
+        margin: 0;
+        padding: 10px;
+
+        &:hover{ 
+            background: #e5f2ff;
+        }
+    }
+}
+
+.transfer-hosting-step {
+    margin-bottom: 56px;
+    margin-top: 30px;
+    position: relative;
+
+    ul {
+        display: flex;
+        list-style: none;
+        width: calc(100% - 77px);
+    }
+
+    &__item {
+        background: #e7eef4;
+        border-radius: 5px 0 0 5px;
+        height: 2px;
+        position: relative;
+        width: 100%;
+
+        &::before {
+            @include font-size('12');
+            background: #00BFA6;
+            border: 2px solid #00BFA6;
+            border-radius: 100%;
+            color: #FFFFFF;
+            content: "1";
+            height: 24px;
+            left: -8px;
+            line-height: 8px;
+            padding: 6px;
+            position: absolute;
+            top: -10px;
+            width: 24px;
+            z-index: 1;
+        }
+
+        &::after {
+            background: #fff;
+            border: 2px solid #A9AFB8;
+            border-radius: 100%;
+            content: "";
+            height: 24px;
+            line-height: 8px;
+            position: absolute;
+            right: -8px;
+            top: -10px;
+            width: 24px;
+            z-index: 1;
+        }
+
+        &--complete {
+            background: #00BFA6;
+
+            &::before {  
+                padding: 0px;
+                content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='22' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='11' cy='10.951' r='10.5' fill='%2300BFA6'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.834 14.716l-2.4-2.4a.8.8 0 1 1 1.131-1.131l1.789 1.789 5.038-5.744a.799.799 0 1 1 1.215 1.04l-5.6 6.4a.8.8 0 0 1-.577.28.814.814 0 0 1-.596-.234z' fill='%23fff'/%3e%3c/svg%3e");
+            }
+        }
+    }
+}

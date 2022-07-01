@@ -1,0 +1,104 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-slider {
+  display: grid;
+  justify-content: start;
+  position: relative;
+
+  @include screen(ipadPro) {
+    display: grid;
+    gap: 10px;
+  }
+
+  @include screen(desktopLarge) {
+    align-items: center;
+    display: flex;
+  }
+
+  &-default {
+    display: flex;
+    margin-bottom: 5rem;
+    position: relative;
+
+    @include screen(desktop) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__quote {
+   
+    border-radius: 50%;
+    height: 60px;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    object-fit: cover;
+    width: 60px;
+
+    @include screen(desktop) {
+      height: 80px;
+      margin-bottom: 0;
+      width: 80px;
+    }
+  }
+
+  &__title {
+    @include font-size('40');
+    color: var(--as-color-primary);
+    margin-bottom: 1rem;
+
+    @include screen(desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__description {
+    @include font-size('16');
+    color: var(--as-color-secondary-two);
+    display: none;
+
+    @include screen(desktop) {
+      display: block;
+    }
+  }
+
+  &__action {
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    margin-left: auto;
+    position: absolute;
+    top: 10px;
+
+    @include screen(desktop) {
+      justify-content: center;
+      position: relative;
+      top: unset;
+    }
+
+    &-default {
+      margin-bottom: 2rem;
+      top: 5rem;
+
+      @include screen(desktop) {
+        margin-bottom: 0;
+        top: 0;
+      }
+    }
+
+    .as-icon-arrow-prev,
+    .as-icon-arrow-next {
+      cursor: pointer;
+    }
+
+    .as-icon-arrow-prev,
+    .as-icon-arrow-next {
+      margin-right: 2rem;
+
+      &.active {
+        opacity: .20;
+      }
+    }
+  }
+}

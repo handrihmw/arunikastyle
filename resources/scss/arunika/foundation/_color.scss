@@ -1,0 +1,72 @@
+@use '../variables/color'as *;
+@use '../variables/shade'as *;
+@use '../variables/shadow'as *;
+
+:root {
+  --as-color-primary: #{$as-color-primary};
+  --as-color-secondary: #{$as-color-secondary};
+  --as-color-secondary-2: #{$as-color-secondary-2};
+  --as-color-disable: #{$as-color-disable};
+  --as-color-white: #{$as-color-white};
+  --as-color-black: #{$as-color-black};
+  --as-color-soft: #{$as-color-soft};
+  --as-color-blue-darken: #{$as-color-blue-darken};
+  --as-color-blue-bright: #{$as-color-blue-bright};
+  --as-color-pink-soft: #{$as-color-pink-soft};
+  --as-color-blue-soft: #{$as-color-blue-soft};
+  --as-color-gray-soft: #{$as-color-gray-soft};
+  --as-color-gray-soft-2: #{$as-color-gray-soft-2};
+  --as-color-blue: #{$as-color-blue};
+  --as-color-blue-light: #{$as-color-blue-light};
+  --as-color-blue-dark: #{$as-color-blue-dark};
+  --as-color-orange: #{$as-color-orange};
+  --as-color-orange-light: #{$as-color-orange-light};
+  --as-color-orange-dark: #{$as-color-orange-dark};
+  --as-color-orange-hover: #{$as-color-orange-hover};
+  --as-color-orange-pressed: #{$as-color-orange-pressed};
+  --as-color-red: #{$as-color-red};
+  --as-color-red-light: #{$as-color-red-light};
+  --as-color-red-dark: #{$as-color-red-dark};
+  --as-color-red-hover: #{$as-color-red-hover};
+  --as-color-red-pressed:#{$as-color-red-pressed};
+  --as-color-green: #{$as-color-green};
+  --as-color-green-light: #{$as-color-green-light};
+  --as-color-green-dark: #{$as-color-green-dark};
+  --as-color-green-hover: #{$as-color-green-hover};
+  --as-color-green-pressed: #{$as-color-green-pressed};
+  --as-color-yellow: #{$as-color-yellow};
+  --as-color-yellow-light: #{$as-color-yellow-light};
+  --as-color-yellow-dark: #{$as-color-yellow-dark};
+  --as-color-text-hover: #{$as-color-text-hover};
+  --as-color-text-pressed:#{$as-color-text-pressed};
+  --as-color-disable-state: #{$as-color-disable-state};
+  --as-color-neutral-hover: #{$as-color-neutral-hover};
+  --as-color-neutral-pressed:#{$as-color-neutral-pressed};
+  --as-color-divider: #{$as-color-divider};
+  --as-color-border: #{$as-color-border};
+  --as-color-backdrop: #{$as-color-backdrop};
+  --as-color-gray: #{$as-color-gray};
+  --as-color-gray-dark: #{$as-color-gray-dark};
+
+  --as-shadow-1: #{$as-shadow-black-1};
+  --as-shadow-2: #{$as-shadow-black-2};
+  --as-shadow-3: #{$as-shadow-black-3};
+
+  --as-shadow-orange-1: #{$as-shadow-orange-1};
+  --as-shadow-orange-2: #{$as-shadow-orange-2};
+
+  --as-shadow-red-1: #{$as-shadow-red-1};
+  --as-shadow-red-2: #{$as-shadow-red-2};
+
+  --as-shadow-green-1: #{$as-shadow-green-1};
+  --as-shadow-green-2: #{$as-shadow-green-2};
+
+  --as-shadow-blue-1: #{$as-shadow-blue-1};
+  --as-shadow-blue-2: #{$as-shadow-blue-2};
+
+  --as-gradient-blue: #{$as-gradient-blue};
+
+  --as-font-regular: 'NunitoSansRegular', sans-serif;
+  --as-font-semibold: 'NunitoSansSemibold', sans-serif;
+  --as-font-bold: 'NunitoSansBold', sans-serif;
+}

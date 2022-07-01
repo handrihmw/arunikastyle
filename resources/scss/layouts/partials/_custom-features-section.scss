@@ -1,0 +1,40 @@
+@use "../../mixins/breakpoints" as *;
+
+.custom-features-section {
+  margin-top: 80px;
+  text-align: center;
+
+  [class*="col-"]:not(:last-child) {
+    margin-bottom: 64px;
+  }
+
+  &__img {
+    height: 64px;
+    width: 64px;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    color: rgba(58, 65, 102, 0.7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+  }
+
+  @include screen(desktop) {
+    margin-top: 48px;
+  }
+
+  &--left {
+    text-align: left !important;
+  }
+}

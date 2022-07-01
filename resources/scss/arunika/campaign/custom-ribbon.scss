@@ -1,0 +1,86 @@
+
+@use "../../mixins/breakpoints" as *;
+
+
+
+
+.as-belt {
+  background-color: var(--as-color-blue-dark);
+  color: var(--as-color-white);
+  height: auto;
+  padding: 2.5rem 1rem;
+  width: 100%;
+
+  @include screen(desktop) {
+    height: 140px;
+    padding: 0.5rem 0;
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+
+    @include screen(desktop) {
+      flex-direction: row;
+      gap: 3.5rem;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &-content {
+    margin: 1rem 0;
+    max-width: 100%;
+
+    @include screen(desktop) {
+      margin: 0;
+      max-width: 390px;
+    }
+
+    &__title {
+      @include font-size('24');
+      margin-bottom: 0.5rem;
+    }
+
+    &__description {
+      @include font-size('14');
+    }
+  }
+
+  &__image {
+   
+    height: auto;
+    max-width: 200px;
+
+    @include screen(desktop) {
+      height: 130px;
+    }
+  }
+
+  &__button {
+    width: 100%;
+
+    @include screen(desktop) {
+      max-width: 250px;
+    }
+
+    &--icon {
+      --icon-url: url(../images/2022/arunika/belt/vps-promocode-icon-copy.svg);
+      position: relative;
+      margin-right: 24px;
+
+      &::before {
+        content: var(--icon-url);
+        margin-left: 0.5rem;
+        position: absolute;
+        transition: all 1s;
+      }
+    }
+  }
+}

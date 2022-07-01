@@ -1,0 +1,51 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-headline-iconcolor {
+  &__title {
+    @include font-size('40');
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    @include font-size('16');
+    color: var(--as-color-secondary);
+    margin-bottom: 3rem;
+
+    @include screen(desktop) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    margin-top: 0;
+
+    @include screen(desktop) {
+      margin-top: 42px;
+    }
+
+    &-item {
+      padding-left: 0.75rem;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &::before {
+        content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 0.333252C9.69255 0.333252 7.43692 1.01749 5.51835 2.29944C3.59977 3.58139 2.10443 5.40347 1.22141 7.53528C0.338383 9.66708 0.107344 12.0129 0.557505 14.276C1.00767 16.5391 2.11881 18.6179 3.75042 20.2495C5.38203 21.8811 7.46083 22.9923 9.72395 23.4424C11.9871 23.8926 14.3328 23.6615 16.4646 22.7785C18.5964 21.8955 20.4185 20.4001 21.7005 18.4816C22.9824 16.563 23.6667 14.3074 23.6667 11.9999C23.6631 8.90681 22.4328 5.94141 20.2457 3.75425C18.0585 1.56709 15.0931 0.336791 12 0.333252ZM18.0748 9.21541L10.8561 16.4342C10.7478 16.5425 10.6192 16.6285 10.4777 16.6871C10.3361 16.7458 10.1844 16.776 10.0312 16.776C9.87801 16.776 9.72631 16.7458 9.58477 16.6871C9.44324 16.6285 9.31465 16.5425 9.20635 16.4342L5.92517 13.1529C5.70867 12.9337 5.5877 12.6377 5.58866 12.3296C5.58962 12.0215 5.71244 11.7263 5.93031 11.5084C6.14817 11.2905 6.44338 11.1677 6.7515 11.1667C7.05961 11.1657 7.35559 11.2867 7.57483 11.5032L10.0312 13.9596L16.4252 7.56567C16.6444 7.34919 16.9404 7.22823 17.2485 7.2292C17.5566 7.23018 17.8518 7.35301 18.0697 7.57088C18.2876 7.78876 18.4104 8.08398 18.4113 8.39209C18.4123 8.7002 18.2913 8.99618 18.0748 9.21541Z' fill='%2300BFA6'/%3E%3C/svg%3E");
+        position: absolute;
+        left: -30px;
+      }
+
+      &--description {
+        @include font-size('18-semibold');
+        margin-bottom: 0.5rem;
+      }
+
+      &--detail {
+        @include font-size('16');
+        color: var(--as-color-secondary);
+      }
+    }
+  }
+}

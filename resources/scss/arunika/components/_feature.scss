@@ -1,0 +1,140 @@
+@use '../mixins/breakpoint' as *;
+
+.as-feature {
+  color: #29384e;
+  height: auto;
+  padding: 65px 30px;
+  width: 100%;
+
+ @include screen(mobile) {
+    height: 100%;
+    padding: 60px 10px;
+    width: auto;
+  }
+
+  &__illustration {
+    height: auto;
+    width: 100%;
+
+   @include screen(mobile) {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      margin: 50px 0;
+    }
+
+    &-top {
+      position: relative;
+      top: -200px;
+
+     @include screen(mobile) {
+        top: 0;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 3.5rem;
+
+   @include screen(mobile) {
+      line-height: 2.25rem;
+      padding: auto;
+    }
+  }
+
+  &__sub-title {
+    color: #535961;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1.625rem;
+
+   @include screen(mobile) {
+      line-height: 1rem;
+      padding: auto;
+    }
+  }
+
+  &__description {
+    color: #546071;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(1rem, 3vw, 1rem);
+    letter-spacing: 0.005em;
+    line-height: 1.5rem;
+
+   @include screen(mobile) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__list {
+    color: #546071;
+    list-style-type: none;
+    margin-top: 42px;
+
+   @include screen(mobile) {
+      margin-top: 0;
+    }
+
+    &-item {
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &::before {
+        content: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.0003 3.1665C15.8688 3.1665 12.8076 4.09511 10.2038 5.8349C7.60003 7.57469 5.57063 10.0475 4.37224 12.9407C3.17385 15.8338 2.8603 19.0174 3.47123 22.0888C4.08217 25.1601 5.59014 27.9814 7.80448 30.1957C10.0188 32.41 12.84 33.918 15.9114 34.5289C18.9828 35.1399 22.1663 34.8263 25.0595 33.6279C27.9527 32.4295 30.4255 30.4001 32.1653 27.7964C33.9051 25.1926 34.8337 22.1314 34.8337 18.9998C34.8337 16.9206 34.4241 14.8617 33.6284 12.9407C32.8327 11.0197 31.6665 9.27424 30.1962 7.80398C28.7259 6.33372 26.9805 5.16744 25.0595 4.37174C23.1385 3.57605 21.0796 3.1665 19.0003 3.1665ZM19.0003 31.6665C16.4951 31.6665 14.0461 30.9236 11.9631 29.5318C9.88009 28.14 8.25657 26.1617 7.29786 23.8472C6.33915 21.5326 6.08831 18.9858 6.57705 16.5287C7.0658 14.0716 8.27218 11.8146 10.0436 10.0432C11.8151 8.27169 14.0721 7.0653 16.5292 6.57656C18.9863 6.08781 21.5331 6.33865 23.8477 7.29736C26.1622 8.25607 28.1404 9.87959 29.5323 11.9626C30.9241 14.0456 31.667 16.4946 31.667 18.9998C31.667 22.3592 30.3325 25.5811 27.957 27.9565C25.5816 30.332 22.3597 31.6665 19.0003 31.6665Z' fill='%2329384E'/%3E%3Cpath d='M16.5137 20.7258L23.3062 13.9175C23.6028 13.6226 24.0041 13.457 24.4224 13.457C24.8407 13.457 25.242 13.6226 25.5387 13.9175C25.6871 14.0646 25.8049 14.2398 25.8853 14.4327C25.9656 14.6256 26.007 14.8326 26.007 15.0416C26.007 15.2506 25.9656 15.4576 25.8853 15.6505C25.8049 15.8435 25.6871 16.0186 25.5387 16.1658L17.622 24.0825C17.3271 24.375 16.9291 24.5399 16.5137 24.5416C16.3053 24.5428 16.0987 24.5029 15.9058 24.4241C15.7129 24.3453 15.5375 24.2292 15.3895 24.0825L11.6687 20.3458C11.5029 20.2038 11.3683 20.0292 11.2733 19.8327C11.1782 19.6363 11.1248 19.4223 11.1164 19.2043C11.108 18.9862 11.1447 18.7688 11.2243 18.5656C11.3039 18.3624 11.4247 18.1779 11.579 18.0236C11.7333 17.8693 11.9178 17.7485 12.121 17.6689C12.3242 17.5893 12.5416 17.5526 12.7597 17.561C12.9777 17.5694 13.1917 17.6228 13.3881 17.7179C13.5846 17.8129 13.7592 17.9475 13.9012 18.1133L16.5137 20.7258Z' fill='%2329384E'/%3E%3C/svg%3E%0A");
+        position: absolute;
+        left: -45px;
+        top: 20px;
+      }
+    }
+
+    &-item-color {
+      color: #29384e;
+      font-family: "NunitoSansBold", sans-serif;
+      font-size: clamp(0.875rem, 3vw, 1rem);
+      font-weight: 600;
+      letter-spacing: 0.005em;
+      left: -10px;
+      line-height: 1.625rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      text-align: left;
+
+      &::before {
+        content: url("../images/2021/arunika/icons/checklist-green.webp");
+        position: absolute;
+        left: -35px;
+      }
+    }
+
+    &-title {
+      color: #29384e;
+      font-family: "NunitoSansBold", sans-serif;
+      font-size: clamp(1rem, 3vw, 1.125rem);
+      font-weight: 600;
+      letter-spacing: 0.005em;
+      line-height: 1.625rem;
+      text-align: left;
+    }
+
+    &-description {
+      font-family: "NunitoSansRegular", sans-serif;
+      font-size: clamp(0.875rem, 3vw, 1rem);
+      letter-spacing: 0.005em;
+      line-height: 1.625rem;
+      text-align: left;
+    }
+  }
+
+  &__button {
+    margin-top: 40px;
+  }
+}

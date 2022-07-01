@@ -1,0 +1,83 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-headline-section {
+  &__title {
+    @include font-size('40');
+    margin-bottom: 1rem;
+  }
+
+  &__subtitle {
+    @include font-size('18');
+    color: var(--as-color-secondary-two);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    @include font-size('16');
+    color: var(--as-color-secondary);
+    margin-bottom: 1rem;
+
+    &--lg {
+      @include font-size('20');
+    }
+
+    &--md {
+      @include font-size('18');
+    }
+
+    &--sm {
+      @include font-size('14');
+    }
+  }
+
+  &__image {
+    border-radius: 12px;
+    height: auto;
+    margin-bottom: 1rem;
+    width: 475px;
+
+    @include screen(desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__cta {
+    @include font-size('16');
+    color: var(--as-color-blue);
+    font-weight: 700;
+
+    &:hover {
+      @extend %transition-2s;
+      color: var(--as-color-blue-dark);
+    }
+  }
+
+  &__cta-icon {
+    @include font-size('16');
+    color: var(--as-color-blue);
+    font-weight: 700;
+
+    &::after {
+      content: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.8297 5.28995L2.5897 1.04995C2.49674 0.95622 2.38613 0.881826 2.26428 0.831057C2.14242 0.780288 2.01171 0.75415 1.8797 0.75415C1.74769 0.75415 1.61698 0.780288 1.49512 0.831057C1.37326 0.881826 1.26266 0.95622 1.1697 1.04995C0.983448 1.23731 0.878906 1.49076 0.878906 1.75495C0.878906 2.01913 0.983448 2.27259 1.1697 2.45995L4.7097 5.99995L1.1697 9.53995C0.983448 9.72731 0.878906 9.98076 0.878906 10.2449C0.878906 10.5091 0.983448 10.7626 1.1697 10.9499C1.26314 11.0426 1.37395 11.116 1.49579 11.1657C1.61763 11.2155 1.74809 11.2407 1.8797 11.2399C2.01131 11.2407 2.14177 11.2155 2.26361 11.1657C2.38544 11.116 2.49626 11.0426 2.5897 10.9499L6.8297 6.70995C6.92343 6.61699 6.99782 6.50638 7.04859 6.38453C7.09936 6.26267 7.1255 6.13196 7.1255 5.99995C7.1255 5.86794 7.09936 5.73723 7.04859 5.61537C6.99782 5.49351 6.92343 5.38291 6.8297 5.28995Z' fill='%23007AFF'/%3E%3C/svg%3E");
+      left: 1.5rem;
+      position: relative;
+      top: 2px;
+    }
+
+    &:hover {
+      @extend %transition-2s;
+      color: var(--as-color-blue-dark);
+    }
+  }
+
+  &--center {
+    text-align: left;
+
+    @include screen(desktop) {
+      text-align: center;
+    }
+  }
+}

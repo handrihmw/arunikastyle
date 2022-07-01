@@ -1,0 +1,59 @@
+@use '../variables/color' as *;
+@use '../variables/shadow' as *;
+@use '../helpers/button-solid' as *;
+
+// Button Variants
+$button-array: (
+  (dark $as-color-black $as-color-black $as-color-black $as-color-white $as-shadow-black-1 $as-shadow-black-2),
+  (success $as-color-green $as-color-green-hover $as-color-green-pressed $as-color-white $as-shadow-green-1 $as-shadow-green-2),
+  (danger $as-color-red $as-color-red-hover $as-color-red-pressed $as-color-white $as-shadow-red-1 $as-shadow-red-2),
+  (primary $as-color-orange $as-color-orange-hover $as-color-orange-pressed $as-color-white $as-shadow-orange-1 $as-shadow-orange-2),
+  (secondary $as-color-blue $as-color-blue-dark $as-color-blue-dark $as-color-white $as-shadow-blue-1 $as-shadow-blue-2),
+  (shade $as-color-divider $as-color-primary null null null null)
+);
+
+.as-btn {
+  @extend %btn-solid-helper !optional;
+
+  &--fluid {
+    width: 100%;
+  }
+}
+
+@each $button in $button-array {
+  .as-btn--#{nth($button, 1)} {
+    background: #{nth($button, 2)};
+    border: 1px solid transparent;
+    box-shadow: #{nth($button, 6)};
+    color: #{nth($button, 5)};
+
+    @if nth($button, 1)=='shade' {
+      color: #{nth($button, 3)};
+    }
+
+    &:hover {
+      background: #{nth($button, 3)};
+      color: #{nth($button, 5)};
+      cursor: pointer;
+
+      @if nth($button, 1)=='shade' {
+        background: var(--as-color-blue);
+        color: var(--as-color-white);
+      }
+    }
+
+    &:focus,
+    &:active,
+    &.as-btn--active {
+      background: #{nth($button, 4)};
+      border: 1px solid var(--as-color-white);
+      box-shadow: #{nth($button, 7)};
+
+      @if nth($button, 1)=='shade' {
+        background: var(--as-color-blue);
+        border: 1px solid var(--as-color-blue);
+        color: var(--as-color-white);
+      }
+    }
+  }
+}

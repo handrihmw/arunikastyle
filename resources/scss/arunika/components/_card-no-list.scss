@@ -1,0 +1,126 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-card {
+  @extend %card-placeholder;
+  min-height: 335px;
+
+  @media only screen and (max-width: 320px) {
+    width: 250px !important;
+  }
+
+  @media only screen and (min-width: 321px) and (max-width: 375px) {
+    width: 280px !important;
+  }
+
+ @include screen(mobile) {
+    width: 350px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    width: 300px;
+  }
+
+  &--best {
+    @extend %card-best-placeholder;
+  }
+
+  &__wrapper {
+    padding-top: 0;
+
+   @include screen(mobile) {
+      padding-top: 5rem;
+    }
+  }
+
+  &__wrapper-top {
+    padding-top: 5rem;
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    @extend %card-title-placeholder;
+  }
+
+  &__description {
+    @extend %card-description-placeholder;
+
+    &-domain {
+      height: 80px;
+    }
+
+    &-domain-first {
+      height: 50px;
+    }
+
+    &--grey {
+      @extend %card-description-grey-placeholder;
+    }
+  }
+
+  &__ribbon {
+    @extend %card-ribbon-placeholder;
+
+    &--green {
+      @extend %card-ribbon-green-placeholder;
+    }
+
+    &--red {
+      @extend %card-ribbon-red-placeholder;
+    }
+  }
+
+  &__best-seller {
+    @extend %card-bestseller-placeholder;
+  }
+
+  &__label {
+    @extend %card-label-placeholder;
+
+    &--green {
+      @extend %card-label-green-placeholder;
+    }
+
+    &--orange {
+      @extend %card-label-orange-placeholder;
+    }
+  }
+
+  &__price {
+    @extend %card-price-placeholder;
+  }
+
+  &__discount {
+    @extend %card-discount-placeholder;
+  }
+
+  &__button {
+    @extend %card-button-placeholder;
+    margin-top: 10px;
+
+    @media only screen and (max-width: 320px) {
+      padding: 10px 20px !important;
+    }
+  }
+
+  &__tooltip {
+    &--title {
+      @include font-size('16-semibold');
+      margin-bottom: 1rem;
+    }
+
+    &--detail {
+      @include font-size('14');
+    }
+
+    :hover .tooltip {
+      opacity: 1;
+      pointer-events: auto;
+      visibility: visible;
+    }
+  }
+}

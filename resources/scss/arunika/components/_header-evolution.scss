@@ -1,0 +1,80 @@
+/* Arunika Header */
+$header-style: ("default"),
+("center"),
+("center--image"),
+("corner"),
+("right"),
+("right--image");
+
+@each $header in $header-style {
+  .as-header-#{nth($header,1)} {
+    background-image: var(--as-color-gradient-blue);
+    background-repeat: no-repeat;
+    height: auto;
+    position: relative;
+
+    @if nth($header, 1)=='center' {
+      background-image: url("/assets/images/2021/arunika/hero/accent-center-small.svg"), var(--as-color-gradient-blue);
+      background-position: center;
+
+      @include screen(desktop) {
+        background-image: url("/assets/images/2021/arunika/hero/accent-center.svg"), var(--as-color-gradient-blue);
+      }
+    }
+
+    @if nth($header, 1)=='center--image' {
+      background-image: var(--as-color-gradient-blue);
+      background-position: center;
+
+      @include screen(desktop) {
+        background-image: url("/assets/images/2021/arunika/hero/accent-center.svg"), var(--as-color-gradient-blue);
+      }
+    }
+
+    @if nth($header, 1)=='corner' {
+      background-image: url("/assets/images/2021/arunika/hero/accent-corner-bottom.svg"), var(--as-color-gradient-blue);
+      background-size: auto;
+      background-position: right bottom;
+
+      @include screen(desktop) {
+        background-image: url("/assets/images/2021/arunika/hero/accent-corner.svg"), var(--as-color-gradient-blue);
+        background-position: right 0;
+      }
+    }
+
+    @if nth($header, 1)=='right' {
+      background-image: var(--as-color-gradient-blue);
+
+      @include screen(desktop) {
+        background-image: url("~assets/images/header/accent-right.svg"), var(--as-color-gradient-blue);
+        background-size: auto;
+        background-position: right 50%;
+      }
+
+
+      @media only screen and (min-width: 1920px) {
+        background-image: var(--as-color-gradient-blue);
+      }
+    }
+
+    @if nth($header, 1)=='right--image' {
+      background-image: url("~assets/images/header/accent-corner-bottom.svg"), var(--as-color-gradient-blue);
+      background-size: auto;
+      background-position: right bottom;
+
+      @include screen(desktop) {
+        background-image: url("~assets/images/header/accent-right.svg"), var(--as-color-gradient-blue);
+        background-size: auto;
+        background-position: right 50%;
+      }
+
+      @media only screen and (min-width: 1920px) {
+        background-image: var(--as-color-gradient-blue);
+      }
+    }
+
+    @if nth($header, 1)=='default' {
+      background-image: var(--as-color-gradient-blue);
+    }
+  }
+}

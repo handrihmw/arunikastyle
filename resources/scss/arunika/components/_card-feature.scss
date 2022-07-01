@@ -1,0 +1,207 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../variables/color' as *;
+@use '../mixins/font' as *;
+
+$card-style: ("solid", $as-color-white, none, $as-shadow-black-1),
+("soft",  $as-color-white, $as-shadow-black-1, $as-shadow-black-2),
+("transparent", transparent, none, none);
+
+@each $cards in $card-style {
+  .as-card-feature-#{nth($cards,1)} {
+    background: nth($cards, 2);
+    border: 0;
+    border-radius: 1.5rem;
+    box-shadow: nth($cards, 3);
+    padding: 2rem 1.5rem;
+
+    @if nth($cards, 1)=='solid' or nth($cards, 1)=='soft' {
+      height: auto;
+
+      @include screen(desktop) {
+        height: 300px;
+      }
+    }
+
+    @if nth($cards, 1)=='transparent' {
+      margin-bottom: 0;
+      padding-top: 1.5rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 0;
+    }
+
+    @else {
+      margin-bottom: 1rem;
+    }
+
+    &:hover {
+      box-shadow: nth($cards, 4);
+    }
+
+    &__image {
+     
+      aspect-ratio: 1/1;
+      height: 48px;
+      margin-bottom: 1.5rem;
+      width: 48px;
+    }
+
+    &__title {
+      @if nth($cards, 1)=='transparent' {
+        @include font-size('16');
+      }
+
+      @else {
+        @include font-size('20');
+      }
+
+      color: var(--as-color-primary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    &__description {
+      @if nth($cards, 1)=='transparent' {
+        @include font-size('12');
+      }
+
+      @else {
+        @include font-size('16');
+      }
+
+      color: var(--as-color-secondary-two);
+    }
+
+    &__list {
+      padding-left: 1.2rem;
+
+      &-item {
+        @include font-size('14');
+      }
+    }
+  }
+}
+
+// ex: .as-cf-solid, .as-cf-soft, .as-cf-transparent
+@each $cards in $card-style {
+  .as-cf-#{nth($cards,1)} {
+    background: nth($cards, 2);
+    border: 0;
+    border-radius: 1.5rem;
+    box-shadow: nth($cards, 3);
+    padding: 1.5rem;
+
+    @if nth($cards, 1)=='solid' {
+      height: auto;
+
+      @include screen(desktop) {
+        max-height: 290px;
+        padding: 2rem;
+      }
+    }
+
+    @if nth($cards, 1)=='soft' {
+      height: auto;
+
+      @include screen(desktop) {
+        min-height: 300px;
+      }
+    }
+
+    @if nth($cards, 1)=='transparent' {
+      margin-bottom: 0;
+      padding-top: 1.5rem;
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 0;
+    }
+
+    @else {
+      margin-bottom: 1rem;
+    }
+
+    &:hover {
+      box-shadow: nth($cards, 4);
+    }
+
+    &__image {
+     
+      aspect-ratio: 1/1;
+      height: 48px;
+      margin-bottom: 1.5rem;
+      width: 48px;
+    }
+
+    &__title {
+      font-weight: 600;
+      margin-bottom: 1rem;
+
+      @if nth($cards, 1)=='transparent' {
+        @include font-size('16');
+      }
+
+      @else {
+        @include font-size('20');
+      }
+
+      &--md {
+        @include font-size('18-semibold');
+      }
+    }
+
+    &__description {
+      color: var(--as-color-secondary-two);
+
+      @if nth($cards, 1)=='transparent' {
+        @include font-size('12');
+      }
+
+      @else {
+        @include font-size('16');
+      }
+    }
+
+    &__list {
+      padding-left: 1.2rem;
+
+      &--item {
+        @include font-size('14');
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__list-green {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      list-style-type: none;
+      margin-bottom: 0;
+
+      &--item,
+      &--item-sm {
+        @include font-size('16');
+        position: relative;
+        padding: 10px 0;
+        text-align: left;
+        width: 90%;
+
+        &::before {
+          content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='22' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='11' cy='10.951' r='10.5' fill='%2300BFA6'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.834 14.716l-2.4-2.4a.8.8 0 1 1 1.131-1.131l1.789 1.789 5.038-5.744a.799.799 0 1 1 1.215 1.04l-5.6 6.4a.8.8 0 0 1-.577.28.814.814 0 0 1-.596-.234z' fill='%23fff'/%3e%3c/svg%3e");
+          left: -35px;
+          padding-top: 13px;
+          position: absolute;
+          top: 1px;
+        }
+
+        .text-bold {
+          font-weight: 700;
+        }
+      }
+
+      &--item-sm {
+        @include font-size('14');
+      }
+    }
+  }
+}

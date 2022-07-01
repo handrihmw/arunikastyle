@@ -1,0 +1,391 @@
+@use "../../mixins/breakpoints" as *;
+
+.belt-wrapper {
+  background-image: linear-gradient(45deg, rgba(0, 52, 155, 1), rgba(0, 92, 255, .9219), rgba(0, 122, 255, 1));
+
+  &--imlek {
+    background-color: #8e0000 !important;
+    height: 130px;
+    margin-top: -25px !important;
+
+    @include screen(desktop) {
+      background-repeat: repeat-x;
+      height: auto;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &--ramadhan {
+    height: 130px;
+    margin-top: -25px !important;
+
+    @include screen(desktop) {
+      background-repeat: repeat-x;
+      height: auto;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &--new {
+    background: none;
+    margin-top: 45px;
+  }
+
+  &--harbolnas {
+    background-image: linear-gradient(45deg, #00349b, rgba(0, 92, 255, .9219), #007aff);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+  }
+}
+
+/*@media (min-width: 1200px) {
+  .belt-wrapper > .container {
+    max-width: 1250px !important;
+  }
+}*/
+
+.belt {
+  margin: 0;
+  padding: 24px 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-width: 1249px) {
+    flex-direction: row;
+  }
+
+  &-power-up-website,
+  &-imlek,
+  &-black-friday20,
+  &-ramadhan {
+    padding: 15px 0 !important;
+  }
+
+  &-harbolnas {
+    padding: 10px 0;
+  }
+
+  &--imlek, 
+  &--ramadhan {
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__item {
+
+    position: relative;
+
+    &--display-none {
+      display: none;
+    }
+
+    &--imlek,
+    &--ramadhan {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      @include screen(desktop) {
+        height: auto;
+        width: 100% !important;
+      }
+
+      @include screen(desktop) {
+        &:first-child {
+          width: 480px !important;
+        }
+      }
+
+      &>.nh-btn {
+        @media (max-width: 768px) {
+          margin-left: 1.5rem !important;
+          margin-right: 1.5rem !important;
+          width: 100% !important;
+        }
+      }
+    }
+
+    &--kemerdekaan {
+      text-align: center;
+    }
+
+    &--black-friday20,
+    &--harbolnas {
+      position: relative;
+      display: inline-block;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    @media (min-width: 1249px) {
+      &:not(:last-child) {
+        margin-right: 55px;
+        margin-bottom: 0;
+      }
+
+      &-image {
+        position: absolute;
+        bottom: -77px;
+
+        &-black-friday20 {
+          margin-top: -100px;
+          margin-bottom: -30px;
+        }
+
+        &-harbolnas {
+          margin-top: -80px;
+          width: 100%;
+        }
+
+        &-imlek,
+        &-ramadhan {
+          bottom: -60px;
+        }
+
+        &-discount {
+          height: auto;
+          width: 158.51px;
+        }
+
+        &-harbolnas-discount {
+          height: 130px;
+          width: 100%;
+
+          @include screen(mobile) {
+            width: 100%;
+          }
+        }
+
+        &-power-up-website {
+          bottom: -68px !important;
+        }
+
+        &-harbolnas,
+        &-imlek {
+          bottom: -60px;
+          right: 0;
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      width: 130px;
+    }
+
+    &:nth-child(3) {
+      width: 235px;
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    &-discount {
+
+      &-title,
+      &-percentage,
+      &-absolute-price {
+        font-family: 'NunitoSansBold', sans-serif;
+      }
+
+      &-title {
+        font-weight: unset;
+        font-size: 28px;
+        color: #fff;
+
+        &--harbolnas,
+        &--imlek,
+        &--website,
+        &--ramadhan {
+          font-weight: 800;
+          font-size: 22px;
+          line-height: 30px;
+          letter-spacing: 0.05em;
+        }
+      }
+
+      &-red-box {
+        width: 215px;
+        background: #E22D1F;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-style: normal;
+        font-weight: unset;
+        font-size: 18px;
+        line-height: 110%;
+        color: #fff;
+        margin: 5px 0 8px;
+      }
+
+      &-label {
+        font-size: 17px;
+        color: #fff;
+        line-height: 1;
+
+        &--harbolnas,
+        &--imlek,
+        &--ramadhan {
+          font-family: 'NunitoSansBold', sans-serif;
+          color: #fff;
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: 0.005em;
+        }
+
+        &--website {
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 110%;
+          margin-right: 10px;
+          text-align: right;
+        }
+
+        &--kemerdekaan {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 30px;
+          margin-right: 10px;
+          display: block;
+        }
+
+        &-gratis {
+          margin-top: 10px;
+          font-style: normal;
+          font-weight: unset;
+          font-size: 9px;
+          line-height: 110%;
+          color: #fff;
+          padding: 4px;
+          background: #E22D1F;
+          border-radius: 4px;
+        }
+      }
+
+      &-rupiah {
+        font-family: 'NunitoSansBold', sans-serif;
+        font-style: normal;
+        font-weight: unset;
+        font-size: 18px;
+        line-height: 110%;
+        color: #fff;
+        margin-right: 4px;
+      }
+
+      &-price {
+        font-family: 'NunitoSansBold', sans-serif;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 36px;
+        letter-spacing: 0.05em;
+        color: #fff;
+      }
+
+      &-bulan {
+        font-family: NunitoSansRegular, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 110%;
+        letter-spacing: 1px;
+      }
+
+      &-percentage {
+        font-size: 65px;
+        color: #fff;
+        line-height: 1;
+
+        &>sub {
+          font-size: 30px;
+          margin-left: 5px;
+          bottom: 0;
+        }
+      }
+
+      &-absolute-price {
+        color: #fff;
+        font-weight: 900;
+        font-size: 56px;
+        line-height: 76px;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    &-countdown {
+
+      &__title {
+        font-size: 10px;
+        color: #fff;
+      }
+
+      &__counter {
+        margin: 8px 0 0;
+        padding: 0;
+        list-style: none;
+
+        &-item {
+          position: relative;
+
+          &-time {
+            font-size: 31px;
+            color: #fff;
+          }
+
+          &-title {
+            font-size: 12px;
+            color: #fff;
+            text-align: center;
+          }
+
+          &:not(:last-child) {
+            margin-right: 50px;
+
+            &::after {
+              position: absolute;
+              content: ':';
+              font-size: 31px;
+              color: #fff;
+              top: 34%;
+              left: calc(100% + 20px);
+              transform: translateY(-50%);
+
+            }
+          }
+        }
+      }
+
+      &--imlek,
+      &--ramadhan {
+        @include screen(desktop) {
+          display: none;
+        }
+      }
+    }
+
+    &-power-up-website {
+      width: 254px !important;
+    }
+
+    &-harbolnas,
+    &-imlek {
+      width: 254px !important;
+    }
+  }
+}

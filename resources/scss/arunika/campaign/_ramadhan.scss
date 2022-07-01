@@ -1,0 +1,18 @@
+@import "../app";
+@import "../components/header-evolution";
+@import "../components/hero";
+
+.as-header {
+    background: url('https://niagaspace.sgp1.digitaloceanspaces.com/assets/2022/ramadhan/bg.webp'), linear-gradient(249.77deg,#0094ff -1.99%,#007dff 43.52%,#026ce8 95.86%);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.as-hero__button {
+    width: 100%;
+
+    @include screen(desktop) {
+        width: auto;
+    }
+}

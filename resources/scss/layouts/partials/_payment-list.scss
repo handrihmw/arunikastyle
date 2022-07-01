@@ -1,0 +1,95 @@
+@use "../../mixins/breakpoints"as *;
+
+.payment-list {
+  padding: 60px 20px;
+
+  @include screen(desktop) {
+    padding: 80px 0 50px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 16px;
+    margin-bottom: 24px;
+
+    @include screen(desktop) {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px;
+    }
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 36px;
+    text-align: center;
+
+    @include screen(desktop) {
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    margin: 0 30px 30px 0;
+    width: auto;
+    height: 35px;
+
+    @include screen(desktop) {
+      filter: gray;
+      /* IE6-9 */
+      -webkit-filter: grayscale(1);
+      /* Google Chrome & Safari 6+ */
+      -webkit-transition: all 0.3s;
+      margin: 0 30px 40px 0;
+      opacity: 0.4;
+
+      &:hover {
+        filter: none;
+        opacity: unset;
+        -webkit-filter: grayscale(0);
+      }
+    }
+  }
+}
+
+.new-payment-list {
+  padding: 60px 20px;
+
+  @include screen(desktop) {
+    padding: 80px 0 50px;
+  }
+
+  &__title {
+    @extend .payment-list__title;
+  }
+
+  &__icon-wrapper {
+    @extend .payment-list__icon-wrapper;
+  }
+
+  &__icon {
+    height: 20px;
+    margin: 0 25px 25px 0;
+    width: auto;
+
+    @include screen(desktop) {
+      filter: gray;
+      /* IE6-9 */
+      height: 30px;
+      margin: 0 30px 40px 0;
+      opacity: 0.4;
+      width: auto;
+      -webkit-filter: grayscale(1);
+      /* Google Chrome & Safari 6+ */
+      -webkit-transition: all 0.3s;
+
+      &:hover {
+        filter: none;
+        opacity: unset;
+        -webkit-filter: grayscale(0);
+      }
+    }
+  }
+}

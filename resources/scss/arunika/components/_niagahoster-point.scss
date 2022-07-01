@@ -1,0 +1,37 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-point {
+  background-color: var(--as-color-white);
+  box-shadow: 0px 4px 24px rgba(0, 87, 178, 0.08);
+  border-radius: 20px;
+  height: 570px;
+  margin-bottom: 1rem;
+  padding: 2rem 2.5rem;
+  text-align: center;
+
+  &__wrapper {
+    margin-top: 6rem;
+  }
+
+  &__image {
+    height: auto;
+    margin-bottom: 2rem;
+    width: auto;
+  }
+
+  &__title {
+    @include font-size('18');
+    color: var(--as-color-primary);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  &__description {
+    @include font-size('16');
+    color: var(--as-color-secondary-two);
+    margin-bottom: 1.5rem;
+  }
+}

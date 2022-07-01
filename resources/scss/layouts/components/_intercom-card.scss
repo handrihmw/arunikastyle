@@ -1,0 +1,15 @@
+.intercom-card {
+  position: relative;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgb(0, 0, 0);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 15px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px 0px, rgba(103, 61, 230, 0.5) 0px 2px 0px 0px inset;
+  transition: height 300ms ease-in-out 0s;
+
+  &__body {
+    padding: 16px 24px;
+  }
+}

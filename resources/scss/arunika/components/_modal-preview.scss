@@ -1,0 +1,214 @@
+@use '../mixins/breakpoint' as *;
+
+.as-modal-preview {
+  background: #007aff;
+  border: none;
+  border-radius: 1rem 1rem 0 0;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+
+ @include screen(mobile) {
+    display: grid;
+    padding: 1rem;
+  }
+
+  &__content {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: none;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    outline: 0;
+    overflow: hidden;
+    padding-bottom: 50px;
+    pointer-events: auto;
+    position: relative;
+    width: 100%;
+  }
+
+  &__wrapper {
+    align-self: center;
+    padding: 16px 0;
+  }
+
+  &__devices {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    gap: 30px;
+    position: relative;
+    text-align: center;
+    top: 15px;
+
+   @include screen(mobile) {
+      display: none;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      display: none;
+    }
+
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      display: none;
+    }
+
+    &--image {
+      height: auto;
+      width: auto;
+    }
+
+    &--text {
+      border-bottom: 3px solid transparent;
+      color: #fff;
+      margin: 0 10px;
+      padding: 12px 0 8px;
+    }
+
+    &--active {
+      border-bottom: 3px solid #fb8c00;
+      font-weight: 600;
+      opacity: 1;
+    }
+
+    &--inactive {
+      opacity: .6;
+    }
+  }
+
+  &__device {
+    opacity: .6;
+
+    &-active {
+      opacity: 1;
+    }
+  }
+
+  &__button-wrapper {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+
+   @include screen(mobile) {
+      display: grid;
+      gap: 10px;
+      margin: 1rem;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      display: grid;
+      gap: 15px;
+      margin-top: 50px;
+    }
+
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      margin: 10px 0;
+    }
+  }
+
+  &__button {
+    font-size: clamp(0.875rem, 5vw, 0.875rem);
+    padding: 0.75rem 3rem;
+    text-transform: uppercase;
+
+    @media only screen and (min-width: 321px) and (max-width: 375px) {
+      padding: 10px !important;
+    }
+
+   @include screen(mobile) {
+      width: 100%;
+    }
+  }
+
+  &__more {
+    background-color: #fff;
+    font-size: clamp(0.875rem, 5vw, 0.875rem);
+    margin-right: 15px;
+    padding: 0.75rem 3rem;
+    text-transform: uppercase;
+
+    @media only screen and (min-width: 321px) and (max-width: 375px) {
+      padding: 10px !important;
+    }
+
+   @include screen(mobile) {
+      margin: 0;
+      width: 100%;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      margin: 0;
+      position: relative;
+      transform: translateX(-1%);
+    }
+  }
+
+  &__iframe {
+    border: none;
+    min-height: 720px;
+    position: relative;
+    transform: scale(.832);
+    transform-origin: 0 0;
+    width: 100%;
+
+    &-disclaimer {
+      background: #22273c;
+      border-radius: 12px;
+      bottom: 20px;
+      color: #ffffff;
+      margin-left: 80px;
+      margin-right: 80px;
+      padding: 20px;
+      position: absolute;
+      text-align: center;
+
+      a {
+        color: #0279ff;
+        text-decoration: underline;
+
+        &:hover {
+          color: #0059be;
+        }
+
+        &:active {
+          color: #00489b;
+        }
+      }
+
+      @media (min-width: 576px) and (max-width: 991px) {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+
+      @media (max-width: 575px) {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    &-wrap {
+      border-radius: 0 0 8px 8px;
+      height: 600px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    &--desktop {
+      width: 1366px;
+    }
+
+    &--tablet {
+      left: 22%;
+      position: relative;
+      width: 768px;
+    }
+
+    &--mobile {
+      left: 35%;
+      position: relative;
+      width: 425px;
+    }
+  }
+}

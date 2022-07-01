@@ -1,0 +1,201 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+.hosting-unlimited-customers {
+    color: #3a4166;
+    text-align: center;
+    padding: 100px 0;
+
+    &__title {
+        font-size: 2.0625rem;
+        line-height: 45px;
+    }
+
+    &__description {
+        font-size: 1.125rem;
+        line-height: 200%;
+
+        a {
+            color: #007aff;
+        }
+    }
+
+    &__feature {
+        box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.15);
+        border-radius: 12px;
+        margin-top: 100px;
+        min-height: 385px;
+        padding: 38px;
+
+        @include media-breakpoint-up(lg) {
+            height: 385px;
+        }
+
+        &-title {
+            color: #3a4166;
+            font-weight: bold;
+            font-size: 1rem;
+            line-height: 28px;
+            text-align: center;
+            margin: 4px 0px;
+            margin-top: 10px;
+        }
+
+        &-subtitle {
+            color: #c4c4c4;
+            font-size: 1rem;
+            line-height: 28px;
+            margin: 4px 0px;
+        }
+
+        &-domain {
+            color: #007aff;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        &-description {
+            color: rgba(58, 65, 102, 0.7);
+            font-size: .875rem;
+            line-height: 177.32%;
+            margin: 28px 0px;
+        }
+    }
+}
+
+.hosting-unlimited-why-use {
+    font-family: 'NunitoSansRegular', sans-serif;
+    ;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 100px 0;
+
+    &__header {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    &__title {
+        color: #29384e;
+        font-weight: bold;
+        font-style: normal;
+        font-size: 2.0625rem;
+        line-height: 56px;
+        letter-spacing: -.02em;
+        text-align: center;
+    }
+
+    &__description {
+        color: #546071;
+        font-size: 1.125rem;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 200%;
+        letter-spacing: .005em;
+        margin-top: 20px;
+        max-width: 770px;
+        text-align: center;
+    }
+
+    &__feature {
+        margin-top: 40px;
+
+        &-wrapper {
+            padding-left: 30px;
+        }
+
+        &-image {
+            margin-top: 70px;
+        }
+
+        &-title {
+            color: #29384e;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 1.125rem;
+            line-height: 27px;
+            letter-spacing: .02em;
+            margin-left: 70px;
+        }
+
+        &-description {
+            color: #546071;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 24px;
+            letter-spacing: .005em;
+            margin-left: 70px;
+        }
+
+        &::before {
+            content: url("../images/2021/hosting-gratis/uil_check-circle.svg");
+            position: absolute;
+        }
+    }
+}
+
+.the-best-unlimited-hosting {
+    background-color: #f0f8ff99;
+    padding: 100px 0;
+
+    .container {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        color: #3a4166;
+        font-size: 2.0625rem;
+        margin: 80px 0px;
+        max-width: 699px;
+        text-align: center;
+        line-height: 45px;
+    }
+
+    &__feature {
+        &-title {
+            font-weight: 800;
+            font-size: 1.125rem;
+            line-height: 30px;
+            letter-spacing: .005em;
+            margin-bottom: 20px;
+            margin-top: 40px;
+        }
+
+        &-description {
+            color: #3a4166b3;
+            font-size: .875rem;
+            line-height: 26px;
+            letter-spacing: .005em;
+        }
+    }
+}
+
+.package {
+    &__info {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: 'NunitoSansBold', sans-serif;
+        margin-bottom: 140px;
+        text-align: center;
+
+        h2 {
+            font-size: 2.063rem;
+            font-weight: bold;
+        }
+
+        p {
+            color: #3a4166e6;
+            font-size: 1.125rem;
+            line-height: 200%;
+            margin-top: 30px;
+            max-width: 920px;
+            opacity: .7;
+        }
+    }
+}

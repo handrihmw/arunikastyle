@@ -1,0 +1,32 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-card-widget {
+  background-color: var(--as-color-white);
+  border-radius: 12px;
+  box-shadow: 0px 4px 24px rgba(0, 87, 178, 0.08);
+  padding: 8px;
+
+  &__title {
+    @include font-size('32-semibold');
+    margin-top: 16px;
+  }
+
+  &__subtitle {
+    @include font-size('16-semibold');
+  }
+
+  &__status {
+    @include font-size('12');
+    white-space: nowrap;
+
+    &--success {
+      color: var(--as-color-green);
+    }
+
+    &--secondary {
+      color: var(--as-color-secondary-two);
+    }
+  }
+}

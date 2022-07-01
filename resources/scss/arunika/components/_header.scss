@@ -1,0 +1,51 @@
+@use '../mixins/breakpoint' as *;
+
+$gradient-hero: linear-gradient(249.77deg, #0094ff -1.99%, #007dff 43.52%, #026ce8 95.86%);
+
+.as-header {
+  background-image: $gradient-hero;
+  background-repeat: no-repeat;
+  background-position: right 50%;
+  height: auto;
+  position: relative;
+
+  @include screen(desktop) {
+    background-image: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/assets/images/accent-right-1655791337.svg"), $gradient-hero;
+    height: max-content;
+    min-height: 700px;
+    max-height: 760px;
+  }
+
+  @include screen(desktopSuperLarge) {
+    background-position: 80%;
+  }
+
+  &-center {
+    background-image: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/assets/images/accent-center-sm-1655791497.svg"), $gradient-hero;
+    background-blend-mode: lighten;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    position: relative;
+
+    @include screen(desktop) {
+      background-image: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/assets/images/accent-center-1655791356.svg"), $gradient-hero;
+      height: 730px;
+    }
+  }
+
+  &-corner {
+    background-image: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/www/assets/images/2021/arunika/hero/accent-corner.svg"), $gradient-hero;
+    background-size: auto;
+    background-position: right 0;
+
+    @include screen(desktop) {
+      background-image: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/www/assets/images/2021/arunika/hero/accent-corner-bottom.svg"), $gradient-hero;
+      background-position: right bottom;
+    }
+  }
+
+  &-default {
+    background-image: $gradient-hero;
+  }
+}

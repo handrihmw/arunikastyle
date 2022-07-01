@@ -1,0 +1,113 @@
+$icon-path : "../../fonts" !default;
+@font-face {
+  font-family: "arunicon";
+  src: url('#{$icon-path}/arunicon.eot?lylguw');
+  src: url('#{$icon-path}/arunicon.eot?lylguw#iefix') format("embedded-opentype"),
+    url('#{$icon-path}/arunicon.ttf?lylguw') format("truetype"),
+    url('#{$icon-path}/arunicon.woff?lylguw') format("woff"),
+    url('#{$icon-path}/arunicon.svg?lylguw#arunicon') format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="as-icon-"],
+[class*=" as-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "arunicon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.as-icon-arrow-down:before {
+  content: "\e901";
+  color: #fff;
+}
+.as-icon-arrow-up:before {
+  content: "\e902";
+  color: #fff;
+}
+.as-icon-cart-blue:before {
+  content: "\e903";
+  color: #007aff;
+}
+.as-icon-cart-white:before {
+  content: "\e904";
+  color: #fff;
+}
+.as-icon-check:before {
+  content: "\e905";
+  color: #00bfa6;
+}
+.as-icon-arrow-next:before {
+  content: "\e900";
+}
+.as-icon-arrow-prev:before {
+  content: "\e906";
+}
+.as-icon-plus:before {
+  content: "\e907";
+  color: #f6fbff;
+}
+.as-icon-minus:before {
+  content: "\e908";
+  color: #f6fbff;
+}
+.as-icon-ask:before {
+  content: "\e909";
+  color: #546071;
+}
+.as-icon-check-circle .path1:before {
+  content: "\e90a";
+  color: rgb(0, 191, 166);
+}
+.as-icon-check-circle .path2:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.as-icon-x:before {
+  content: "\e90c";
+  color: #f43636;
+}
+.as-icon-search:before {
+  content: "\e90d";
+}
+.as-icon-avatar-square .path1:before {
+  content: "\e90e";
+  color: rgb(0, 123, 255);
+}
+.as-icon-avatar-square .path2:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.as-icon-avatar-circle .path1:before {
+  content: "\e910";
+  color: rgb(0, 123, 255);
+}
+.as-icon-avatar-circle .path2:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.as-icon-sm {
+  font-size: 1.5rem;
+}
+
+.as-icon-md {
+  font-size: 1.75rem;
+}
+
+.as-icon-lg {
+  font-size: 2rem;
+}

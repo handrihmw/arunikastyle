@@ -1,0 +1,87 @@
+header {
+  background-image: linear-gradient(45deg, rgba(0,52,155,1), rgba(0,92,255,.9219), rgba(0, 122, 255, 1));
+}
+
+body {
+  font-family: 'NunitoSansRegular', sans-serif;
+  font-size: 14px;
+  color: #3a4166;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.fonts-loaded {
+  font-family: 'NunitoSansRegular', sans-serif;
+}
+
+p {
+  font-family: 'NunitoSansRegular', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'NunitoSansBold', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:hover {
+  text-decoration: none;
+  outline: none;
+  color: #3a4166;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px !important;
+  }
+}
+
+@keyframes fallIn {
+  from { top: -100px; }
+  to { top: 0; }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+.modal-backdrop {
+  animation-name: backdrop;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.wa-chat{z-index:99;display:none;position:fixed;right:20px;bottom:20px}.wa-chat img{height:63px;width:63px}
+.intercom-messenger-frame{max-height:unset!important}
+.loader{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4;display:none}
+.chat-launcher{display:none;bottom:69px;box-sizing:border-box;direction:ltr;opacity:1;position:fixed!important;right:23px;transition:opacity 0.5s ease 0s;z-index:16000160!important}.chat-launcher__brand{list-style:none;flex-flow:column wrap}.chat-launcher__brand-telegram,.chat-launcher__brand-whatsapp{-webkit-box-pack:end;display:flex;justify-content:flex-end;margin-top:16px;position:relative}.chat-launcher__brand-telegram a,.chat-launcher__brand-whatsapp a,.chat-launcher__button>a{border-radius:50%;border:0;box-shadow:rgb(0 0 0 / 40%) 2px 2px 6px;box-sizing:border-box;cursor:pointer;display:block;height:62px;order:2;overflow:hidden;padding:5px;position:relative;transition:all 0.5s ease 0s;width:62px;z-index:200}.chat-launcher__brand-telegram a{background:rgb(41 168 233)}.chat-launcher__brand-whatsapp a{background:rgb(76 175 81)}.chat-launcher__button{-webkit-box-pack:end;display:flex;justify-content:flex-end;margin-top:16px;position:relative}.chat-launcher__button>a{background:#5831cc;padding:15px}.chat-launcher__button a img{width:100%;height:auto;filter:invert(1)}
+
+@import "../components";
+@import "../partials";
+@import "../../arunika/layouts";

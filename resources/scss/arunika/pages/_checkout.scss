@@ -1,0 +1,41 @@
+@import "../helpers/bootstrap/bootstrap";
+@import "../helpers/fontawesome/all";
+@import "../mixins/all";
+@import "../modules/all";
+@import "../helpers/all";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-icon";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Order Step */
+@import "../components/order-step";
+
+/* Arunika Summary Cart */
+@import "../components/summary-cart";
+
+header {
+    background-image: none !important;
+}
+
+.button-disabled {
+    cursor: not-allowed;
+}
+
+.as-tooltip {
+    &__info {
+        font-size: clamp(1.125rem,4vw,1.25rem) !important;
+        padding: 1.25rem 1.5rem;
+    }
+
+    &__domain {
+        left: 60px;
+
+        &::after {
+            left: 70px
+        }
+    }
+}

@@ -1,0 +1,409 @@
+@use "../../mixins/breakpoints"as *;
+
+.hosting-feature {
+  padding: 60px 0;
+
+  @include screen(desktop) {
+    display: none;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+  }
+
+  &__package {
+    margin-top: 40px;
+    padding: 30px;
+    border: 1px solid rgba(17, 26, 104, .1);
+    border-bottom: none;
+
+    &:not(:first-child) {
+      border-left: none;
+    }
+
+    &--sticky {
+      position: fixed;
+      top: 30px;
+      background: #fff;
+      z-index: 2;
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 16px;
+      opacity: .7;
+      text-align: center;
+    }
+
+    &-price {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 18px;
+      font-weight: bolder;
+      text-align: center;
+      margin-top: 10px;
+      padding-right: 4px;
+
+      &::after {
+        content: '/bln';
+        font-family: 'NunitoSansRegular', sans-serif;
+        font-size: 10px;
+        color: #3A4166;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    &-btn {
+      text-align: center;
+      margin-top: 20px;
+
+      >a {
+        font-family: NunitoSansBold, sans-serif !important;
+        font-size: 12px !important;
+        text-transform: capitalize !important;
+        padding: 8px 28px !important;
+      }
+    }
+  }
+
+  &__accordion {
+    &-item {
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #fff;
+      }
+
+      &-header {
+
+        &-btn {
+          display: block;
+          font-family: 'NunitoSansBold', sans-serif;
+          font-size: 22px;
+          padding: 24px 50px 24px 20px;
+          background: #007AFF;
+          color: #fff;
+          position: relative;
+
+          &:hover {
+            color: #fff;
+          }
+
+          &::after {
+            content: '\f077';
+            font-family: "Font Awesome 5 Free", sans-serif;
+            font-size: 25px;
+            color: #fff;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all .6s;
+          }
+
+          &--collapse {
+            &::after {
+              content: '\f078' !important;
+              transition: all .6s;
+            }
+          }
+        }
+      }
+
+      &-content {}
+    }
+  }
+
+  &__table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    &-row {
+      display: block;
+      border-bottom: 1px solid rgba(17, 26, 104, .1);
+      padding: 0;
+
+      &-column {
+        width: 100%;
+        display: flex;
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        &-item {
+          position: relative;
+          font-family: 'NunitoSansRegular', sans-serif;
+          font-size: 14px;
+          text-align: center;
+          color: rgba(58, 65, 102, .7);
+          padding: 20px 0;
+          margin: 0;
+          border-right: 1px solid rgba(17, 26, 104, .1);
+
+          &:first-child {
+            width: 60%;
+            border-right: none;
+            border-left: 1px solid rgba(17, 26, 104, .1);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 20px;
+            text-align: left;
+          }
+
+          &:nth-child(2) {
+            width: 40%;
+            border-left: 1px solid rgba(17, 26, 104, .1);
+          }
+
+          >a {
+            color: #007aff;
+          }
+
+          >a:hover {
+            text-decoration: underline;
+          }
+
+          &-icon {}
+
+          &-title {
+            margin-left: 10px;
+          }
+
+          >.fa-times {
+            font-size: 24px;
+            color: #EE4957;
+          }
+
+          >.fa-check {
+            font-size: 24px;
+            color: #00BFA5;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hosting-feature-desktop {
+  display: none;
+  padding: 100px 0;
+
+  @include screen(desktop) {
+    display: block;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    text-align: center;
+  }
+
+  &__package {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 60px;
+    padding-left: 0;
+
+    &--sticky {
+      position: fixed;
+      top: 40px;
+      background: #fff;
+      z-index: 2;
+
+      @include screen(desktopExtra) {
+        top: 60px;
+      }
+    }
+
+    &-item {
+      padding: 30px;
+      border: 1px solid rgba(17, 26, 104, .1);
+      border-bottom: none;
+      width: 178px;
+
+      @include screen(desktopExtra) {
+        width: 206px
+      }
+
+      &:not(:first-child) {
+        border-left: none;
+      }
+
+      &-title {
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: 16px;
+        opacity: .7;
+        text-align: center;
+      }
+
+      &-price {
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: 18px;
+        font-weight: bolder;
+        text-align: center;
+        margin-top: 10px;
+        padding-right: 4px;
+
+        &::after {
+          content: '/bln';
+          font-family: 'NunitoSansRegular', sans-serif;
+          font-size: 10px;
+          color: #3A4166;
+          bottom: 0;
+          right: 0;
+        }
+      }
+
+      &-btn {
+        text-align: center;
+        margin-top: 20px;
+
+        >a {
+          font-family: NunitoSansBold, sans-serif !important;
+          font-size: 12px !important;
+          text-transform: capitalize !important;
+          padding: 8px 28px !important;
+        }
+      }
+    }
+  }
+
+  &__accordion {
+    &-item {
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #fff;
+      }
+
+      &-header {
+
+        &-btn {
+          display: block;
+          font-family: 'NunitoSansBold', sans-serif;
+          font-size: 22px;
+          padding: 24px 20px;
+          background: #007AFF;
+          color: #fff;
+          position: relative;
+
+          &:hover {
+            color: #fff;
+          }
+
+          &::after {
+            content: '\f077';
+            font-family: "Font Awesome 5 Free", sans-serif;
+            font-weight: 900;
+            font-size: 25px;
+            color: #fff;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all .6s;
+          }
+
+          &--collapse {
+            &::after {
+              content: '\f078' !important;
+              transition: all .6s;
+            }
+          }
+        }
+      }
+
+      &-content {}
+    }
+  }
+
+  &__table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+
+    &-row {
+      display: block;
+      border-bottom: 1px solid rgba(17, 26, 104, .1);
+      padding: 0;
+
+      &-column {
+        width: 100%;
+        display: flex;
+        list-style: none;
+        margin-bottom: 0;
+        padding-left: 0;
+
+        &-item {
+          position: relative;
+          font-family: 'NunitoSansRegular', sans-serif;
+          font-size: 14px;
+          text-align: center;
+          color: rgba(58, 65, 102, .7);
+          width: 178px;
+          padding: 20px 0;
+          margin: 0;
+          border-right: 1px solid rgba(17, 26, 104, .1);
+
+          @include screen(desktopExtra) {
+            width: 206px;
+          }
+
+          >a {
+            color: #007aff;
+          }
+
+          >a:hover {
+            text-decoration: underline;
+          }
+
+          &:first-child {
+            width: calc(100% - 712px);
+            border-right: none;
+            border-left: 1px solid rgba(17, 26, 104, .1);
+            text-align: left;
+            padding: 20px;
+
+            @include screen(desktopExtra) {
+              width: calc(100% - 824px);
+            }
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+          }
+
+          &:nth-child(2) {
+            border-left: 1px solid rgba(17, 26, 104, .1);
+          }
+
+          &-icon {}
+
+          &-title {
+            margin-left: 20px;
+          }
+
+          >.fa-times {
+            font-size: 24px;
+            color: #EE4957;
+          }
+
+          >.fa-check {
+            font-size: 24px;
+            color: #00BFA5;
+          }
+        }
+      }
+    }
+  }
+}

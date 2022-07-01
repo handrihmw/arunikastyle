@@ -1,0 +1,172 @@
+@use "../../mixins/breakpoints"as *;
+
+.easy-website-package {
+  &__card-wrapper {
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      /*For Mobile*/
+    }
+
+    @include screen(desktop) {
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        text-align: right !important;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        text-align: left !important;
+      }
+    }
+
+    @include screen(desktopExtra) {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  /* /&card-wrapper */
+
+  &__card {
+    position: relative;
+    display: inline-block;
+    width: 270px;
+    min-height: 665px;
+    border-radius: 8px;
+    padding: 88px 13px 35px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(17, 26, 104, .15);
+    text-align: center;
+
+    @include screen(desktopExtra) {
+      width: 363.29px;
+      min-height: 665px;
+      padding: 88px 37px 35px;
+    }
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    margin-bottom: 140px;
+    text-align: center;
+  }
+
+  &__label {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 18px;
+    color: #fff;
+    background: #E5E5E5;
+    display: inline-block;
+    width: 100.4%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 12px 0;
+    text-align: center;
+
+    &--green {
+      background: #00BFA5;
+    }
+
+    &--yellow {
+      background: #FB8C00;
+    }
+  }
+
+  &__package-title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  &__price {
+    position: relative;
+    font-size: 18px;
+    opacity: .7;
+
+    &--hidden {
+      visibility: hidden;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 13px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 1px;
+      background: #3A4166;
+    }
+  }
+
+  &__discount-price {
+    display: inline-block;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 32px;
+    color: #007AFF;
+    margin-bottom: 37px;
+    padding-right: 24px;
+    position: relative;
+
+    &::after {
+      font-family: NunitoSansRegular, sans-serif !important;
+      font-size: 14px;
+      content: "";
+      color: #3A4166;
+      opacity: .7;
+      position: absolute;
+      right: 0;
+      bottom: 8px;
+    }
+  }
+
+  &__hr {
+    height: 1px;
+    width: 100%;
+    background: #E5E5E5;
+    margin-bottom: 40px;
+  }
+
+  &__br {
+    width: 100%;
+    background: #E5E5E5;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    opacity: .7;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 12px;
+    line-height: 26px;
+  }
+
+  &__feature {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 30px 0 0;
+    padding: 0 0 0 30px;
+    list-style: none;
+
+    >li {
+      position: relative;
+      padding: 10px 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: -25px;
+    top: 6px;
+  }
+}

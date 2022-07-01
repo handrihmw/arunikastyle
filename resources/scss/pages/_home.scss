@@ -1,0 +1,987 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+@import "../arunika/helpers/all";
+@import "../arunika/mixins/all";
+@import "../arunika/components/header";
+@import "../arunika/components/hero";
+@import "../arunika/components/counter";
+
+/* Our Clients Style */
+.our-clients {
+  background: #f6fbff;
+  padding: 65px 0;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 44px;
+    text-align: center;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    >li {
+      display: block;
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-bottom: 55px;
+      }
+
+      @include screen(desktop) {
+        display: inline-block;
+        margin-bottom: 0 !important;
+        width: 19%;
+      }
+    }
+  }
+
+  &__icon {
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: auto;
+    transition: all 1.3s;
+    width: 166px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: all 1.3s;
+    }
+  }
+
+  &--richeese {
+    background: url('../images/2019/our-clients/richeese.svg') no-repeat;
+
+    &:hover {
+      background: url('../images/2019/our-clients/richeese-color.svg') no-repeat;
+    }
+  }
+
+  &--rabbani {
+    background: url('../images/2019/our-clients/rabbani.svg') no-repeat;
+
+    &:hover {
+      background: url('../images/2019/our-clients/rabbani-color.svg') no-repeat;
+    }
+  }
+
+  &--antologi {
+    background: url('../images/2019/our-clients/antologi.svg') no-repeat;
+
+    &:hover {
+      background: url('../images/2019/our-clients/antologi-color.svg') no-repeat;
+    }
+  }
+
+  &--hydro {
+    background: url('../images/2019/our-clients/hydro.svg') no-repeat;
+
+    &:hover {
+      background: url('../images/2019/our-clients/hydro-color.svg') no-repeat;
+    }
+  }
+
+  &--petro {
+    background: url('../images/2019/our-clients/petro.svg') no-repeat;
+
+    &:hover {
+      background: url('../images/2019/our-clients/petro-color.svg') no-repeat;
+    }
+  }
+
+  &--oten {
+    background: url('../images/2019/our-clients/oten.svg') no-repeat;
+
+    &:hover {
+      background: url('../images/2019/our-clients/oten-color.svg') no-repeat;
+    }
+  }
+}
+
+.clients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  &__item {
+    margin: 1rem;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  &__icon {
+    aspect-ratio: 16/9;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    height: 110px;
+    transition: all 1.3s;
+    width: 166px;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: all 1.3s;
+    }
+
+    &--richeese {
+      background: url('../images/2019/our-clients/richeese.svg') no-repeat;
+
+      &:hover {
+        background: url('../images/2019/our-clients/richeese-color.svg') no-repeat;
+      }
+    }
+
+    &--rabbani {
+      background: url('../images/2019/our-clients/rabbani.svg') no-repeat;
+
+      &:hover {
+        background: url('../images/2019/our-clients/rabbani-color.svg') no-repeat;
+      }
+    }
+
+    &--antologi {
+      background: url('../images/2019/our-clients/antologi.svg') no-repeat;
+
+      &:hover {
+        background: url('../images/2019/our-clients/antologi-color.svg') no-repeat;
+      }
+    }
+
+    &--hydro {
+      background: url('../images/2019/our-clients/hydro.svg') no-repeat;
+
+      &:hover {
+        background: url('../images/2019/our-clients/hydro-color.svg') no-repeat;
+      }
+    }
+
+    &--petro {
+      background: url('../images/2019/our-clients/petro.svg') no-repeat;
+
+      &:hover {
+        background: url('../images/2019/our-clients/petro-color.svg') no-repeat;
+      }
+    }
+
+    &--oten {
+      background: url('../images/2019/our-clients/oten.svg') no-repeat;
+
+      &:hover {
+        background: url('../images/2019/our-clients/oten-color.svg') no-repeat;
+      }
+    }
+  }
+}
+
+/* Our Services Style */
+.our-services {
+  background: #f6fbff;
+  padding: 70px 0 65px;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 55px;
+    text-align: center;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(17, 26, 104, .2);
+    display: inline-block;
+    height: 394px;
+    margin: 0 15px;
+    max-width: 260px;
+    padding: 55px 24px;
+    text-align: center;
+    transition: all .4s;
+
+    >a {
+      color: #3a4166;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &:hover {
+      box-shadow: 0 6px 30px rgba(17, 26, 104, .4);
+      cursor: pointer;
+      transform: scaleY(1.025);
+      transition: all .4s;
+
+      >* {
+        transform: scaleY(.975);
+        transition: transform .4s;
+      }
+    }
+
+    @include screen(desktop) {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0 !important;
+
+      &:not(:last-child) {
+        margin-right: 28px;
+      }
+    }
+  }
+
+  &__service-image {
+    margin-bottom: 30px;
+  }
+
+  &__service-title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.125rem;
+    font-weight: unset;
+    margin-bottom: 18px;
+  }
+
+  &__service-description {
+    color: rgba(58, 65, 102, .7);
+    font-size: .875rem;
+    margin-bottom: 24px;
+  }
+
+  &__service-start-from {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: .875rem;
+    font-weight: unset;
+    opacity: .7;
+  }
+
+  &__service-price {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.5rem;
+    font-weight: unset;
+  }
+}
+
+.our-services-v2 {
+  background: #f6fbff;
+  padding: 70px 0 65px;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 55px;
+    text-align: center;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  &__card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(17, 26, 104, .2);
+    display: inline-block;
+    height: 394px;
+    max-width: 260px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 55px 24px;
+    text-align: center;
+    transition: all .4s;
+
+    >a {
+      color: #3a4166;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    &:hover {
+      box-shadow: 0 6px 30px rgba(17, 26, 104, .4);
+      cursor: pointer;
+      transform: scaleY(1.025);
+      transition: all .4s;
+
+      >* {
+        transform: scaleY(.975);
+        transition: transform .4s;
+      }
+    }
+
+    @include screen(desktop) {
+      margin: 0 14px;
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-down(lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__service-image {
+    margin-bottom: 30px;
+
+    &--link {
+      color: #007aff;
+    }
+  }
+
+  &__service-title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.125rem;
+    font-weight: unset;
+    margin-bottom: 18px;
+  }
+
+  &__service-description {
+    color: rgba(58, 65, 102, .7);
+    font-size: .875rem;
+    margin-bottom: 24px;
+  }
+
+  &__service-start-from {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: .875rem;
+    font-weight: unset;
+    opacity: .7;
+  }
+
+  &__service-price {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.5rem;
+    font-weight: unset;
+  }
+}
+
+.our-services-website {
+  margin-top: 30px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  position: relative;
+
+  &__link {
+    &:hover {
+      box-shadow: 0 6px 30px rgba(17, 26, 104, .4);
+      cursor: pointer;
+      transform: scaleY(1.025);
+      transition: all .4s;
+
+      >* {
+        transform: scaleY(.975);
+        transition: transform .4s;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    height: auto;
+    margin: 30px auto;
+    width: 92px;
+  }
+
+  @include screen(desktop) {
+    margin-top: 55px;
+
+    &__img {
+      margin-top: 0;
+      margin-bottom: 0;
+      width: 100%;
+    }
+  }
+
+  .col-lg-6 {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 260px;
+
+    @include screen(desktop) {
+      max-width: none;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .card {
+    background: #fff;
+    box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.2);
+    border-radius: 8px;
+    border: 0;
+  }
+
+  .card-body {
+    border-radius: 8px;
+    padding-bottom: 55px;
+
+    @include screen(desktop) {
+      padding: 24px;
+    }
+  }
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.125rem;
+    line-height: 25px;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    color: #757a94;
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 1rem;
+    line-height: 28px;
+    letter-spacing: 0.05em;
+
+    a {
+      color: #007aff;
+      display: block;
+
+      @include screen(desktop) {
+        display: inline;
+      }
+    }
+  }
+
+  &__title,
+  &__description,
+  &__img {
+    text-align: center;
+
+    @include screen(desktop) {
+      text-align: left;
+    }
+  }
+}
+
+/* Prioruty Stle */
+.priority {
+  padding: 70px 0 100px;
+
+  @include screen(desktop) {
+    padding: 100px 0;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 68px;
+    text-align: center;
+
+    @include screen(desktop) {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__image-wrapper {
+    margin-bottom: 60px;
+    position: relative;
+    padding: 0 65px 150px 72px;
+
+    @include screen(desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    &--graphic {
+      left: -64px;
+      position: absolute;
+      top: 65%;
+      z-index: 2;
+
+      @media (max-width: 576px) {
+        left: -58px;
+        top: 72%;
+      }
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+        left: -58px;
+        top: 68%;
+      }
+    }
+
+    &--imunify,
+    &--lite-speed,
+    &--grpahic {
+      @media (max-width: 576px) {
+        max-width: 42%;
+      }
+    }
+
+    &--imunify {
+      left: -64px;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    &--lite-speed {
+      position: absolute;
+      right: -64px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+  }
+
+  &__feature-wrapper {
+    padding-left: 26px;
+
+    @include screen(desktop) {
+      padding-left: 110px;
+    }
+  }
+
+  &__feature {
+    margin-bottom: 40px;
+    position: relative;
+
+    &::before {
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    &:nth-child(1)::before {
+      content: url('../images/2019/priority/hosting-super-cepat.svg');
+    }
+
+    &:nth-child(2)::before {
+      content: url('../images/2019/priority/domain-keamanan-ekstra.svg');
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    &-description {
+      font-size: 1rem;
+      opacity: .7;
+    }
+
+    @include screen(desktop) {
+      &::before {
+        left: -94px;
+        position: absolute;
+        top: -10px;
+      }
+    }
+  }
+}
+
+/* Cost Saving Style */
+.cost-saving {
+  background: #f6fbff;
+  padding: 60px 0 70px;
+
+  @include screen(desktop) {
+    padding-bottom: 80px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 68px;
+    text-align: center;
+
+    @include screen(desktop) {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__image-wrapper {
+    margin-bottom: 60px;
+    padding: 20px 66px 50px 50px;
+  }
+
+  &__image {
+
+    &--man,
+    &--woman1,
+    &--woman2,
+    &--intercom-logo,
+    &--icon-online {
+      position: absolute;
+
+      @media (max-width: 576px) {
+        max-width: 42%;
+      }
+    }
+
+    &--man {
+      bottom: -50px;
+      left: 16%;
+    }
+
+    &--woman1 {
+      top: 30%;
+      left: -48px;
+    }
+
+    &--woman2 {
+      top: 30%;
+      right: -66px;
+    }
+
+    &--intercom-logo {
+      top: -30px;
+      left: 8%;
+    }
+
+    &--icon-online {
+      bottom: -70px;
+      right: -22px;
+    }
+  }
+
+  &__feature-wrapper {
+    padding-left: 26px;
+
+    @include screen(desktop) {
+      padding-left: 110px;
+    }
+  }
+
+  &__feature {
+    margin-bottom: 40px;
+    position: relative;
+
+    &:before {
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    &:nth-child(1)::before {
+      content: url('../images/2019/cost-saving/icons-domain-harga-murah.svg');
+    }
+
+    &:nth-child(2)::before {
+      content: url('../images/2019/cost-saving/icons-website-selalu-online.svg');
+    }
+
+    &:nth-child(3)::before {
+      content: url('../images/2019/cost-saving/icons-domain-support-andal.svg');
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    &-description {
+      font-size: 1rem;
+      opacity: .7;
+    }
+
+    @include screen(desktop) {
+      &::before {
+        position: absolute;
+        left: -94px;
+        top: -10px;
+      }
+    }
+  }
+}
+
+/* Clients Testimony Style */
+.client-testimony {
+  padding: 65px 0;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.7rem;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @include screen(desktop) {
+      text-align: left;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: 180px;
+
+    &--seconds {
+      @media (max-width: 320px) {
+        margin-bottom: 50px !important;
+      }
+
+      @media (max-width: 375px) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__image {
+    border-radius: 8px;
+  }
+
+  &__list {
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+
+    >li {
+      display: inline-block;
+      max-width: 360px;
+      margin: 35px 15px;
+
+      @include screen(desktop) {
+        display: inline-block;
+        margin: 0;
+
+        &:not(:last-child) {
+          margin-right: 26px;
+        }
+      }
+    }
+
+    @include media-breakpoint-down(lg) {
+      display: block;
+    }
+  }
+
+  &__image-wrapper {
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__image-overlay {
+    background: rgba(0, 0, 0, .4);
+    border-radius: 6px;
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 49.8%;
+    transform: translate(-50%, -50%);
+    transition: all 1s;
+    width: 100%;
+
+    &:hover {
+      background: rgba(0, 0, 0, .1);
+      transition: all 1s;
+
+      &::after {
+        box-shadow: 2px 6px 20px rgba(0, 0, 0, .6);
+        background: #007aff;
+        transition: all 1s;
+      }
+    }
+
+    &::after {
+      background: #007aff;
+      border-radius: 50%;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+      content: url('../images/2019/client-testimony/icon-play.svg');
+      height: 74px;
+      left: 50%;
+      padding-left: 5px;
+      padding-top: 20px;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 1s;
+      width: 74px;
+    }
+  }
+
+  &__description {
+    font-size: .875rem;
+    flex: 1;
+    margin-top: 40px;
+    opacity: .7;
+    text-align: left;
+  }
+
+  &__client-name {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1rem;
+    text-align: left;
+
+    &--seconds,
+    &--first {
+      @media (max-width: 375px) {
+        margin-top: 25px;
+      }
+    }
+
+    &--lighter {
+      font-size: 1rem;
+      margin-top: 5px;
+      opacity: .7;
+      text-align: left;
+    }
+  }
+}
+
+/* Harbolnas Promo Style */
+.harbolnas {
+  background: #f6fbff;
+  padding: 60px 0 70px;
+}
+
+.harbolnas-card {
+  border-radius: 1.5em !important;
+  background: linear-gradient(76.7deg, #044cdd 0%, #0d54e0 31.35%, #1e62e5 56.43%, #3580fc 100%);
+  box-shadow: 0 10px 20px -6px #777 !important;
+  -webkit-box-shadow: 0 10px 20px -6px #777 !important;
+  -moz-box-shadow: 0 10px 20px -6px #777 !important;
+  cursor: auto !important;
+  max-width: 1140px;
+  min-height: 400px;
+  padding: 25px 50px;
+}
+
+.harbolnas-card-left {
+  &--image {
+    width: 80%;
+  }
+}
+
+.harbolnas-card-right {
+  &--text {
+    color: #fff;
+    font-size: 1.25em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.25em;
+    letter-spacing: .03em;
+
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+    }
+  }
+
+  &--link {
+    margin: 30px 0;
+    padding: 10px 70px 10px 0;
+
+    @include media-breakpoint-down(xs) {
+      padding: 0;
+    }
+
+    .btn {
+      color: #fff;
+
+      &:hover,
+      &:active {
+        background-color: #ff6634;
+        border: 1px solid #ff6634;
+        transition: all 1s;
+      }
+    }
+  }
+}
+
+.php-eight {
+  padding: 100px 0 0 0;
+
+  &__heading {
+    display: flex;
+
+    @media (max-width: 992px) {
+      padding: unset;
+    }
+
+    @media (max-width: 700px) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &-item {
+      margin-right: 85px;
+
+      @media (max-width: 700px) {
+        margin-right: unset;
+        padding: 20px 0;
+      }
+    }
+
+    &-title {
+      color: #3a4166;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 2.357em;
+      line-height: 45px;
+    }
+
+    &-subtitle {
+      color: rgba(58, 65, 102, 0.7);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.286em;
+      line-height: 200%;
+      margin-top: 14px;
+    }
+  }
+
+  &__body {
+    margin-top: 100px;
+
+    .grid-item {
+      margin-top: unset;
+      margin-bottom: 70px;
+    }
+
+    .grid-item-heading {
+      display: flex;
+      min-height: 64px;
+
+      &-icon {
+        margin-right: 24px;
+      }
+
+      &-title {
+        color: #3a4166;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.286em;
+        line-height: 32px;
+        white-space: normal;
+        width: 65%;
+
+        @media (max-width: 700px) {
+          width: unset;
+        }
+      }
+    }
+
+    .grid-item-description {
+      color: rgba(58, 65, 102, 0.7);
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1em;
+      line-height: 177.32%;
+      margin-top: 22px;
+      padding-right: 40px;
+
+      @media (max-width: 700px) {
+        padding-right: unset;
+      }
+    }
+  }
+}

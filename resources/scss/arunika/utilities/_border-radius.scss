@@ -1,0 +1,9 @@
+$border-radius-count: 50;
+
+@for $i from 1 through $border-radius-count {
+  $borad: $i * 1px;
+
+  .as-border-radius-#{$i} {
+    border-radius: $borad;
+  }
+}

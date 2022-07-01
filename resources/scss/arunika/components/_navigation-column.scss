@@ -1,0 +1,140 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-nav-col {
+  background: var(--as-color-blue-light);
+  border-radius: 12px;
+  display: flex;
+  margin-bottom: 1.5rem;
+  mix-blend-mode: multiply;
+  padding: 1.25rem;
+  width: 100%;
+  position: relative;
+
+  @include screen(desktop) {
+    width: 300px;
+  }
+
+  &::before {
+    background-color: inherit;
+    border: inherit;
+    border-radius: 0 0 0 6px;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+    content: "";
+    display: none;
+    height: 36px;
+    opacity: 0;
+    position: absolute;
+    right: -81px;
+    top: calc(50% - 15px);
+    transform: translateY(-50%);
+    transform: rotate(45deg);
+    width: 36px;
+    z-index: 1;
+
+    @include screen(desktop) {
+      display: block;
+    }
+  }
+
+  &.active {
+    background: var(--as-color-white);
+    box-shadow: $as-shadow-black-1;
+    mix-blend-mode: unset;
+
+    &::before {
+      opacity: 1;
+    }
+
+    .as-nav-col__title,
+    .as-nav-col__description {
+      color: var(--as-color-primary);
+    }
+
+    .as-nav-col__image,
+    .img-fluid {
+      filter: grayscale(0);
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    filter: grayscale(1);
+    height: 45px;
+    margin-right: 20px;
+    opacity: 0.4;
+    width: 45px;
+  }
+
+  &__title {
+    @include font-size('16');
+    color: var(--as-color-secondary-two);
+    font-weight: 600;
+  }
+
+  &__description {
+    @include font-size('16');
+    color: var(--as-color-secondary-two);
+  }
+
+  &__pane {
+    background: var(--as-color-white);
+    border-radius: 1.5rem;
+    box-shadow: $as-shadow-black-1;
+    height: auto;
+    padding: 2.25rem;
+    width: auto;
+  }
+
+  &__content {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: none;
+
+    @include screen(desktop) {
+      grid-template-columns: auto auto;
+    }
+
+    &-item {
+      padding-right: 0;
+
+      @include screen(desktop) {
+        padding-right: 3rem;
+      }
+    }
+
+    &--image {
+      aspect-ratio: 1/1;
+      height: 40px;
+      margin-bottom: 1.5rem;
+      width: 40px;
+    }
+
+    &--title {
+      @include font-size('20');
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+  }
+
+  &__list {
+    &--description {
+      @include font-size('16');
+      margin-bottom: 1rem;
+    }
+
+    &--item {
+      @include font-size('16');
+      list-style: none;
+      list-style-type: none;
+      margin-left: -30px;
+    }
+  }
+
+  .img-fluid {
+    filter: grayscale(1);
+    opacity: .4;
+  }
+}

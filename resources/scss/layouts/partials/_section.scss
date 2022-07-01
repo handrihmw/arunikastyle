@@ -1,0 +1,30 @@
+.section {
+  &__padding {
+    padding: 100px 0;
+  }
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    font-weight: unset;
+    line-height: 45px;
+    margin-bottom: 60px;
+  }
+
+  &__sub-title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.25rem;
+    font-weight: unset;
+    line-height: 27px;
+  }
+
+  &__description {
+    color: rgba(58, 65, 102, 0.7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 1.125rem;
+    font-weight: unset;
+    line-height: 36px;
+  }
+}

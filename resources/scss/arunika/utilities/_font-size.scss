@@ -1,0 +1,42 @@
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+@each $name, $fs in $font-size {
+  .as-text-#{$name} {
+    @include font-size($name);
+  }
+}
+
+.as-text-semibold {
+  font-family: $fst-semibold;
+  font-weight: 600;
+}
+
+.as-text-bold {
+  font-family: $fst-bold;
+  font-weight: 700;
+}
+
+.h1 {
+  @include font-size('56');
+}
+
+.h2 {
+  @include font-size('40');
+}
+
+.h3 {
+  @include font-size('32');
+}
+
+.h4 {
+  @include font-size('28');
+}
+
+.h5 {
+  @include font-size('24');
+}
+
+.h6 {
+  @include font-size('20');
+}

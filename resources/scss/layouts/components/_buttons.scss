@@ -1,0 +1,188 @@
+@use "../../mixins/breakpoints" as *;
+
+.nh-btn {
+  background: #f0f0f0;
+  border-radius: 5px;
+  color: #3a4166;
+  display: inline-block;
+  font-family: 'NunitoSansBold', sans-serif;
+  font-size: .938rem;
+  padding: 12px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 1s;
+
+  @include screen(desktop) {
+    padding: 12px 22px;
+  }
+
+  &:hover {
+    background: #acb6c0;
+    color: #3a4166;
+    transition: all 1s;
+  }
+
+  &--color {
+    &-white {
+      background: transparent;
+      color: #fff;
+
+      &:hover {
+        color: #fff !important;
+      }
+    }
+
+    &-orange {
+      color: #fb8c00;
+
+      &:hover {
+        color: #fb8c00 !important;
+      }
+    }
+
+    &-blue {
+      color: #007aff;
+
+      &:hover {
+        color: #007aff !important;
+      }
+    }
+  }
+
+  &--transparent {
+    background: transparent;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &--orange {
+    background: #fb8c00;
+    border: none;
+    color: #fff;
+
+    &:hover {
+      background: #ff6634;
+      color: #fff;
+    }
+  }
+
+  &--blue {
+    background: #007aff;
+    color: #fff;
+  }
+
+  &--neon {
+    background: linear-gradient(156.96deg, #fb8c00 23.9%, #ff6634 80.64%);
+    border: 2px solid linear-gradient(122.92deg, #ffeda8 15.76%, #aa6106 83.82%);
+    box-shadow: 0px 4px 24px rgba(255, 237, 168, 0.64);
+    color: #fff;
+    white-space: nowrap;
+
+    &:hover {
+      background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+      color: #fff;
+    }
+  }
+
+  &--white {
+    background: #fff;
+
+    &:hover {
+      background: #fff !important;
+    }
+  }
+
+  &--outline {
+    &-white {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+
+      &:hover {
+        background: transparent !important;
+        color: #fff;
+      }
+    }
+  }
+
+  &--border {
+    &-white {
+      border: 1px solid #fff;
+    }
+
+    &-orange {
+      border: 1px solid #fb8c00;
+    }
+
+    &-blue {
+      border: 1px solid #007aff;
+    }
+  }
+
+  &--radius {
+    &-50 {
+      border-radius: 50px;
+    }
+
+    &-4 {
+      border-radius: 4px;
+    }
+  }
+
+  &--center {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &--block {
+    display: block;
+    width: 100%;
+
+    &-limit {
+      max-width: 230px;
+    }
+  }
+
+  &--padding {
+    &-top-bottom-16-right-left-32 {
+      padding: 16px 32px;
+    }
+  }
+}
+
+.nh-dash {
+  border: 0;
+  border-top: 1px solid #ddd;
+  display: block;
+  height: 1px;
+  margin-top: 50px;
+}
+
+.nh-btn__pill {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  color: #fff;
+  display: inline-block;
+  font-family: 'NunitoSansBold', sans-serif;
+  font-size: 1rem;
+  padding: 6px 32px;
+  text-align: center;
+  transition: all 1s;
+
+  &:hover {
+    background: #fff;
+    color: #ff9800;
+  }
+
+  @include screen(desktop) {
+    padding: 10px 32px;
+  }
+
+  @include ipadProPortrait {
+    padding: 10px 32px;
+  }
+}

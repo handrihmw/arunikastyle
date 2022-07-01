@@ -1,0 +1,349 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero";
+@import "../components/hero-center";
+
+/* Arunika Section */
+@import "../components/section-domain";
+@import "../components/section-white";
+@import "../components/section-center-blue";
+@import "../components/section-soft-blue";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-color";
+@import "../components/card-icon";
+@import "../components/card-tips";
+@import "../components/card-list";
+@import "../components/card-no-list";
+@import "../components/card-color-dark";
+@import "../components/card-table";
+@import "../components/card-left-image";
+@import "../components/card-square";
+@import "../components/card-full";
+
+/* Arunika Navigation */
+@import "../components/tab-navigation";
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+
+/* Arunika Search Domain */
+@import "../components/search-domain";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Banner */
+@import "../components/banner";
+
+/* Arunika Feature */
+@import "../components/feature";
+
+/* Arunika Spinner */
+@import "../components/spinner";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Header */
+@import "../components/header";
+
+@import "../components/table";
+
+.hosting-indonesia {
+  &-dark {
+      &-icon {
+          padding-top: 0;
+      }
+  }
+
+  &-fasilitas {
+      .as-feature {
+          &__title {
+              font-size: clamp(1.75rem,5vw,2.5rem);
+          }
+      }
+  }
+}
+
+.hosting-terbaik {
+  &__column {
+    &-desktop {
+      display: none;
+
+      @include screen(tablet) {
+        display: flex;
+      }
+    }
+
+    &-mobile {
+      @include screen(tablet) {
+        display: none;
+      }
+    }
+  }
+}
+
+.as-section-softblue, .as-section-white {
+  &__title {
+    @include screen(desktop) {
+      padding: 0 220px;
+    }
+  }
+}
+
+.as-hero {
+  &__title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      line-height: clamp(2.625rem, 5vw, 4rem);
+  }
+
+  &__description {
+      font-size: clamp(1rem, 5vw, 1.25rem);
+      font-weight: normal;
+      opacity: .8;
+      line-height: clamp(1.5rem, 5vw, 2rem);
+  }
+  
+  &__feature-list {
+    color: var(--as-color-white);
+    list-style-type: none;
+    margin-top: 2rem;
+    
+    &-title {
+      color: var(--as-color-white);
+      font-family: NunitoSansBold,sans-serif;
+      font-size: clamp(1rem,5vw,1.125rem);
+      font-weight: 600;
+      letter-spacing: .005em;
+      line-height: 1.625rem;
+      text-align: left;
+    }
+
+    &-item {
+      margin-bottom: 1rem;
+      position: relative;
+
+      &::before {
+        content: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.9999 0.333374C9.69248 0.333374 7.43684 1.01761 5.51827 2.29956C3.5997 3.58151 2.10435 5.4036 1.22133 7.5354C0.338307 9.6672 0.107268 12.013 0.557429 14.2761C1.00759 16.5392 2.11873 18.618 3.75034 20.2496C5.38196 21.8812 7.46076 22.9924 9.72387 23.4425C11.987 23.8927 14.3328 23.6617 16.4646 22.7786C18.5964 21.8956 20.4185 20.4003 21.7004 18.4817C22.9823 16.5631 23.6666 14.3075 23.6666 12C23.663 8.90693 22.4328 5.94153 20.2456 3.75437C18.0584 1.56721 15.093 0.336913 11.9999 0.333374ZM18.0748 9.21553L10.856 16.4343C10.7477 16.5426 10.6191 16.6286 10.4776 16.6872C10.336 16.7459 10.1843 16.7761 10.0311 16.7761C9.87794 16.7761 9.72623 16.7459 9.5847 16.6872C9.44316 16.6286 9.31457 16.5426 9.20627 16.4343L5.92509 13.153C5.70859 12.9338 5.58762 12.6378 5.58858 12.3297C5.58954 12.0216 5.71237 11.7264 5.93023 11.5085C6.14809 11.2906 6.44331 11.1678 6.75142 11.1668C7.05953 11.1658 7.35552 11.2868 7.57476 11.5033L10.0311 13.9597L16.4251 7.5658C16.6443 7.34931 16.9403 7.22835 17.2484 7.22932C17.5565 7.2303 17.8518 7.35313 18.0696 7.57101C18.2875 7.78888 18.4103 8.0841 18.4113 8.39221C18.4122 8.70032 18.2913 8.9963 18.0748 9.21553Z' fill='white'/%3E%3C/svg%3E%0A");
+        left: -40px;
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+
+  &__offer {
+    display: none;
+    flex-direction: row;
+
+    &-item {
+      &-word {
+        @include font-size('16');
+        color: var(--as-color-white);
+        margin-top: -5px;
+      }
+  
+      &-price {
+        @include font-size('24');
+        color: var(--as-color-white);
+  
+        &::before {
+          @include font-size('24');
+          content: "Rp ";
+          float: left;
+          margin-right: 5px;
+        }
+  
+        &::after {
+          @include font-size('16');
+          content: "/bulan";
+        }
+      }
+    }
+
+    &--desktop {
+      @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+
+    &--mobile {
+      @media (max-width: 767.98px) {
+        display: block;
+      }
+    }
+  }
+
+  &__button {
+    @media (max-width: 767.98px) {
+      width: 100% !important;
+    }
+  }
+
+  &__image {
+    @include screen(mobileSmall) {
+      margin: -70px;
+      margin-left: 50%;
+      margin-top: 0 !important;
+      position: relative;
+      transform: translateX(-50%);
+      width: 150%;
+      z-index: 0;
+    }
+  }
+}
+
+.as-card {
+    &-base {
+        &__title {
+            text-transform: none;
+        }
+    }
+
+    &-icon {
+        &__list {
+            &-item{
+                &--align-right {
+                    display: flex;
+                    align-items: center;
+
+                    & .as-card-base__list-item__text {
+                        flex-basis: 75%;
+                        flex-grow: 1;
+                        flex-shrink: 1;
+                    }
+
+                    &::before {
+                        flex-basis: 25%;
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    &-dark {
+        padding: 1.325rem;
+
+        &__title { 
+            font-size: clamp(1rem, 5vw, 1.1rem);
+        }
+
+        &__icon {
+            height: 44px;
+            width: 44px;
+        }
+
+        
+    }
+
+    &-color {
+        padding: 1.7rem;
+
+        &__icon {
+            height: 60px;
+            width: 60px;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        &-table {
+            padding: .875rem;
+
+            &__body {
+                padding: 0;
+            }
+        }
+
+        &-color  {
+            padding: 0;
+            box-shadow: none;
+
+            &-col {
+                background: var(--as-color-white);
+                box-shadow: -80px 80px 80px rgba(35, 44, 79, 0.05);
+                border-radius: 18px;
+                margin-bottom: 1rem;
+                padding: .5rem;
+            }
+
+            &__description {
+                font-size: clamp(.875rem,4vw,1rem);
+            }
+            
+        }
+
+        &-dark {
+            padding: 0;
+
+            &-col {
+                background: var(--as-color-white);
+                border-radius: 18px;
+                margin-bottom: 1rem;
+                padding: .5rem;
+            }
+
+            &__description {
+                font-size: clamp(.875rem,4vw,1rem);
+            }
+        }
+    }
+}
+
+.as-text {
+    &__title {
+        font-size: clamp(1.75rem, 5vw, 2rem);
+
+        @media only screen and (max-width: 768px) {
+            text-align: left;
+        }
+    }
+}
+
+.as-feature {
+    &__title {
+        font-size: clamp(1.75rem, 5vw, 2rem);
+    }
+
+    @media only screen and (max-width: 768px) {
+        &__list {
+            &-description {
+                font-size: clamp(.875rem, 4vw, 1rem);
+            }
+            
+            &-item {
+                padding: 0;
+
+                &::before {
+                    top: 0;
+                }
+            }
+        }
+    }    
+}
+
+.as-banner {
+    &__sub-title {
+        opacity: .6;
+    }
+
+    &__description {
+        opacity: .8;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .pm {
+        &-0 {
+            padding: 0;
+        }
+    }
+
+    .as-feature__illustration-top {
+        top: 0;
+    }
+}

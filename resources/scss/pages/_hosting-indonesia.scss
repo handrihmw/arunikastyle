@@ -1,0 +1,158 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+@import "../arunika/helpers/all";
+@import "../arunika/components/hero";
+@import "../arunika/mixins/space";
+
+.the-best-hosting {
+  padding: 100px 0;
+  background: #f6fbff;
+
+  @include media-breakpoint-down(md) {
+    padding: 50px 0;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    text-align: center;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 18px;
+    color: rgba(58, 65, 102, .7);
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &__feature {
+    margin-top: 60px;
+
+    &-image {
+      width: 60px;
+      height: 60px;
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: bolder;
+      font-size: 18px;
+      margin-top: 30px;
+    }
+
+    &-description {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 14px;
+      color: rgba(58, 65, 102, .7);
+      margin-top: 20px;
+    }
+  }
+}
+
+.safer-with-imunify {
+  padding: 120px 0;
+
+  @include media-breakpoint-down(md) {
+    padding: 60px 0;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    text-align: center;
+  }
+
+  &__feature {
+    margin-top: 60px;
+
+    &-image {
+      width: 60px;
+      height: 60px;
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: bolder;
+      font-size: 18px;
+      margin-top: 30px;
+    }
+
+    &-description {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 14px;
+      color: rgba(58, 65, 102, .7);
+      margin-top: 20px;
+    }
+  }
+}
+
+.course {
+  padding: 100px 0;
+  background: #f6fbff;
+
+  @include media-breakpoint-down(md) {
+    padding: 50px 0;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    text-align: center;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 18px;
+    color: rgba(58, 65, 102, .7);
+    margin: 20px 0 40px;
+    text-align: center;
+  }
+
+  &__feature {
+    margin-top: 40px;
+
+    &-image {
+      width: 60px;
+      height: 60px;
+      margin-right: 30px;
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: bolder;
+      font-size: 18px;
+      margin-top: 30px;
+    }
+
+    &-description {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 14px;
+      color: rgba(58, 65, 102, .7);
+      margin-top: 20px;
+    }
+  }
+
+  &__image {
+    margin: 40px auto 0px;
+    text-align: center;
+  }
+
+  @include screen(desktop) {
+    &__image {
+      margin-top: 10px;
+    }
+  }
+
+  @include screen(laptop) {
+    &__feature {
+      display: flex;
+      display: -ms-flexbox;
+
+      &-title {
+        margin-top: 0px;
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+@use '../mixins/breakpoint' as *;
+
+.as-card-slider-v2 {
+  &__card {
+
+    &-container {
+      margin: 0 5px;
+
+     @include screen(mobile) {
+        width: 95vw;
+      }
+
+     @include screen(desktop) {
+        width: 33vw;
+      }
+
+      @include screen(desktopLarge) {
+        width: 20vw;
+        margin: 0 8px;
+      }
+    }
+  }
+
+  &__control {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 180px;
+
+    &--left {
+      background: linear-gradient(90deg, #ffffff 20%, rgba(255, 255, 255, 0) 90%);
+    }
+
+    &--right {
+      background: linear-gradient(270deg, #ffffff 20%, rgba(255, 255, 255, 0) 90%);
+      right: 0;
+    }
+
+    &--icon {
+      position: absolute;
+      top: 50%;
+      color: #007AFF;
+      font-size: 32px;
+      cursor: pointer;
+
+      &-left {
+        left: 40px;
+      }
+
+      &-right {
+        right: 40px;
+      }
+    }
+  }
+
+  &__content {
+    overflow: hidden;
+  }
+
+  &__swiper-section {
+    position: relative;
+    text-align: center;
+
+    & .swiper-pagination {
+      margin-bottom: 10px;
+
+      @media(min-width: 767.98px) {
+        display: none;
+      }
+    }
+
+    &__dot {
+      background: transparent;
+      border: 2px solid var(--as-color-blue);
+      border-radius: 50%;
+      display: inline-block;
+      height: 16px;
+      margin-right: 5px;
+      width: 16px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:is(.swiper-pagination-bullet-active) {
+        background-color: var(--as-color-blue);
+      }
+    }
+
+    &__previous,
+    &__next {
+      align-items: center;
+      border: 1px solid var(--as-color-border);
+      border-radius: 8px;
+      display: flex;
+      height: 35px;
+      justify-content: center;
+      position: absolute;
+      width: 35px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__previous {
+      left: 10px;
+    }
+
+    &__next {
+      right: 10px;
+    }
+  }
+
+  &__card-button {
+    transform: translate(0);
+  }
+
+  &__tooltip {
+    &-info-top {
+      transform: translate(-51.5%, -6%);
+    }
+  }
+}
+
+section.as-card-slider-v2__section {
+  background: #ffffff;
+}
+
+.show-more__state~.as-card-base__more:before,
+.show-more__state~.as-card-list__more:before {
+  content: 'Lihat Semua Fitur';
+}

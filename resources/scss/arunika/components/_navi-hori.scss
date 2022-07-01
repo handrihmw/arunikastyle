@@ -1,0 +1,331 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.navi {
+  &-menu {
+    &__wrapper {
+      height: 100% !important;
+      width: 100%;
+    }
+
+    &__image {
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      height: 45px;
+      margin-right: 20px;
+      opacity: 0.4;
+      width: 45px;
+    }
+
+    &__title {
+      @include font-size('16-semibold');
+      letter-spacing: 0.005em;
+      margin-bottom: 0 !important;
+    }
+
+    &__pane {
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0px 8px 32px rgba(0, 87, 178, 0.16);
+      height: auto;
+      padding: 2.25rem;
+      width: auto;
+    }
+
+    &__description {
+      color: #7f8895;
+      display: none;
+      font-family: "NunitoSansRegular", sans-serif;
+      @include font-size('16');
+      word-wrap: break-word;
+
+      &--show {
+        display: block !important;
+      }
+    }
+  }
+
+  &-content {
+    &-item {
+      &__image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      &__title {
+        color: #29384e;
+        @include font-size('16');
+        @include font-size('24-semibold');
+        margin-top: 26px;
+      }
+
+      &__description {
+        color: #7f8895;
+        @include font-size('24');
+        margin-bottom: 30px;
+        margin-top: 18px;
+        padding: 0 40px 0 0;
+
+        @media (max-width: 576px) {
+          padding: unset;
+        }
+      }
+
+      &__list {
+        color: rgba(58, 65, 102, 0.7);
+        list-style: none;
+        margin-left: -40px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: none;
+    }
+  }
+
+  &-step {
+    padding: 120px 0;
+    text-align: left !important;
+
+    @include screen(mobileSmall) {
+      padding: 40px 0 30px 0;
+    }
+
+    &-title {
+      color: #29384e;
+      @include font-size('40');
+      line-height: 3.5rem;
+      text-align: center;
+
+      @include screen(mobileSmall) {
+        font-family: "NunitoSansBold", sans-serif;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        letter-spacing: -0.02em;
+        line-height: 2.25rem;
+        text-align: left;
+      }
+
+      @include screen(desktop) {
+        padding: 0 230px;
+      }
+    }
+
+    &-description {
+      color: #29384e;
+      @include font-size('18');
+      margin-top: 24px;
+      text-align: center;
+
+      @media (max-width: 576px) {
+        text-align: left;
+      }
+
+      @include screen(desktop) {
+        padding: 0 150px;
+      }
+    }
+
+    &-phil {
+      margin-top: 60px;
+
+      @include screen(desktop) {
+        margin-top: 80px;
+      }
+
+      &-desktop {
+        display: none;
+
+        @include screen(desktop) {
+          display: block;
+        }
+      }
+
+      &-mobile {
+        @include screen(desktop) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+#v-pills-five.navi-menu__pane {
+  height: 690px;
+
+  @media (max-width: 576px) {
+    height: auto;
+  }
+}
+
+#v-pills-six.navi-menu__pane {
+  height: 790px;
+}
+
+#naviMobile {
+  .panel {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin-bottom: 5px;
+
+    &-title {
+      a {
+        align-items: start;
+        background: #f5faff;
+        border-radius: 12px;
+        color: #a9afb8;
+        display: flex;
+        flex-direction: column;
+        @include font-size('14-semibold');
+        padding: 1.5rem;
+        text-decoration: none;
+        transition: all 0.5s ease 0s;
+      }
+
+      a[aria-expanded="true"] {
+        background: #fff;
+        box-shadow: 0px 8px 32px rgba(0, 87, 178, 0.16);
+
+        .navi-menu__title {
+          color: #29384e;
+        }
+
+        .navi-menu__image {
+          filter: unset;
+          opacity: 1;
+        }
+      }
+
+      a[aria-expanded="false"] {
+        mix-blend-mode: multiply;
+
+        .navi-menu__image {
+          filter: grayscale(1);
+          opacity: 0.4;
+        }
+      }
+    }
+
+    &-heading {
+      border: none;
+      border-radius: 0;
+      margin-top: 24px;
+      padding: 0;
+      text-align: left;
+
+      @media (max-width: 576px) {
+        text-align: left;
+      }
+    }
+
+    &-body {
+      background: #fff;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0px 8px 32px rgba(0, 87, 178, 0.16);
+      color: #29384e;
+      @include font-size('14');
+      margin: 2rem 0;
+      padding: 1.5rem;
+      position: relative;
+
+      &:after {
+        border: 15px solid transparent;
+        border-bottom: 15px solid #fff;
+        content: "";
+        left: 45%;
+        position: absolute;
+        top: -30px;
+      }
+    }
+  }
+}
+
+.hori-tabs {
+  display: flex;
+  gap: 28px;
+  grid-gap: 28px;
+
+  &__content {
+    margin-top: 20px;
+  }
+
+  @media (max-width: 576px) {
+    gap: 0;
+    grid-gap: 0;
+  }
+}
+
+.hori-tabs__link,
+.verti-tabs__link {
+  align-items: center;
+  background: #f5faff;
+  border-radius: 12px;
+  color: #a9afb8;
+  height: 110px;
+  margin-bottom: 1.5rem;
+  max-width: 310px;
+  mix-blend-mode: multiply;
+  padding: 24px;
+  position: relative;
+  text-decoration: none;
+}
+
+.hori-tabs__link:hover,
+.verti-tabs__link:hover {
+  color: #a9afb8;
+  text-decoration: none;
+}
+
+.hori-tabs__link.active,
+.verti-tabs__link.active {
+  background: #fff;
+  box-shadow: 0px 8px 32px rgba(0, 87, 178, 0.16);
+  color: #29384e;
+  mix-blend-mode: unset;
+}
+
+.hori-tabs__link.active::before,
+.verti-tabs__link.active::before {
+  opacity: 1;
+}
+
+.hori-tabs__link.active .navi-menu__image,
+.verti-tabs__link.active .navi-menu__image {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+@include screen(desktop) {
+  .hori-tabs__link::before {
+    border-bottom: 20px solid #fff;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    content: "";
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: 45%;
+    top: 51%;
+    transform: translateY(350%);
+    z-index: 1;
+  }
+
+  .verti-tabs__link::before {
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid #fff;
+    border-top: 20px solid transparent;
+    content: "";
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+}

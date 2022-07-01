@@ -1,0 +1,25 @@
+@use "../../mixins/breakpoints" as *;
+
+#fb-page-share {
+  font-family: 'NunitoSansBold', sans-serif;
+  font-size: 13px;
+  padding: 2px 8px 0px;
+  position: absolute;
+  left: 85px;
+  top: 54px;
+  padding-bottom: 1px;
+  border-radius: 4px;
+  height: 29px;
+  background: #1877f2;
+  border: 0px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  -webkit-user-select: none;
+  white-space: nowrap;
+
+  @include screen(desktop) {
+    top: 79px !important;
+  }
+}

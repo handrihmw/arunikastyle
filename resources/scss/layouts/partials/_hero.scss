@@ -1,0 +1,405 @@
+@use "../../mixins/breakpoints"as *;
+
+.hero {
+  padding: 60px 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  @include screen(desktop) {
+    padding: 150px 0;
+  }
+
+  &--csa-referral {
+    padding: 60px 0 80px 0;
+  }
+
+  &--syawal {
+    padding: 100px 0 0;
+
+    @include screen(desktop) {
+      padding-bottom: 134px;
+    }
+  }
+
+  &--power-up-website {
+    padding: 30px 0 0;
+
+    @include screen(desktop) {
+      padding-bottom: 68px;
+    }
+  }
+
+  &--harbolnas {
+    padding: 20px 0 30px 0 !important;
+  }
+
+  &--promo-new {
+    padding: 30px 0 50px 0 !important;
+  }
+
+  &--black-friday {
+    padding-top: 49px !important;
+    padding-bottom: 0;
+
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .nh-btn {
+      @media (max-width: 1200px) {
+        margin-bottom: 71px;
+      }
+    }
+  }
+
+  &--black-friday20 {
+    .nh-btn {
+      margin-bottom: 71px;
+    }
+  }
+
+  &--black-friday20-v2 {
+    height: 100%;
+    width: 100%;
+    background-image: url('../images/2020/campaign/blackfriday/blackfriday-bg.png');
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    .nh-btn {
+      @media (max-width: 1200px) {
+        margin-bottom: 71px;
+      }
+    }
+  }
+
+  &--default-v2 {
+    height: 787px;
+    justify-content: center;
+    margin: 0px !important;
+    overflow: hidden;
+    padding: 0px !important;
+    position: relative;
+
+    &--btn {
+      align-items: center;
+      font-size: 1rem;
+      font-weight: 800;
+      flex: none;
+      flex-grow: 0;
+      letter-spacing: 0.02em;
+      line-height: 16px;
+      order: 0;
+      padding: 16px 32px;
+      text-transform: unset;
+    }
+
+    @media (min-width: 1600px) {
+      height: 900px;
+    }
+
+    @media (min-width: 1920px) {
+      height: 1080px;
+    }
+  }
+
+  &--work-frome-home {
+    padding: 20px 0px !important;
+  }
+
+  &--promosi {
+    @include screen(desktop) {
+      padding-top: 102.78px !important;
+      padding-bottom: 80px;
+      margin-top: 0;
+    }
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 24px;
+
+    &--csa-referral {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-size: 47px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    &--syawal {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-size: 47px;
+      color: #fff;
+      margin-bottom: 24px;
+    }
+
+    &--power-up-website {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-size: 20px;
+      color: #fff;
+      margin-top: 70px;
+      margin-bottom: 20px;
+      line-height: 27px;
+    }
+
+    &--black-friday20 {
+      font-weight: 800;
+      font-size: 47px;
+      line-height: 64px;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+
+    &--harbolnas {
+      color: #fff;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 3em;
+      line-height: 1.5em;
+      margin-bottom: 24px;
+    }
+
+    &--ramadhan {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 40px;
+      line-height: 55px;
+      color: #fff;
+    }
+
+    &--work-from-home {
+      font-size: 50px;
+      line-height: 68px;
+      margin-top: 25px;
+      margin-bottom: 24px;
+    }
+
+    &--promosi {
+      letter-spacing: 0.01em;
+      line-height: 64px;
+      margin-bottom: 32px;
+    }
+
+    &--promo-new {
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 64px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__description {
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 1.625em;
+    letter-spacing: .05em;
+    margin-bottom: 40px;
+
+    &--csa-referral {
+      font-size: 18px;
+      font-style: normal;
+      text-align: left;
+      color: #fff;
+    }
+
+    &--power-up-website {
+      font-size: 14px;
+      line-height: 25px;
+      letter-spacing: 0.05em;
+    }
+
+    &--black-friday20 {
+      font-size: 1.125rem;
+      line-height: 26px;
+      letter-spacing: 0.05em;
+      margin-bottom: 40px;
+    }
+
+    &--harbolnas {
+      font-size: 1.125rem;
+      line-height: 1.625em;
+      letter-spacing: .05em;
+      margin-bottom: 40px;
+    }
+
+    &--work-from-home {
+      font-size: 16px;
+      line-height: 177.32%;
+      margin-bottom: 28px;
+    }
+
+    &--promosi {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.05em;
+      margin-bottom: 70px;
+    }
+
+    &--promo-new {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+    }
+
+  }
+
+  &__image-wrapper {
+    margin-top: 64px;
+
+    @include screen(desktop) {
+      margin-top: 0;
+      position: relative;
+    }
+
+    &--promo-new {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__image {
+    image-rendering: pixelated;
+
+    @include screen(desktop) {
+      position: absolute;
+      width: 100%;
+      right: 0;
+      top: -53px;
+
+      &--syawal {
+        top: unset;
+        bottom: -134px;
+      }
+
+      &--power-up-website {
+        top: unset;
+        bottom: -68px;
+      }
+
+      &--ramadhan {
+        top: unset;
+        bottom: -110px;
+      }
+    }
+
+    &--harbolnas,
+    &--promo-new {
+      height: 100%;
+      width: auto;
+      margin: -40px 0 0 50px;
+
+      @include screen(mobile) {
+        max-height: 100%;
+        margin: 0;
+      }
+    }
+
+    &--black-friday20 {
+      margin: -80px 0 0 -90px;
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+        height: auto;
+        margin-top: 2px;
+        margin-bottom: -20px;
+      }
+    }
+
+    &--black-friday20-v2 {
+      height: 50%;
+      width: 50%;
+      margin: -80px 0;
+
+      @media screen and (max-width: 450px) {
+        width: 100%;
+        margin-bottom: -50px;
+      }
+    }
+
+    &--black-friday20-discount {
+      width: 50%;
+      margin-top: -40px;
+
+      @media screen and (max-width: 450px) {
+        width: 80%;
+        height: auto;
+        margin-top: -10px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &--black-friday20-discount-v2 {
+      width: 50%;
+
+      @media screen and (max-width: 450px) {
+        width: 90%;
+        margin-top: -10px;
+        margin-left: 20px;
+      }
+    }
+
+    &--black-friday20-divider {
+      width: 100%;
+      margin-top: -100px;
+      margin-left: -5px;
+
+      @media screen and (max-width: 450px) {
+        width: 80%;
+        height: auto;
+        margin-top: -20px;
+      }
+    }
+
+    &--black-friday20-divider-v2 {
+      width: 100%;
+      margin-left: -5px;
+      margin-bottom: -60px;
+
+      @media screen and (max-width: 450px) {
+        margin-top: -100px;
+      }
+    }
+
+    &--black-friday20-coupon {
+      width: 50%;
+      margin-bottom: 50px;
+
+      @media screen and (max-width: 450px) {
+        width: 80%;
+        height: auto;
+        margin-top: 5px;
+      }
+    }
+
+    &--black-friday20-coupon-v2 {
+      width: 50%;
+
+      @media screen and (max-width: 450px) {
+        width: 90%;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &__btn {
+    &--promosi {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: 0.05em;
+    }
+  }
+}

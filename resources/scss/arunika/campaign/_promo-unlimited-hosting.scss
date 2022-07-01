@@ -1,0 +1,101 @@
+@import "../helpers/bootstrap/functions";
+@import "../helpers/bootstrap/variables";
+@import "../helpers/bootstrap/mixins/breakpoints";
+@import "../mixins/all";
+@import "../helpers/all";
+@import "../components/belt";
+@import "../components/counter";
+
+
+@use "../../mixins/breakpoints" as *;
+
+
+
+.campaign-promo-uh-belt {
+  &__wrapper {
+    background: #0056b2;
+  }
+
+  &--title {
+    @include font-size('20-semibold');
+    color: var(--as-color-white);
+  }
+
+  &--top-title {
+    @include font-size('14');
+    color: var(--as-color-white);
+  }
+
+  &__button {
+    color: #fff;
+    border: 2px dashed var(--as-color-white);
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: uppercase;
+  }
+}
+
+.as-counter-top__item {
+  font-size: clamp(1rem, 5vw, 1rem);
+  height: 37px;
+  padding: 8px;
+  width: 37px;
+}
+
+.as-counter__colon {
+  &::after {
+    font-size: clamp(1rem, 5vw, 1rem);
+  }
+}
+
+.campaign-belt {
+  margin: 0;
+
+  &__item {
+    width: 100%;
+
+    &-right, &-left {
+      text-align: center !important;
+    }
+  }
+
+  @include screen(tablet) {
+    flex-direction: row;
+  }
+
+  @include screen(tablet) {
+    &__item {
+      &-right {
+        text-align: left !important;
+      } 
+  
+      &-left {
+        text-align: right !important;
+      }
+    }
+  }
+}
+
+.campaign-belt--fit-content {
+  width: fit-content;
+}
+
+.as-belt__button--icon {
+  --icon-url: url('https://niagaspace.sgp1.cdn.digitaloceanspaces.com/www/assets/images/2022/arunika/belt/vps-promocode-icon-copy.svg');
+  margin-right: 24px;
+  position: relative;
+
+  &::before {
+    content: var(--icon-url);
+    margin-left: 0.5rem;
+    position: absolute;
+    transition: all 1s;
+  }
+}
+
+@media(min-width: 1024px) {
+  .campaign-belt__item-left {
+    white-space: nowrap !important;
+  }
+}

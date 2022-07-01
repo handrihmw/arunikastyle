@@ -1,0 +1,50 @@
+.pretty-radio {
+  cursor: pointer;
+  display: block;
+  font-family: 'NunitoSansRegular', sans-serif;
+  font-size: 21px;
+  color: #4d5872;
+
+  & input[type=radio] {
+    display: none;
+  }
+
+  &__icon {
+    position: relative;
+
+    &::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 400;
+      content: "\f058";
+      display: inline-block;
+      color: #007aff;
+      position: absolute;
+      left: -2px;
+      top: 8px;
+    }
+
+    &.checked {
+      &::before {
+        font-weight: 900 !important;
+      }
+    }
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 18px;
+    line-height: 200%;
+    color: #3A4166;
+    padding: 8px 0 8px 27px;
+  }
+
+  &__desc {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 26px;
+    color: rgba(58, 65, 102, 0.7);
+    margin: 8px 0 8px 27px;
+  }
+}

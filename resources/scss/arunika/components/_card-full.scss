@@ -1,0 +1,256 @@
+@use '../mixins/breakpoint' as *;
+@use "../helpers/card";
+
+.as-card-full {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(17, 26, 104, 0.1);
+  display: inline-block;
+  margin-bottom: 40px;
+  padding: 32px 18px 24px;
+  position: relative;
+  width: 85%;
+
+  @media only screen and (max-width: 320px) {
+    width: 270px !important;
+  }
+
+  @media only screen and (min-width: 321px) and (max-width: 375px) {
+    width: 320px !important;
+  }
+
+ @include screen(mobile) {
+    width: 350px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    width: 300px;
+  }
+
+  &--best {
+    @extend %card-best-placeholder;
+  }
+
+  &__wrapper {
+    @extend %card-wrapper-placeholder;
+  }
+
+  &__wrapper-top {
+    @extend %card-wrapper-top-placeholder;
+  }
+
+  &__title {
+    @extend %card-title-placeholder;
+    text-transform: capitalize;
+  }
+
+  &__description {
+    @extend %card-description-placeholder;
+  }
+
+  &__description-center {
+    @extend %card-description-center-placeholder;
+  }
+
+  &__icon {
+    display: inline-block;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &.ssl {
+            left: 10%;
+            width: 75% !important;
+        }
+
+        &.mail {
+            width: 100% !important;
+        }
+    }
+  }
+
+  &__best-seller {
+    @extend %card-bestseller-placeholder;
+  }
+
+  &__label {
+    @extend %card-label-placeholder;
+
+    &--green {
+      @extend %card-label-green-placeholder;
+    }
+
+    &--orange {
+      @extend %card-label-orange-placeholder;
+    }
+  }
+
+  &__price {
+    color: #ff9800;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.25rem, 10vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.75rem;
+    margin-bottom: 28px;
+    margin-top: 0;
+
+    &--yearly {
+      &::after {
+        bottom: 24px;
+        color: #29384e;
+        content: "/tahun";
+        font-family: "NunitoSansBold", sans-serif;
+        font-size: clamp(1.125rem, 5vw, 1.125rem);
+        font-weight: 700;
+        padding-left: 0.5rem;
+        right: 0;
+      }
+    }
+
+    &--monthly {
+      &::after {
+        bottom: 24px;
+        color: #29384e;
+        content: "/bulan";
+        font-family: "NunitoSansBold", sans-serif;
+        font-size: clamp(1.125rem, 5vw, 1.125rem);
+        font-weight: 700;
+        padding-left: 0.5rem;
+        right: 0;
+      }
+    }
+
+    
+  }
+
+  &__button {
+    @extend %card-button-placeholder;
+    padding: 10px 50px;
+
+    @media only screen and (max-width: 320px) {
+      padding: 10px 20px !important;
+    }
+
+   @include screen(mobile) {
+      padding: 10px 20px;
+    }
+  }
+
+  &__ribbon {
+    @extend %card-ribbon-placeholder;
+
+    &--green {
+      @extend %card-ribbon-green-placeholder;
+    }
+
+    &--red {
+      @extend %card-ribbon-red-placeholder;
+    }
+  }
+
+  &__discount {
+    @extend %card-discount-placeholder;
+  }
+
+  &__feature {
+    @extend %card-feature-placeholder;
+
+    &--list {
+      @extend %card-feature-list-placeholder;
+    }
+
+    &--icon {
+      @extend %card-feature-icon-placeholder;
+    }
+  }
+
+  &__more {
+    @extend %card-more-placeholder;
+    transform: translateX(100%);
+
+    @media only screen and (max-width: 320px) {
+      transform: translateX(30%) !important;
+    }
+
+    @media only screen and (min-width: 321px) and (max-width: 420px) {
+      transform: translateX(60%) !important;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      transform: translateX(50%);
+    }
+
+    &--website-instan {
+      padding-bottom: 15px;
+      transform: translateX(0);
+      width: 100%;
+    }
+  }
+
+  &--full-width {
+    width: 100% !important;
+  }
+
+  &--no-padding {
+    padding: 0 !important;
+  }
+}
+
+/** 
+  * Show more list
+ */
+
+.show-more {
+  &__target {
+    animation: open 0.2s linear;
+    font-size: 0;
+    max-height: 0;
+    opacity: 0;
+  }
+
+  &__state {
+    display: none;
+
+    &:checked {
+      ~ {
+        .show-more__target {
+          font-size: inherit;
+          max-height: 999em;
+          opacity: 1;
+        }
+
+        .as-card-full__more {
+          &:before {
+            content: "Lihat Fitur Sedikit";
+          }
+        }
+      }
+    }
+
+    ~ {
+      .as-card-full__more {
+        &:before {
+          content: "Lihat Fitur Lainnya";
+        }
+      }
+    }
+  }
+}
+
+@keyframes open {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,41 @@
+
+@use "../../mixins/breakpoints" as *;
+
+
+
+.campaign-ramadhan-belt {
+  &__wrapper {
+    background-image: url('https://niagaspace.sgp1.digitaloceanspaces.com/assets/2022/ramadhan/banner-bottom.webp'), linear-gradient(45deg,#00349b,rgba(0,92,255,.922),#007aff);
+  }
+
+  &--title {
+    @include font-size('20-semibold');
+    color: var(--as-color-white);
+  }
+
+  &--top-title {
+    @include font-size('14');
+    color: var(--as-color-white);
+  }
+}
+
+.as-counter-top__item {
+  font-size: clamp(1rem, 5vw, 1rem);
+  height: 37px;
+  padding: 8px;
+  width: 37px;
+}
+
+.as-counter__colon {
+  &::after {
+    font-size: clamp(1rem, 5vw, 1rem);
+  }
+}
+
+.campaign-belt {
+  margin: 0;
+}
+
+.campaign-belt__item {
+  width: 100%;
+}

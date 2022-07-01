@@ -1,0 +1,78 @@
+@use '../mixins/breakpoint' as *;
+
+.as-video-frame {
+  aspect-ratio: 16/9;
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+
+  @include screen(desktop) {
+    margin-bottom: 2rem;
+  }
+
+  img {
+    border-radius: 12px;
+    height: auto;
+    width: 100%;
+  }
+
+  iframe {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:before {
+      backdrop-filter: blur(6px);
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 100%;
+      content: "";
+      height: 80px;
+      left: 50%;
+      margin: -40px 0 0 -40px;
+      position: absolute;
+      top: 50%;
+      transition: border-color 300ms;
+      width: 80px;
+      -moz-transition: border-color 300ms;
+      -webkit-transition: border-color 300ms;
+    }
+
+    &:after {
+      border-bottom: 16px solid transparent;
+      border-left: 30px solid var(--as-color-white);
+      border-top: 16px solid transparent;
+      content: "";
+      height: 0;
+      left: 50%;
+      margin: -16px 0 0 -10px;
+      position: absolute;
+      top: 50%;
+      width: 0;
+      transition: border-color 300ms;
+      -moz-transition: border-color 300ms;
+      -webkit-transition: border-color 300ms;
+    }
+
+    &:hover:before,
+    &:focus:before {
+      box-shadow: 0 0 1px 4px rgba(var(--as-color-white), 0.2), 0 0 1px 16px rgba(var(--as-color-white), 0.1);
+    }
+  }
+}

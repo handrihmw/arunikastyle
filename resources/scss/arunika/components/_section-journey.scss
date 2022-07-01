@@ -1,0 +1,98 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-section-journey {
+  color: #fff;
+  padding: 60px 20px;
+  position: relative;
+
+  @include screen(desktop) {
+    padding: 90px;
+  }
+
+  .container {
+    z-index: 2;
+  }
+
+  &__image {
+    position: absolute;
+    left: -90%;
+    top: 0;
+    max-width: 391px;
+
+    img {
+      border-radius: 24px;
+      border: 4px solid #fff;
+      z-index: 2;
+      position: relative;
+    }
+
+    &::after {
+      bottom: -14%;
+      content: url("../images/2021/arunika/icons/dot-circle.webp");
+      position: absolute;
+      right: -18%;
+      z-index: 1;
+
+     @include screen(mobile) {
+        right: -10%;
+      }
+    }
+  }
+
+  &__title {
+    @include font-size('40');
+    color: #29384e;
+    margin-bottom: 5rem;
+
+    @include screen(desktop) {
+      margin-bottom: 10rem;
+    }
+  }
+
+  &__description {
+    @include font-size('18');
+    margin-bottom: 3rem;
+    padding-right: 1rem;
+
+    &-italic {
+      font-style: italic;
+    }
+
+    &-bold {
+      font-weight: 600;
+    }
+  }
+
+  &__background {
+    background: #007aff;
+    bottom: 0;
+    display: block;
+    height: 70%;
+    position: absolute;
+    right: 0;
+    width: 70%;
+    z-index: 1;
+  }
+
+  @include screen(desktop) {
+    .section-white__title {
+      margin-bottom: 40px !important;
+    }
+
+    .section-white__description {
+      margin-top: 0;
+    }
+
+    &__image {
+      position: relative;
+      left: 0;
+      margin-bottom: 100px;
+    }
+
+    &__background {
+      width: 100%;
+    }
+  }
+}

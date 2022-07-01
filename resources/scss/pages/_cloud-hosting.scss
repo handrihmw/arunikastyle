@@ -1,0 +1,317 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+.cloud-hosting-what,
+.cloud-hosting-why,
+.cloud-hosting-price,
+.cloud-hosting-feature {
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+  }
+
+  &__description {
+    color: rgba(58, 65, 102, 0.7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 1.125rem;
+  }
+}
+
+.cloud-hosting-what {
+  background: #f5faff;
+  padding: 100px 0 90px;
+
+  &__title {
+    line-height: normal;
+  }
+
+  &__description {
+    line-height: 41px;
+    padding-top: 20px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 130px 0;
+  }
+}
+
+.cloud-hosting-why {
+  background: #f6fbff;
+  position: relative;
+  padding: 50px 0;
+
+  &__title {
+    padding-bottom: 40px;
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    line-height: 32px;
+  }
+
+  .nav-link {
+    background: #fff;
+    color: #3a4166;
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 1.125rem;
+    padding: 15px;
+
+    &.active {
+      background: #fff;
+      box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.1);
+      color: #3a4166;
+    }
+
+    &:hover {
+      box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.1) !important;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__item {
+    padding-top: 37px;
+  }
+
+  &__box {
+    padding-top: 0;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 50px;
+    }
+  }
+
+  &--space {
+    display: none;
+
+    @include screen(desktop) {
+      display: block;
+      margin-top: 100px;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    &--sticky {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 150px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 80px 0;
+
+    &_box {
+      padding-top: 20px;
+    }
+  }
+}
+
+.cloud-hosting-price {
+  background: #fff;
+  padding: 50px 0;
+
+  &__niagahoster-point {
+    color: rgba(58, 65, 102, 0.7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 1rem;
+    line-height: 16px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  &__title,
+  &__description {
+    text-align: center;
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 28px;
+    padding: 30px 0;
+  }
+
+  &__table {
+    background: #fff;
+    box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.15);
+    border-radius: 8px;
+    margin: 0 auto 30px;
+    max-width: 350px;
+
+    &--space {
+      margin: 35px 10px 30px;
+    }
+  }
+
+  &__discount,
+  &__point,
+  &__package {
+    font-family: 'NunitoSansRegular', sans-serif;
+    text-transform: capitalize;
+  }
+
+  &__discount {
+    background: #00bfa5;
+    border-radius: 8px 8px 0px 0px;
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 28px;
+    padding: 12px 0;
+
+    &.premium {
+      background: #fb8c00 !important;
+    }
+  }
+
+  &__package {
+    font-size: 1.625rem;
+    font-weight: unset;
+    padding: 30px;
+  }
+
+  &__strike,
+  &__available {
+    color: rgba(58, 65, 102, 0.7);
+    padding-bottom: 0;
+  }
+
+  &__strike {
+    margin-bottom: 0;
+  }
+
+  &__available {
+    span {
+      color: #007aff;
+      font-size: 1.813rem;
+      line-height: normal;
+      text-align: center;
+    }
+  }
+
+  &__strike,
+  &__available,
+  &__point {
+    margin-bottom: 10px;
+  }
+
+  &__point {
+    color: rgba(58, 65, 102, 0.7);
+    padding: 5px 0;
+  }
+
+  &__btn {
+    line-height: normal;
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+    margin-bottom: 22px;
+    padding: 10px 35px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    padding: 100px 0;
+
+    &__description {
+      padding: 45px 55px;
+    }
+  }
+}
+
+.cloud-hosting-feature {
+  background-image: linear-gradient(45deg, #007aff, #0040ac);
+  padding: 60px 0;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    position: relative;
+
+    &::after {
+      background: #007aff;
+      content: "";
+      height: 8px;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      width: 100px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 30px;
+  }
+
+  &__item {
+    color: rgba(58, 65, 102, 0.7);
+    font-style: normal;
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    padding-bottom: 30px;
+
+    &::before {
+      content: "\f058";
+      color: #007aff;
+      display: inline-block;
+      font-family: "Font Awesome 5 Free";
+      font-size: 1.25rem;
+      font-style: normal;
+      font-variant: normal;
+      left: -30px;
+      line-height: 1;
+      position: absolute;
+      text-rendering: auto;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+
+  &--border {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(17, 26, 104, 0.3);
+    margin: 0;
+    padding: 70px 20px 35px;
+    padding-top: 25px;
+
+    @include media-breakpoint-up(xl) {
+      margin: 0 -15px;
+      padding: 80px 0 35px;
+    }
+  }
+}
+
+.cloud-hosting-integrate {
+  padding: 120px 0;
+  text-align: center;
+
+  &__title {
+    color: #3a4166;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 45px;
+    text-align: center;
+  }
+
+  &__description {
+    color: rgba(58, 65, 102, 0.7);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 0.005em;
+    margin-top: 32px;
+    text-align: center;
+
+    @include screen(desktop) {
+      padding: 0 180px;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-tooltip {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  left: 3px;
+  top: 3px;
+
+  &:hover {
+    .as-tooltip__info {
+      visibility: visible;
+    }
+  }
+
+  &__info {
+    @include font-size('14');
+    border-radius: 12px;
+    visibility: hidden;
+    display: inline-block;
+    cursor: auto;
+    width: 240px;
+    padding: 0.75rem 1rem;
+    color: var(--as-color-white);
+    background: var(--as-color-blue-dark);
+    position: absolute;
+    margin-top: 8px;
+    z-index: 1;
+    word-wrap: break-word;
+    text-align: left;
+
+    >a {
+      color: var(--as-color-blue);
+      font-weight: 700;
+      text-decoration: underline;
+
+      &:hover {
+        color: var(--as-color-blue-dark);
+      }
+    }
+
+    &--bottom {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::after {
+        position: absolute;
+        top: -9px;
+        left: 50%;
+        margin-left: -12px;
+        content: "";
+        display: block;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid var(--as-color-blue-dark);
+      }
+    }
+
+    &--top {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: var(--as-color-blue-dark);
+      }
+    }
+
+    &--left {
+      top: 50%;
+      left: -258px;
+      transform: translateY(-50%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        border: 5px solid transparent;
+        border-left-color: var(--as-color-blue-dark);
+      }
+    }
+
+    &--right {
+      top: 50%;
+      left: calc(100% + 4px);
+      transform: translateY(-50%);
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        transform: translateY(-50%);
+        border: 5px solid transparent;
+        border-right-color: var(--as-color-blue-dark);
+      }
+    }
+  }
+}

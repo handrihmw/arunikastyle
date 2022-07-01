@@ -1,0 +1,42 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-section-form {
+  background: #f5faff;
+  padding: 2.5rem 1.25rem;
+
+  @include screen(desktop) {
+    padding: 6rem 0;
+  }
+
+  &__title {
+    color: #29384e;
+    @include font-size('40');
+    margin-bottom: 2rem;
+
+    @include screen(desktop) {
+      letter-spacing: -.02rem;
+      line-height: 3.5rem;
+      text-align: center;
+    }
+  }
+
+  &__description {
+    color: #546071;
+    @include font-size('16');
+    margin-bottom: 2.5rem;
+
+    @include screen(desktop) {
+      margin-bottom: 3.75rem;
+      text-align: center;
+    }
+  }
+
+  &__container {
+    @include screen(desktop) {
+      margin: 0 auto;
+      width: 45.625rem;
+    }
+  }
+}

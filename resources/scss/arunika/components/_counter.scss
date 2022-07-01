@@ -1,0 +1,100 @@
+@use '../mixins/breakpoint' as *;
+
+.as-counter {
+  display: flex;
+  margin-bottom: 3rem;
+  text-align: center;
+
+ @include screen(mobile) {
+    justify-content: start;
+    gap: 0;
+  }
+
+  &__wrapper {
+    display: table;
+    text-align: center;
+
+    &-top {
+      align-items: center;
+      justify-content: center;
+
+      @include screen (desktop) {
+        display: flex;
+      }
+    }
+  }
+
+  &__item {
+    background-color: #fff;
+    border-radius: 8px;
+    color: #29384e;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(2rem, 5vw, 2rem);
+    height: 70px;
+    margin: 0.4rem;
+    padding: 12px 10px;
+    width: 70px;
+
+    &-top-start {
+      flex: 1.5;
+    }
+
+   @include screen(mobile) {
+      height: 60px;
+      padding: 8px 10px;
+      width: 60px;
+    }
+
+    @media only screen and (max-width: 320px) {
+      font-size: clamp(1.5rem, 5vw, 1.5rem);
+      height: 50px;
+      width: 50px;
+    }
+  }
+
+  &__time {
+    color: #fff;
+    display: inline-flex;
+    font-size: clamp(0.875rem, 5vw, 0.875rem);
+    letter-spacing: 0.02em;
+    line-height: 1rem;
+    margin: 0 0.5rem;
+
+    @media only screen and (max-width: 320px) {
+      font-size: clamp(0.75rem, 5vw, 0.75rem);
+    }
+
+    &-top {
+      margin-top: 1rem;
+
+      @include screen(desktop) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__colon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: -20px;
+    padding: 0 0.5rem;
+
+    &-top {
+      margin-top: 0;
+    }
+
+    &:after {
+      content: ":";
+      color: #fff;
+      font-family: "NunitoSansBold", sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      opacity: 0.4;
+      text-align: center;
+    }
+
+   @include screen(mobile) {
+      padding: 0;
+    }
+  }
+}

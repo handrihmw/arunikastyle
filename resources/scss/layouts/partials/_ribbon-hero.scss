@@ -1,0 +1,93 @@
+@use "../../mixins/breakpoints" as *;
+
+.ribbon-hero {
+  background: linear-gradient(45deg,
+      #00349b,
+      rgba(0, 92, 255, 0.9219),
+      #007aff);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  padding: 10px 0;
+
+  &__hero-ribbon {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 14.82px;
+
+    @include screen(desktop) {
+      margin-top: -86px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__super-ribbon {
+    text-align: center;
+
+    @include screen(desktop) {
+      margin-bottom: 18.52px;
+
+      img {
+        max-width: 215.13px;
+      }
+    }
+  }
+
+  &-countdown {
+    text-align: center;
+
+    &__title {
+      font-size: 10px;
+      color: #fff;
+    }
+
+    &__timer {
+      margin-bottom: 40px;
+
+      @include screen(desktop) {
+        margin-bottom: 0;
+      }
+
+      li {
+        position: relative;
+
+        &:not(:last-child) {
+          margin-right: 50px;
+
+          &::after {
+            position: absolute;
+            content: ":";
+            font-size: 31px;
+            color: #fff;
+            top: 50%;
+            left: calc(100% + 20px);
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+
+    &__item-time {
+      text-align: center;
+      font-size: 31px;
+      color: #fff;
+    }
+
+    &__item-title {
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__cta {
+    text-align: right;
+
+    @include screen(desktop) {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+  }
+}

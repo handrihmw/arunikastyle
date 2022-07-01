@@ -1,0 +1,96 @@
+@use '../mixins/breakpoint'as *;
+
+.as-section-list {
+  align-items: center;
+  background-blend-mode: overlay;
+  background: linear-gradient(249.77deg, #0094ff -1.99%, #007dff 43.52%, #026ce8 95.86%);
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 60px 20px;
+
+  .as-headline__title {
+    margin-bottom: 80px;
+
+    @include screen(mobile) {
+      margin-bottom: 60px;
+      max-width: 200px;
+      text-align: left !important;
+    }
+  }
+
+  @include screen(desktop) {
+    background-image: url("../images/2021/arunika/hero/accent-center.svg"),
+      linear-gradient(249.77deg, #0094ff -1.99%, #007dff 43.52%, #026ce8 95.86%);
+    padding: 90px;
+  }
+
+  &__inner {
+    &--margin {
+      margin-bottom: 2.5rem;
+
+      @include screen(desktop) {
+        margin-bottom: 5rem;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    left: 0;
+    border-radius: 16px;
+    width: 64px;
+    height: 64px;
+  }
+
+  &__info {
+    padding-left: 92px;
+    text-align: left;
+
+    &-title {
+      font-family: "NunitoSansBold", sans-serif;
+      font-size: clamp(1rem, 5vw, 1.25rem);
+      letter-spacing: 0.005em;
+      line-height: 1.625rem;
+      margin-bottom: 8px;
+    }
+
+    &-description {
+      font-family: "NunitoSansRegular", sans-serif;
+      font-size: clamp(0.875rem, 5vw, 0.875rem);
+      letter-spacing: 0.005em;
+      line-height: 1.625rem;
+
+      &--index2 {
+        max-width: 225px;
+
+        @include screen(mobile) {
+          max-width: 147px;
+        }
+      }
+    }
+
+    @include screen(mobile) {
+      display: table-cell;
+      height: 64px;
+      max-width: 280px;
+      position: relative;
+      vertical-align: middle;
+      width: 100vw;
+
+      &-title {
+        margin-bottom: 0;
+      }
+
+      &-description {
+        left: 0;
+        padding-top: 32px;
+        position: absolute;
+      }
+    }
+  }
+}

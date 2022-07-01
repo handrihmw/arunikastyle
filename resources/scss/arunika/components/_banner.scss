@@ -1,0 +1,171 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-banner {
+  align-items: center;
+  background: linear-gradient(249.77deg,#0094ff -1.99%,#007dff 43.52%,#026ce8 95.86%);
+  background-blend-mode: overlay;
+  background-repeat: no-repeat,repeat;
+  border-radius: 24px;
+  box-shadow: 0px 32px 72px rgba(0, 87, 178, 0.16);
+  color: #fff;
+  height: auto;
+  margin: 40px 0;
+  width: 100%;
+
+  @include screen (mobile) {
+    background-position: center top;
+    margin: 50px 0;
+    padding: 20px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    padding: 40px 20px;
+  }
+
+  &__illustration {
+    height: auto;
+    width: auto;
+
+    @include screen (mobile) {
+      display: grid;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      display: grid;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include font-size('40');
+
+    color: #fff;
+    margin-bottom: 2rem;
+    padding-right: 10rem;
+
+    &--md {
+      @include font-size('32');
+    }
+
+    @include screen (mobile) {
+      line-height: 2.25rem;
+      margin-bottom: 18px;
+      padding-right: 0;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      margin-bottom: 1rem;
+      padding-right: 0;
+    }
+  }
+
+  &__sub-title {
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1rem, 5vw, 1.125rem);
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1.625rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+
+    @include screen (mobile) {
+      margin-bottom: 16px;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__description {
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(1rem, 5vw, 1rem);
+    letter-spacing: 0.005em;
+    line-height: 24px;
+    margin-bottom: 2.875rem;
+    margin-right: 3rem;
+
+    @include screen (mobile) {
+      margin-right: 0;
+    }
+  }
+}
+
+.as-banner-soft {
+  align-items: flex-start;
+  background: url("../images/2021/arunika/banner/accent.svg") #f5faff;
+  background-position: 95%;
+  background-repeat: no-repeat;
+  background-size: auto;
+  border-radius: 1rem;
+  justify-content: center;
+  padding: 60px 30px;
+
+  @include screen (mobile) {
+    background: url("../images/2021/arunika/banner/accent-mobile.svg") #f5faff;
+    background-blend-mode: multiply;
+    background-position: 100% 1px;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    background-position: 110%;
+  }
+
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+    background-position: 120%;
+  }
+
+  &__info {
+    @include screen (mobile) {
+      margin-bottom: 30px;
+      padding-right: 10px;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      padding-right: 0;
+    }
+
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      padding-right: 0;
+    }
+  }
+
+  &__action {
+    padding: 35px 0;
+    text-align: center;
+
+    @include screen (mobile) {
+      padding: 0;
+    }
+  }
+
+  &__button {
+    padding: 12px 60px;
+
+    @media only screen and (max-width: 375px) {
+      padding: 12px 24px;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      margin-top: 30px;
+      padding: 12px 36px;
+    }
+
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      margin-top: 0;
+    }
+  }
+
+  .text-blue {
+    color: #007aff;
+  }
+}

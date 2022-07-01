@@ -1,0 +1,177 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.comparations {
+  color: #546071;
+  background: #fff;
+  border: 1px solid #f3f4f6;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 24px rgba(0, 87, 178, 0.08);
+  border-radius: 16px;
+  padding: 32px 75.5px;
+
+  th,
+  td {
+    padding: 0 24px;
+  }
+
+  &__title div,
+  &__detail,
+  &__item div {
+    padding: 21px 0;
+  }
+
+  &__title {
+    div {
+      color: #29384e;
+      font-family: "NunitoSansBold", sans-serif;
+      font-size: clamp(1.125rem, 4vw, 1.25rem);
+      letter-spacing: 0.005rem;
+      line-height: 2rem;
+      text-align: center;
+    }
+
+    &--featured {
+      div {
+        color: #fff !important;
+        background: #007aff;
+        border-radius: 10px 10px 0px 0px;
+      }
+    }
+  }
+
+  &__detail,
+  &__item {
+    color: #546071;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(0.875rem, 4vw, 1rem);
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    line-height: 1.5rem;
+  }
+
+  &__detail {
+    position: relative;
+    padding-left: 30.34px;
+
+    &-tooltip {
+      @include font-size('14');
+      background: #22273c;
+      border-radius: 8px;
+      color: #fff;
+      display: none;
+      height: auto;
+      left: 34px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 320px;
+      z-index: 99;
+
+      &::before {
+        border-bottom: 8px solid transparent;
+        border-right: 8px solid #22273c;
+        border-top: 8px solid transparent;
+        content: "";
+        height: 0;
+        left: -8px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+      }
+    }
+
+    &-icon {
+      cursor: pointer;
+      height: auto;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16.67px;
+    }
+  }
+
+  &__icon-yes,
+  &__icon-no {
+    width: 14px;
+    height: auto;
+  }
+
+  &__icon-yes {
+    content: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/assets/images/chekclist-icon-1644910113.png");
+  }
+
+  &__icon-no {
+    content: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/assets/images/prohibited-icon-1644909960.png");
+  }
+
+  &__item {
+    div {
+      text-align: center;
+      border-bottom: 1px solid rgba(18, 18, 18, 0.12);
+    }
+
+    &--featured {
+      div {
+        background-color: #f5faff;
+        border-bottom: 1px solid #007aff !important;
+      }
+    }
+  }
+
+  @include screen(desktop) {
+    padding-left: 13.67px;
+    padding-right: 13.67px;
+
+    &__title {
+      position: relative;
+
+      &--featured div {
+        background: #fff;
+        color: #29384e !important;
+      }
+
+      &-prev,
+      &-next {
+        content: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/assets/images/arrow-right-icon-1644984136.png");
+        cursor: pointer;
+        display: inline-block;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+      }
+
+      &-prev {
+        filter: grayscale(100%);
+        left: 24px;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        width: 6.25px;
+        height: auto;
+      }
+
+      &-next {
+        right: 34px;
+        width: 7.69px;
+        height: auto;
+      }
+    }
+
+    &__item div {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+ @include screen(mobile) {
+    &__detail {
+      &-tooltip {
+        max-width: 207px;
+      }
+    }
+  }
+}

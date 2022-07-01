@@ -1,0 +1,238 @@
+@use "../../mixins/breakpoints" as *;
+
+.package {
+  background: #f6fbff;
+  padding: 100px 0;
+  font-family: 'NunitoSansRegular', sans-serif;
+
+  &__tooltip {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 5px;
+    box-shadow: 0px 1px 4px rgba(17, 26, 104, 0.15);
+    -webkit-box-shadow: 0px 1px 4px rgba(17, 26, 104, 0.15);
+    -moz-box-shadow: 0px 1px 4px rgba(17, 26, 104, 0.15);
+    display: none;
+    font-size: 0.625rem;
+    line-height: 0.875rem;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+
+    &::after {
+      content: "";
+      box-sizing: border-box;
+      border: 11px solid rgba(77, 88, 114, 0.1);
+      border-color: transparent transparent #fff #fff;
+      box-shadow: -1px 1px 4px 0 rgba(17, 26, 104, 0.15);
+      -webkit-box-shadow: -1px 1px 1px rgba(17, 26, 104, 0.15);
+      -webkit-transform-origin: 0 0;
+      -webkit-transform: rotate(-47deg);
+      position: absolute;
+      top: 100%;
+      transform-origin: 0 0;
+      transform: rotate(-47deg);
+    }
+
+    &--price {
+      left: 84px;
+      padding: 6px 5px 7px;
+      text-align: center;
+      top: -95px;
+      width: 135px;
+
+      @include screen(mobile) {
+        left: 150px;
+      }
+
+      &::after {
+        left: 50px;
+      }
+    }
+  }
+
+  &__point {
+    border-bottom: 1px solid rgba(17, 26, 104, .1);
+    color: rgba(58, 65, 102, 0.7);
+    font-size: .875rem;
+    line-height: 16px;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+
+  &__card-wrapper {
+    text-align: center;
+
+    &:hover {
+      .package__tooltip {
+        display: block !important;
+      }
+    }
+  }
+
+  &__card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(17, 26, 104, 0.15);
+    display: inline-block;
+    min-height: 700px;
+    padding: 88px 13px 35px;
+    position: relative;
+    text-align: center;
+    width: 270px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2.063rem;
+    margin-bottom: 140px;
+    text-align: center;
+  }
+
+  &__best-seller {
+    background: #007aff;
+    border-radius: 8px;
+    color: #fff;
+    display: none;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.25rem;
+    left: 50%;
+    padding: 14px 78px;
+    position: absolute;
+    top: -86px;
+    transform: translateX(-50%);
+    width: 100%;
+
+     @include screen(desktop) {
+      display: inline-block;
+    }
+
+    &::after {
+      content: "";
+      border: 16px solid transparent;
+      border-top-color: #007aff;
+      left: 50%;
+      position: absolute;
+      top: 100%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__label {
+    background: #e5e5e5;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    color: #fff;
+    display: inline-block;
+    font-size: 1.125rem;
+    font-weight: unset;
+    left: 50%;
+    padding: 12px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform: translateX(-50%);
+    width: 100.4%;
+    font-family: 'NunitoSansBold', sans-serif;
+
+    &--green {
+      background: #00bfa5;
+    }
+
+    &--orange {
+      background: #fb8c00;
+    }
+  }
+
+  &__category {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.875rem;
+    margin-bottom: 40px;
+  }
+
+  &__price {
+    font-size: 1.125rem;
+    opacity: 0.7;
+    position: relative;
+
+    &--hidden {
+      visibility: hidden;
+    }
+
+    &::after {
+      content: "";
+      background: #3a4166;
+      height: 1px;
+      left: 50%;
+      position: absolute;
+      top: 13px;
+      transform: translateX(-50%);
+      width: 130px;
+    }
+  }
+
+  &__discount {
+    color: #007aff;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    font-weight: unset;
+    margin-bottom: 8px;
+    padding-right: 24px;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: "/bln";
+      bottom: 8px;
+      color: #3a4166;
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: .875rem;
+      opacity: 0.7;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  &__description {
+    font-size: .75rem;
+    margin-top: 30px;
+    opacity: 0.7;
+    padding: 0 10px;
+  }
+
+  &__feature {
+    align-items: flex-start;
+    flex-direction: column;
+    list-style: none;
+    margin: 30px 0 0;
+    padding: 0 0 0 30px;
+    display: flex;
+
+    >li {
+      position: relative;
+      padding: 7px 0;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: -25px;
+
+    &::before {
+      content: "\f059";
+      color: #3a4166;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .6s;
+    }
+  }
+
+  &__more {
+    color: #007aff;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 30px;
+  }
+}

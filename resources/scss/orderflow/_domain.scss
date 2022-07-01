@@ -1,0 +1,310 @@
+@use "../mixins/breakpoints" as *;
+
+.button-default {
+  &--inherit-height {
+    height: inherit;
+  }
+}
+
+.orderflow-domain {
+  &__tab {
+    &--flow-domain {
+      margin-top: 17.99px;
+    }
+  }
+
+  &__check {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    white-space: pre;
+
+    &--transfer {
+      width: 175px;
+    }
+
+    @include screen(mobile) {
+      margin: 0 auto;
+      width: 175px;
+    }
+  }
+
+  &__btn {
+    .button-default {
+      height: inherit;
+    }
+  }
+
+  &__register-tld {
+    &.vs--open .vs__selected {
+      position: inherit !important;
+    }
+  }
+
+  &__transfer {
+    margin-top: 52px;
+
+    &-domain {
+      color: #4d5872;
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 24px;
+      line-height: 33px;
+
+      &--epp-saved {
+        &::after {
+          color: #3ecf8f;
+          content: "\f00c";
+          font-family: "Font Awesome 5 Free";
+          font-size: 16px;
+          font-weight: 900;
+          margin-left: 8px;
+        }
+      }
+    }
+
+    &-info-price,
+    &-info-epp,
+    &-tos {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      color: #4d5872;
+    }
+
+    &-info-price {
+      line-height: 33px;
+
+      strong {
+        font-family: 'NunitoSansBold', sans-serif;
+      }
+    }
+
+    &-tos {
+      margin-top: 32px;
+    }
+
+    &--input-group {
+      display: flex !important;
+      flex-wrap: unset;
+
+      .form-control {
+        border-color: #cccccc;
+      }
+
+      .btn-outline-secondary {
+        background: #cccccc;
+        color: #fff;
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: 16px;
+
+        &:hover {
+          background: #fb8c00;
+          border-color: #fb8c00;
+        }
+      }
+
+      input {
+        border-width: 1px;
+
+        &:focus {
+          border-color: #80bdff;
+          border-right: 0;
+        }
+      }
+    }
+
+    &--btn-orange {
+      background: #fb8c00 !important;
+    }
+
+    &--sld {
+      word-break: break-all;
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 24px;
+      line-height: 33px;
+
+      @include screen(desktop) {
+        font-size: 16px;
+        line-height: 22px
+      }
+    }
+
+    &--not-active {
+      p {
+        position: relative;
+        font-family: 'NunitoSansRegular', sans-serif;
+        font-size: 18px;
+        line-height: 25px;
+        padding-left: 18px;
+        text-align: left;
+        margin: 0;
+
+        &::before {
+          position: absolute;
+          color: #eb5757;
+          content: "\f00d";
+          font-family: "Font Awesome 5 Free";
+          font-weight: 900;
+          left: 0;
+        }
+
+        @include screen(desktop) {
+          font-size: 14px;
+          line-height: 19px;
+        }
+      }
+    }
+
+    &--not-available,
+    &--available {
+      padding-bottom: 32px;
+
+      .button-default {
+        width: 213px;
+        line-height: 48px;
+        padding: 0;
+      }
+    }
+  }
+
+  &__result {
+    &-duration {
+      &--orderdomain {
+        font-family: 'NunitoSansBold', sans-serif;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        line-height: 25px;
+
+        select {
+          background: inherit;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        @include screen(desktop) {
+          font-family: NunitoSansRegular, sans-serif !important;
+          font-size: 14px !important;
+          line-height: 19px !important;
+        }
+      }
+    }
+  }
+
+  &__not-available {
+    &--orderdomain {
+      margin-top: 52px;
+      margin-bottom: 33px;
+
+      p {
+        color: #4D5872;
+        font-family: 'NunitoSansRegular', sans-serif;
+        font-size: 24px;
+        line-height: 33px;
+        text-align: left;
+        margin-bottom: 0;
+        word-break: break-word;
+
+        s {
+          font-family: 'NunitoSansBold', sans-serif;
+        }
+
+        span {
+          position: relative;
+          font-size: 18px;
+          line-height: 25px;
+          padding-left: 18px;
+
+          &::before {
+            position: absolute;
+            color: #eb5757;
+            content: "\f00d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            left: 0;
+          }
+        }
+
+        strong {
+          font-family: 'NunitoSansBold', sans-serif;
+        }
+      }
+
+      @include screen(desktop) {
+        margin-top: 30px;
+        margin-bottom: 20px;
+
+        p {
+          font-size: 16px;
+          line-height: 22px;
+
+          span {
+            font-size: 14px;
+            line-height: 19px;
+          }
+        }
+      }
+    }
+  }
+
+  &__btn-next-mobile {
+    display: block;
+    position: fixed;
+    margin: 0 auto;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    width: 280px;
+  }
+
+  &__line {
+    border-color: rgba(204, 204, 204, 0.4);
+    margin: 33.5px 0;
+  }
+
+  @include screen(desktop) {
+    &__transfer {
+      &-info-price {
+        text-align: right;
+      }
+    }
+  }
+
+  @include screen(mobile) {
+    &__tab-owndomain {
+      &--transfer {
+        line-height: 33px;
+      }
+    }
+  }
+
+  @include screen(desktop) {
+    &__domain-id {
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+    &__transfer {
+      &-domain {
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      &-info,
+      &-tos {
+        font-size: 10px;
+        line-height: 14px;
+      }
+
+      &-info-price {
+        strong {
+          display: block;
+          font-size: 14px;
+          line-height: 19px;
+        }
+      }
+    }
+  }
+}

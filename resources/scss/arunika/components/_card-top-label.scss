@@ -1,0 +1,279 @@
+@use '../mixins/breakpoint' as *;
+@use "../helpers/card";
+
+.as-card-top-label {
+  @extend %card-placeholder;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+
+  @media only screen and (max-width: 320px) {
+    width: 270px !important;
+  }
+
+  @media only screen and (min-width: 321px) and (max-width: 375px) {
+    width: 290px !important;
+  }
+
+  @media only screen and (min-width: 376px) and (max-width: 767.99px) {
+    width: 320px !important;
+  }
+
+ @include screen(mobile) {
+    width: 350px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    width: 300px;
+  }
+
+  &--offer {
+    border: none;
+    box-shadow: 0 6px 50px rgba(17, 26, 104, 0.25);
+    padding: 85px 32px 32px 32px;
+  }
+
+  &__wrapper {
+    @extend %card-wrapper-placeholder;
+  }
+
+  &__wrapper-top {
+    @extend %card-wrapper-top-placeholder;
+  }
+
+  &__title {
+    @extend %card-title-placeholder;
+    font-size: clamp(1.4rem, 5vw, 1.4rem);
+    margin-bottom: 16px;
+    text-transform: capitalize;
+  }
+
+  &__description {
+    @extend %card-description-placeholder;
+    color: #7F8895;
+    font-size: clamp(0.8rem, 5vw, 0.8rem);
+    margin-bottom: 1rem;
+    min-height: 72px;
+
+    & > a {
+      color: var(--as-color-blue);
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: underline;
+      text-transform: uppercase;
+
+      &:hover {
+        color: var(--as-color-blue-dark);
+      }
+    }
+  }
+
+  &__image {
+    max-height: 60px;
+    min-height: 57px;
+    width: 60px;
+  }
+
+  &__label {
+    @extend %card-label-placeholder;
+
+    &--green {
+      @extend %card-label-green-placeholder;
+    }
+
+    &--orange {
+      @extend %card-label-orange-placeholder;
+    }
+
+    &--blue {
+      @extend %card-label-blue-placeholder;
+    }
+  }
+
+  &__price {
+    @extend %card-price-month-placeholder;
+    margin-top: 0px;
+
+    span {
+        color: #7F8895;
+        font-size: clamp(0.75rem, 5vw, 0.75rem);
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: clamp(0.825rem, 5vw, 0.825rem);
+    }
+  }
+
+  &__button {
+    @extend %card-button-placeholder;
+    padding: 10px 50px;
+
+    @media only screen and (max-width: 320px) {
+      padding: 10px 20px !important;
+    }
+
+   @include screen(mobile) {
+      padding: 10px 20px;
+    }
+  }
+
+  &__ribbon {
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(0.75rem, 5vw, 0.75rem);
+    font-weight: 700;
+    height: 32px;
+    margin-right: 0.5rem;
+    margin-top: 0;
+    padding: 8px 10px;
+    position: relative;
+
+    @include screen(desktop) {
+      margin-right: 0;
+      margin-top: 0.5rem;
+    }
+
+    img {
+      margin: 2px 8px 4px 2px;
+      width: 12px;
+    }
+
+    &--green {
+      background: #ADEBE3;
+      border-color: #00897B;
+      color: #00897B;
+    }
+
+    &--red {
+      background: #FBB2B2;
+      border-color: #A83232;
+      color: #A83232;
+    }
+
+    &--yellow {
+      background: #FFE082;
+      border-color: #C77700;
+      color: #C77700;
+    }
+
+    &--blue {
+      background: #E0EFFF;
+      border-color: #0057B2;
+      color: #0057B2;
+    }
+
+    &--blue-highlight {
+      background-color: var(--as-color-blue);
+      border-color: var(--as-color-blue);
+      color: var(--as-color-white);
+    }
+
+    &-wrapper {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: row;
+
+      @include screen(desktop) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__discount {
+    @extend %card-discount-placeholder;
+  }
+
+  &--full-width {
+    width: 100% !important;
+  }
+
+  &--no-padding {
+    padding: 0 !important;
+  }
+
+  &--border {
+    border: 1px solid #bfc5cc;
+  }
+
+  &--no-boxshadow {
+    box-shadow: none !important;
+  }
+}
+
+.as-card-top-label-more {
+  @extend %card-placeholder;
+  background: linear-gradient(249.77deg, #0094FF -1.99%, #007DFF 43.52%, #026CE8 95.86%);
+  width: 350px;
+
+  @media only screen and (max-width: 320px) {
+    width: 270px !important;
+  }
+
+  @media only screen and (min-width: 321px) and (max-width: 375px) {
+    width: 290px !important;
+  }
+
+  @media only screen and (min-width: 376px) and (max-width: 767.99px) {
+    width: 320px !important;
+  }
+
+ @include screen(mobile) {
+    width: 350px;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    width: 300px;
+  }
+
+  &--box {
+    border: none;
+    box-shadow: 0 6px 50px rgba(17, 26, 104, 0.25);
+    padding: 20px 15px 32px 15px;
+  }
+
+  &__wrapper {
+    @extend %card-wrapper-placeholder;
+  }
+
+  &__wrapper-top {
+    @extend %card-wrapper-top-placeholder;
+  }
+
+  &__title {
+    @extend %card-title-placeholder;
+    color: #FFFFFF;
+    font-size: clamp(1.4rem, 5vw, 1.4rem);
+    margin-bottom: 10px;
+    margin-top: 4rem;
+    text-transform: capitalize;
+  }
+
+  &__description {
+    @extend %card-description-placeholder;
+    color: #FFFFFF;
+    font-size: clamp(0.8rem, 5vw, 0.8rem);
+    margin-bottom: 9rem;
+    padding-right: 0;
+  }
+
+  &__image {
+    display: block;
+    margin: auto;
+    width: 65px;
+  }
+
+  &__button {
+    @extend %card-button-placeholder;
+    padding: 10px 50px;
+
+    @media only screen and (max-width: 320px) {
+      padding: 10px 20px !important;
+    }
+
+   @include screen(mobile) {
+      padding: 10px 20px;
+    }
+  }
+
+}

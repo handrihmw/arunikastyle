@@ -1,0 +1,21 @@
+@use '../mixins/breakpoint' as *;
+
+.as-header-white {
+  background-color: var(--as-color-white);
+  background-image: none;
+  color: var(--as-color-primary);
+  height: auto;
+  position: relative;
+
+  &--md {
+    min-height: 700px;
+  }
+
+  &__image {
+    margin-top: -2rem;
+
+    @include screen(desktop) {
+      margin-top: -8rem;
+    }
+  }
+}

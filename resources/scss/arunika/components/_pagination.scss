@@ -1,0 +1,38 @@
+@use '../mixins/breakpoint' as *;
+
+.as-pagination {
+  margin-top: 40px;
+
+  .pagination {
+    .page-item {
+      background: #ffff;
+      border: 1px solid #d9dde3;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 8px 14px;
+
+      &:hover {
+        background: #eff2f5;
+        border: 1px solid #eff2f5;
+      }
+
+      @include screen(laptop) {
+        margin: 0 10px;
+      }
+    }
+
+    .current {
+      background: #007aff;
+      color: #ffff;
+
+      &:hover {
+        background: #0062cc;
+        border: 1px solid #0062cc;
+      }
+    }
+
+    .page-link {
+      border: none;
+    }
+  }
+}

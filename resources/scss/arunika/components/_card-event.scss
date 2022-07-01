@@ -1,0 +1,190 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-card-event {
+  @extend %card-placeholder;
+  height: auto;
+  padding: 0;
+  width: 100%;
+
+  @include screen(ipadPro) {
+    height: auto;
+    width: 100%;
+  }
+
+  @include screen(desktopLarge) {
+    height: 750px;
+    width: 360px;
+  }
+
+  &--before {
+    box-shadow: none;
+    height: auto;
+    width: 100%;
+
+    @include screen(ipadPro) {
+      height: auto;
+      width: 100%;
+    }
+
+    @include screen(desktopLarge) {
+      height: 720px;
+      width: 100%;
+    }
+
+    &:hover {
+      box-shadow: 0 6px 20px rgba(17, 26, 104, 0.1);
+    }
+  }
+
+  &__image {
+    border-radius: 1rem 1rem 0 0;
+    height: auto;
+    margin-bottom: 0.5rem;
+    width: 100%;
+
+    @include screen(ipadPro) {
+      height: auto;
+      width: 100%;
+    }
+
+    @include screen(desktopLarge) {
+      width: 360px;
+    }
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+
+    @include screen(ipadPro) {
+      padding: 3rem 1rem;
+    }
+
+    &--before {
+      justify-content: center;
+
+      @include screen(ipadPro) {
+        justify-content: center;
+        padding: 3rem 1rem;
+      }
+      
+      @include screen(laptop) {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__left {
+    position: relative;
+    text-align: center;
+    top: 0;
+    width: 140px;
+
+    @include screen(desktopLarge) {
+      top: -2.9rem;
+    }
+
+    &--before {
+      top: 0;
+
+      @include screen(desktopLarge) {
+        top: -4.2rem;
+      }
+    }
+
+    &--date {
+      @include font-size('24');
+      font-weight: 700;
+    }
+  
+    &--month {
+      @include font-size('16');
+      color: var(--as-color-blue);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  &__right {
+    padding-left: 1rem;
+    
+    &--tag {
+      @include font-size('14');
+      background-color: var(--as-color-red);
+      border-radius: 1.5rem;
+      color: var(--as-color-white);
+      height: 30px;
+      margin-bottom: 1rem;
+      padding: 4px 14px;
+      width: 92px
+    }
+  
+    &--title {
+      @include font-size('16');
+      font-weight: 800;
+      height: 84px;
+      margin-bottom: 0;
+
+      @include screen(mobileSmall) {
+        height: auto;
+      }
+
+      @include screen(laptop) {
+        margin-bottom: 1rem;
+      }
+    }
+  
+    &--description {
+      @include font-size('16');
+      color: var(--as-color-secondary-two);
+      height: 84px;
+      margin-bottom: 1rem;
+      padding-right: 1rem;
+
+      @include screen(mobileSmall) {
+        height: auto;
+      }
+    }
+  }
+
+  &__action {
+    text-align: center;
+    width: 60px;
+
+    &--text {
+      @include font-size('20');
+      color: var(--as-color-primary);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    &--button {
+      padding: 0.5rem 2.25rem;
+
+      @include screen(mobileSmall) {
+        padding: .5rem 1rem;
+      }
+
+      @include screen(laptop) {
+        padding: 0.75rem 3.8rem;
+      }
+    }
+
+    &--button-before {
+      margin-top: 1rem;
+      padding: 0.5rem 4.625rem;
+
+      @include screen(mobileSmall) {
+        padding: .5rem 2rem;
+      }
+
+      @include screen(laptop) {
+        padding: 0.75rem 6rem;
+      }
+    }
+  }
+}

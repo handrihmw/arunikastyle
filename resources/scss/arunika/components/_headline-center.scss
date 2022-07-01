@@ -1,0 +1,79 @@
+@use '../mixins/breakpoint' as *;
+
+.as-headline-center {
+  text-align: center;
+
+  &__title {
+    color: #29384e;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 3.5rem;
+    margin-bottom: 2rem;
+    padding: 0 150px;
+
+   @include screen(mobile) {
+      line-height: 2.25rem;
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+    }
+  }
+
+  &__sub-title {
+    color: #535961;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1rem, 5vw, 1.125rem);
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1.625rem;
+    padding: 0 180px;
+
+   @include screen(mobile) {
+      line-height: 1rem;
+      padding: 0 3rem;
+    }
+  }
+
+  &__description {
+    color: #546071;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(0.875rem, 5vw, 1rem);
+    letter-spacing: 0.005em;
+    line-height: 1.5rem;
+    margin: 2rem 0;
+    padding: 0 160px;
+
+   @include screen(mobile) {
+      margin-bottom: 1rem;
+      padding: 0 1rem;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      padding: 0 2rem;
+    }
+  }
+
+  &__link {
+    background: transparent;
+    border: none;
+    color: #007aff;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(0.875rem, 5vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.002em;
+    line-height: 2rem;
+    padding: 0 160px;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--as-color-blue-dark);
+      text-decoration: none;
+    }
+
+   @include screen(mobile) {
+      line-height: normal;
+      padding: 0 1rem;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@use "mixins/breakpoints" as *;
+@use "foundation/fonts";
+
+@use "layouts/pages";
+
+@import './vendor/bootstrap/bootstrap';
+@import '../../node_modules/font-awesome/scss/font-awesome';

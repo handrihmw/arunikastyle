@@ -1,0 +1,58 @@
+@import "../app";
+
+/* Arunika Header */
+@import "../components/header";
+
+/* Arunika Hero */
+@import "../components/hero";
+
+/* Arunika Section */
+@import "../helpers/section";
+@import "../components/section-center-blue";
+
+/* Owl Carousel */
+@import "../components/owl-carousel";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-feature";
+@import "../components/card-color";
+@import "../components/card-list";
+@import "../components/card-icon";
+@import "../components/card-image";
+
+/* Arunika Table List */
+@import "../components/table-list";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Navigation Tab */
+@import "../components/tab-navigation";
+
+.as-navigation-tab {
+  margin: 0;
+  width: 100%;
+
+ @include screen(mobile) {
+    margin: 0 auto 5rem auto;
+    width: 67%;
+  }
+
+  @include screen(desktopLarge) {
+    margin: 0 auto 5rem auto;
+    width: 36%;
+  }
+
+  &__link {
+    &>span {
+      color: var(--as-color-orange);
+      margin-left: .75rem;
+    }
+
+    &.active>span {
+      color: var(--as-color-white);
+      margin-left: .75rem;
+    }
+  }
+}

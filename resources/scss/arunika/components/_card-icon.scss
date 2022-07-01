@@ -1,0 +1,90 @@
+@use '../mixins/breakpoint' as *;
+@use "../helpers/card";
+
+.as-card-icon {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 6px 20px rgba(17, 26, 104, 0.1);
+  display: block;
+  margin-bottom: 40px;
+  padding: 32px 18px 24px;
+  position: relative;
+
+  &__title {
+    color: #7F8895;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+  }
+
+  &-double-arrow-up {
+    &__list {
+      list-style-type: none;
+      margin: 43px 0;
+  
+      &-item {
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: clamp(1.125rem,5vw,1.125rem);
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: .02em;
+        line-height: 25px;
+        padding: 12px 0;
+        position: relative;
+        text-align: left;
+  
+        &::before {
+          background-color: #00BFA6;
+          border-radius: 2rem;
+          content: url("data:image/svg+xml,%3Csvg width='10' height='12' viewBox='0 0 10 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.70996 6.53994C5.617 6.44621 5.5064 6.37182 5.38454 6.32105C5.26268 6.27028 5.13197 6.24414 4.99996 6.24414C4.86795 6.24414 4.73724 6.27028 4.61538 6.32105C4.49352 6.37182 4.38292 6.44621 4.28996 6.53994L1.28996 9.53994C1.09635 9.72824 0.985477 9.98574 0.981727 10.2558C0.977976 10.5258 1.08166 10.7863 1.26996 10.9799C1.45826 11.1735 1.71577 11.2844 1.98582 11.2882C2.25587 11.2919 2.51635 11.1882 2.70996 10.9999L4.99996 8.65994L7.28996 10.9999C7.38292 11.0937 7.49352 11.1681 7.61538 11.2188C7.73724 11.2696 7.86795 11.2957 7.99996 11.2957C8.13197 11.2957 8.26268 11.2696 8.38454 11.2188C8.5064 11.1681 8.617 11.0937 8.70996 10.9999C8.80369 10.907 8.87808 10.7964 8.92885 10.6745C8.97962 10.5527 9.00576 10.422 9.00576 10.2899C9.00576 10.1579 8.97962 10.0272 8.92885 9.90536C8.87808 9.7835 8.80369 9.6729 8.70996 9.57994L5.70996 6.53994ZM2.70996 5.45994L4.99996 3.15994L7.28996 5.45994C7.38292 5.55367 7.49352 5.62806 7.61538 5.67883C7.73724 5.7296 7.86795 5.75574 7.99996 5.75574C8.13197 5.75574 8.26268 5.7296 8.38454 5.67883C8.5064 5.62806 8.617 5.55367 8.70996 5.45994C8.80369 5.36698 8.87808 5.25637 8.92885 5.13452C8.97962 5.01266 9.00576 4.88195 9.00576 4.74994C9.00576 4.61793 8.97962 4.48722 8.92885 4.36536C8.87808 4.2435 8.80369 4.1329 8.70996 4.03994L5.70996 1.03994C5.617 0.946211 5.5064 0.871816 5.38454 0.821048C5.26268 0.770279 5.13197 0.744141 4.99996 0.744141C4.86795 0.744141 4.73724 0.770279 4.61538 0.821048C4.49352 0.871816 4.38292 0.946211 4.28996 1.03994L1.28996 4.03994C1.10166 4.22824 0.995869 4.48364 0.995869 4.74994C0.995869 5.01624 1.10166 5.27164 1.28996 5.45994C1.47826 5.64824 1.73366 5.75403 1.99996 5.75403C2.26626 5.75403 2.52166 5.64824 2.70996 5.45994Z' fill='white'/%3E%3C/svg%3E%0A");
+          height: 20px;
+          left: -40px;
+          line-height: 1.25rem;
+          padding: 0 5px;
+          position: absolute;
+          top: 14px;
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin-bottom: 0;
+
+    @include screen(desktop) {
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      font-size: clamp(.875rem, 5vw, .875rem);
+      position: relative;
+      padding: 10px 0 10px 0;
+      text-align: left;
+
+      &::before {
+        content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='22' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='11' cy='10.951' r='10.5' fill='%2300BFA6'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.834 14.716l-2.4-2.4a.8.8 0 1 1 1.131-1.131l1.789 1.789 5.038-5.744a.799.799 0 1 1 1.215 1.04l-5.6 6.4a.8.8 0 0 1-.577.28.814.814 0 0 1-.596-.234z' fill='%23fff'/%3e%3c/svg%3e");
+        left: -35px;
+        padding: 10px 0 0 0;
+        position: absolute;
+        top: 1px;
+        width: 40px;
+      }
+
+      &-warning {
+        &::before {
+          content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='22' height='22' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='11' cy='10.951' r='10.5' fill='%23FF9800'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.834 14.716l-2.4-2.4a.8.8 0 1 1 1.131-1.131l1.789 1.789 5.038-5.744a.799.799 0 1 1 1.215 1.04l-5.6 6.4a.8.8 0 0 1-.577.28.814.814 0 0 1-.596-.234z' fill='%23fff'/%3e%3c/svg%3e");
+        }
+      }
+
+      &-center {
+        &::before {
+          top: auto;
+        }
+      }
+    }
+  }
+}

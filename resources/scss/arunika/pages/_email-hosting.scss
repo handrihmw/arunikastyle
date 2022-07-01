@@ -1,0 +1,193 @@
+@import "../app";
+
+
+/* Arunika Hero */
+@import "../components/hero";
+@import "../components/hero-center";
+
+/* Arunika Section */
+@import "../components/section-domain";
+@import "../components/section-white";
+@import "../components/section-center-blue";
+@import "../components/section-soft-blue";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-color";
+@import "../components/card-icon";
+@import "../components/card-tips";
+@import "../components/card-list";
+@import "../components/card-no-list";
+@import "../components/card-color-dark";
+@import "../components/card-table";
+
+/* Arunika Search Domain */
+@import "../components/search-domain";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Banner */
+@import "../components/banner";
+
+/* Arunika Feature */
+@import "../components/feature";
+
+/* Arunika Spinner */
+@import "../components/spinner";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Header */
+@import "../components/header";
+
+/* Arunika Table */
+@import "../components/table";
+
+/* Arunika Comparations */
+@import "../components/comparations";
+
+@import "../components/navigation-step";
+@import "../components/navigation-step-mobile";
+
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+
+.as-nav-col__image {
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.active .as-nav-col__image {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+}
+
+.as-nav-col:before {
+    right: -51px;
+}
+
+.text-show-hide {
+    @include font-size('24-semibold');
+    color: var(--as-color-blue);
+}
+
+.email-hosting {
+    &__swiper-section {
+    position: relative;
+    text-align: center;
+
+    @media(min-width: 1200px) {
+        margin: 0 auto;
+        max-width: 1170px !important;
+    }
+
+    & .swiper-pagination {
+        margin-bottom: 10px;
+
+        @media(min-width: 767.98px) {
+            display: none;
+            }
+        }
+
+        &__dot {
+            background: transparent;
+            border: 2px solid var(--as-color-blue);
+            border-radius: 50%;
+            display: inline-block;
+            height: 16px;
+            margin-right: 5px;
+            width: 16px;
+
+            &:last-child {
+            margin-right: 0;
+            }
+
+            &:is(.swiper-pagination-bullet-active) {
+            background-color: var(--as-color-blue);
+            }
+        }
+
+        &__previous,
+        &__next {
+            align-items: center;
+            border: 1px solid var(--as-color-border);
+            border-radius: 8px;
+            display: flex;
+            height: 35px;
+            justify-content: center;
+            position: absolute;
+            width: 35px;
+
+            &:hover {
+            cursor: pointer;
+            }
+        }
+
+        &__previous {
+            left: 10px;
+        }
+
+        &__next {
+            right: 10px;
+        }
+    }
+
+    &__title {
+        text-transform: none;
+    }
+
+    &__card {
+        &:not(.as-card-base--best) {
+            margin-top: 50px;
+        }
+    }
+
+    &__feature-card {
+        &--horizontal {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            & img {
+                margin-bottom: 0;
+            }
+
+            & .as-card-color {
+                &__content-wrapper {
+                    margin-left: 1.5rem;
+                }
+
+                &__title {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    @media(min-width: 1200px) {
+        &__comparison {
+            & .comparations {
+                &__detail,
+                &__item {
+                    white-space: nowrap;
+                }
+
+                &__detail {
+                    &-tooltip {
+                        white-space: normal;
+                    }
+                }
+            }
+        }
+    }
+
+    &__button {
+        @media (max-width: 992px) {
+            &--full-mobile {
+                width: 100%;
+            }
+        }
+    }
+}

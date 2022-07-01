@@ -1,0 +1,81 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero";
+@import "../components/hero-center";
+
+/* Arunika Header */
+@import "../components/header";
+
+/* Arunika Section */
+@import "../components/section-white";
+@import "../components/section-soft-blue";
+
+/* Arunika Point */
+@import "../components/niagahoster-point";
+
+/* Arunika Headline Checklist */
+@import "../components/headline-checklist";
+
+/* Arunika Card Point */
+@import "../components/card-point";
+
+/* Arunika Step Card */
+
+@import "../helpers/transition";
+@import "../components/step-card";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Section Blue */
+@import "../components/section-center-blue";
+
+/* Owl Carousel */
+@import "../components/owl-carousel";
+
+/* Mixins */
+@import "../mixins/space";
+
+.poin-header {
+
+    .as-hero__title {
+        padding-right: 100px;
+    }
+
+    .as-hero__description {
+        font-size: clamp(1.125rem,5vw,1.125rem);
+        line-height: 2.125rem;
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .as-hero__title {
+            font-size: clamp(2rem,5vw,2rem);
+            padding: 0;
+        }
+
+        .as-hero__description {
+            font-size: clamp(1rem,5vw,1rem);
+        }
+    }
+}
+
+.poin-card {
+    height: auto;
+
+    & .as-card-point__image {
+        height: auto;
+        width: auto;
+    }
+
+   @include screen(mobile) {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+
+        & .as-card-point__title, & .as-card-point__description {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

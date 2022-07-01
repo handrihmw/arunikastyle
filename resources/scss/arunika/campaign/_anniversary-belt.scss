@@ -1,0 +1,95 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+
+.as-belt {
+  background-color: var(--as-color-blue-soft);
+  color: var(--as-color-primary);
+  padding: 3rem 1rem;
+
+  &--blue {
+    background: var(--as-color-gradient-blue);
+
+    &__image {
+     
+      height: auto;
+      max-width: 100%;
+    }
+  }
+
+  @include screen(desktopLarge) {
+    padding: 0;
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+
+    @include screen(desktopLarge) {
+      flex-direction: unset;
+      gap: 4rem;
+    }
+  }
+
+  &__title {
+    @include font-size('10');
+    margin-bottom: 1rem;
+  }
+
+  &__image {
+   
+    height: auto;
+    max-width: 100%;
+
+    @include screen(desktop) {
+      height: 130px;
+      width: 430px;
+    }
+  }
+
+  &__countdown {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+
+      &:not(:last-child) {
+        &::after {
+          content: ":";
+          font-size: 2rem;
+          font-weight: 700;
+          left: calc(100% + 20px);
+          position: absolute;
+          transform: translateY(-35%);
+        }
+      }
+
+      &--time {
+        @include font-size('32-semibold');
+      }
+
+      &--title {
+        @include font-size('12');
+      }
+    }
+  }
+
+  &__button {
+    border-radius: 2.5rem;
+    width: 100%;
+
+    @include screen(desktop) {
+      width: auto;
+    }
+  }
+}

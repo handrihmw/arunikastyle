@@ -1,0 +1,56 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-card-point {
+  background-color: var(--as-color-white);
+  border: none;
+  border-radius: 20px;
+  box-shadow: $as-shadow-black-1-soft;
+  height: 510px;
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+
+  @include screen(desktopLarge) {
+    padding: 2rem;
+  }
+
+  &:hover {
+    @extend %transition-2s;
+    box-shadow: $as-shadow-black-1;
+  }
+
+  &__image {
+   
+    height: auto;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 220px;
+    padding: 10px;
+    width: auto;
+  }
+
+  &__title {
+    @include font-size('18');
+    color: var(--as-color-primary);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 190px;
+  }
+
+  &__description {
+    @include font-size('14');
+    color: var(--as-color-secondary-two);
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 190px;
+  }
+}

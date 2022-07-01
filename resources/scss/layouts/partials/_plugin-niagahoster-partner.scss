@@ -1,0 +1,321 @@
+@use "../../mixins/breakpoints"as *;
+
+.hero {
+  &--plugin-nipa {
+    padding: 80px 0;
+  }
+
+  &__title--plugin-nipa {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  &__description--plugin-nipa {
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 50px;
+  }
+
+  &__image-wrapper--plugin-nipa {
+    text-align: center;
+  }
+
+  @include screen(desktop) {
+    &--plugin-nipa {
+      padding: 100px 0;
+    }
+
+    &__title--plugin-nipa {
+      font-size: 50px;
+      line-height: 64px;
+    }
+
+    &__description--plugin-nipa {
+      font-size: 20px;
+      line-height: 32px;
+    }
+
+    &__image--plugin-nipa {
+      top: -40px;
+    }
+  }
+}
+
+/* INTEGRATION PLUGIN */
+.integration-plugin {
+  padding: 65px 0;
+  text-align: center;
+
+  &__wrapper {
+    max-width: 833px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 30px;
+    line-height: 41px;
+    margin-bottom: 40px;
+    color: #3A4166;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 32px;
+    margin-bottom: 60px;
+    color: rgba(58, 65, 102, 0.7);
+  }
+
+  @include screen(desktop) {
+    padding: 100px 0 70px;
+
+    &__title {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    &__description {
+      font-size: 18px;
+    }
+  }
+
+  &__image {
+    &-wrapper {
+      align-self: center;
+    }
+  }
+
+  &__feature {
+    text-align: left;
+
+    &-items {
+      list-style: none;
+    }
+
+    &-item {
+      &:before {
+        content: "\f058";
+        /* FontAwesome Unicode */
+        font-family: Font Awesome\ 5 Free;
+        margin: 0 5px 0 -30px;
+        color: #007AFF;
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      &-title {
+        font-family: NunitoSansBold, sans-serif;
+        font-size: 18px;
+        margin-bottom: 24px;
+        margin-top: -21px;
+        color: #3A4166;
+      }
+
+      &-description {
+        font-size: 18px;
+        line-height: 32px;
+        opacity: .7;
+        margin-bottom: 30px;
+        color: rgba(58, 65, 102, 0.7);
+      }
+    }
+  }
+}
+
+/* GET AND USE PLUGIN */
+.get-use-plugin {
+  padding: 70px 0 65px;
+
+  &.get-plugin {
+    background: #F6FBFF;
+  }
+
+  @include screen(desktop) {
+    padding: 100px 0 95px;
+  }
+
+  &__wrapper {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 32px;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 30px;
+    line-height: 41px;
+    color: #3A4166;
+  }
+
+  &__description {
+    text-align: center;
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.005em;
+    color: rgba(58, 65, 102, 0.7);
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 61px;
+
+    @include screen(desktop) {
+      &__title {
+        font-size: 32px;
+        line-height: 48px;
+        margin-bottom: 24px;
+      }
+
+      &__description {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__step {
+    text-align: center;
+
+    &-image {
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 16px;
+      line-height: 24px;
+      max-width: 290px;
+      margin: auto;
+      margin-bottom: 45px;
+      color: #3A4166;
+
+      @include screen(desktop) {
+        font-size: 18px;
+        max-width: 280px;
+      }
+    }
+
+    &-text:last-child {
+      margin-bottom: unset;
+    }
+  }
+}
+
+/* NIPA REGISTRATION */
+.plugin-nipa-registration {
+  padding: 65px 0;
+  background: linear-gradient(81.71deg, #00349B -38.66%, rgba(0, 92, 255, 0.921875) 45.38%, #007AFF 125.99%);
+
+  &__form-wrapper {
+    margin-top: 40px;
+    margin-bottom: -371px;
+  }
+
+  &__wrapper {
+    color: #fff;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 30px;
+    line-height: 41px;
+    margin-bottom: 50px;
+  }
+
+  &__description {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  &__form-wrapper .form>.nh-btn {
+    margin: 20px 0;
+  }
+
+  @include screen(desktop) {
+    &__title {
+      font-size: 32px;
+      line-height: 48px;
+    }
+
+    &__description {
+      font-size: 18px;
+    }
+
+    &__form-wrapper {
+      margin-top: 0px;
+      margin-bottom: -197px;
+    }
+
+    &__wrapper {
+      padding: 65px 10px 65px 0;
+    }
+
+    &__form-wrapper .form>.nh-btn {
+      margin: 30px 0;
+    }
+  }
+}
+
+/*NIPA FAQ*/
+.plugin-nipa-faq {
+  margin-top: 270px;
+  padding: 100px 0;
+
+  @include screen(desktop) {
+    margin-top: unset;
+    padding: 235px 0 100px;
+  }
+
+  & .custom-faq__list-item-question {
+    line-height: 30px;
+  }
+}
+
+/* JOIN NIPA */
+.join-nipa {
+  padding: 40px 0;
+  background: linear-gradient(20.57deg, #00349B -38.66%, rgba(0, 92, 255, 0.921875) 45.38%, #007AFF 125.99%);
+
+  &__text-wrapper {
+    color: #fff;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 30px;
+    line-height: 41px;
+    margin-bottom: 40px;
+  }
+
+  &__btn-wrapper {
+    text-align: center;
+  }
+
+  @include screen(desktop) {
+    padding: 70px 0 65px;
+
+    &__text-wrapper {
+      text-align: left;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 48px;
+      margin-bottom: 0;
+    }
+
+    &__btn-wrapper {
+      text-align: right;
+    }
+
+    &__btn-wrapper>.nh-btn {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

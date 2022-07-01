@@ -1,0 +1,96 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-modal-event {
+  &__dialog {
+    width: auto;
+
+    @include screen(laptop) {
+      width: 472px;
+    }
+  }
+
+  &__watch {
+    height: auto;
+    width: auto;
+
+    @include screen(laptop) {
+      height: auto;
+      width: 800px;
+    }
+  }
+
+  &__header {
+    border-bottom: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top-left-radius: calc(1rem - 1px);
+    border-top-right-radius: calc(1rem - 1px);
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: var(--as-color-white);
+    background-clip: padding-box;
+    border: none;
+    border-radius: 1rem;
+    outline: 0;
+    text-align: start;
+  }
+
+  &__body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0 3.5rem;
+
+   @include screen(mobile) {
+      padding: 0 2rem;
+    }
+
+    &--watch {
+      padding: 1rem;
+    }
+  }
+
+  &__footer {
+    padding: 1.125rem 3.5rem;
+  }
+
+  &__image {
+    border-radius: 16px;
+    display: unset;
+    max-height: 100%;
+    width: unset;
+  }
+
+  &__iframe {
+    height: auto;
+    width: auto;
+  }
+
+  &__title {
+    @include font-size('24');
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    @include font-size('16');
+    color: var(--as-color-secondary-two);
+    margin-bottom: 1rem;
+    padding-right: 1rem;
+  }
+
+  &__button {
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+}

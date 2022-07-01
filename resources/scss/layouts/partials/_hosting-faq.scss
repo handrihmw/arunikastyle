@@ -1,0 +1,75 @@
+/*HOSTING FAQ*/
+.hosting-faq {
+  padding: 100px 0;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    text-align: center;
+  }
+
+  &__question-list {
+    max-width: 770px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__question-wrapper {
+    position: relative;
+    padding: 30px;
+    text-align: left;
+    border-bottom: 1px solid rgba(17, 26, 104, .15);
+
+
+    &--website {
+      padding-left: 0px !important;
+    }
+
+    &::before {
+      position: absolute;
+      content: url("../../images/2019/hosting-faq/icon-ellipse.svg");
+      top: 30px;
+      left: 0;
+    }
+
+    >a::after {
+      position: absolute;
+      content: url("../../images/2019/hosting-faq/icon-minus.svg");
+      top: 30px;
+      right: 0;
+    }
+
+    >a.collapsed::after {
+      position: absolute;
+      content: url("../../images/2019/hosting-faq/icon-plus.svg");
+      top: 30px;
+      right: 0;
+    }
+  }
+
+  &__question {
+    display: block;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 18px;
+    font-weight: unset;
+    text-align: left;
+    color: #3A4166;
+
+    &--website {
+      padding-left: 30px;
+    }
+
+    &:hover {
+      color: #1b1e21;
+    }
+  }
+
+  &__answer {
+    font-size: 16px;
+    opacity: .7;
+    line-height: 2em;
+    text-align: left;
+    margin-top: 20px;
+  }
+}

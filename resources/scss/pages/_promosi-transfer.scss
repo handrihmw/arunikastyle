@@ -1,0 +1,449 @@
+@import "../pages";
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+.hero {
+  @include screen(laptop) {
+    padding-top: 109px
+  }
+
+  padding-top: 80px;
+}
+
+.pt-header {
+  color: #fff;
+  padding-right: 20px;
+  padding-left: 20px;
+
+  @include screen(mobile) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__title,
+  &__subtitle {
+    font-family: 'NunitoSansBold', sans-serif;
+  }
+
+  &__title {
+    font-size: 33px;
+    line-height: 45px;
+    margin-bottom: 8px;
+  }
+
+  &__subtitle {
+    font-size: 50px;
+    line-height: 68px;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 20px;
+    line-height: 32px;
+    /* or 160% */
+    letter-spacing: 0.05em;
+    margin-bottom: 50px;
+  }
+
+  &__btn {
+    margin-bottom: 40px;
+
+    @include screen(laptop) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.pt-langkah {
+  background-color: #fff;
+  text-align: center;
+
+  @include screen(mobile) {
+    padding-top: 120px;
+    padding-bottom: 65px;
+  }
+
+  padding:40px 20px 60px 20px;
+
+  &__item {
+    @include screen(laptop) {
+      margin-bottom: inherit;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    line-height: 45px;
+    color: #3A4166;
+    margin-bottom: 120px;
+  }
+
+  &__img {
+    &--arrow {
+      @include screen(laptop) {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: url('../images/2019/promosi-transfer/arrow.svg');
+          top: 50%;
+        }
+      }
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 20px;
+    line-height: 200%;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    color: rgba(58, 65, 102, 0.7);
+  }
+
+}
+
+.pt-ribbon-top {
+  height: 100vh;
+}
+
+.pt-ribbon-bottom {
+  background: #f6fbff;
+  height: 70vh;
+}
+
+.pt-transfer {
+  background: linear-gradient(47.79deg, #00349B -38.24%, rgba(0, 92, 255, 0.921875) 34.47%, #007AFF 104.22%);
+  margin-top: -100vh;
+  margin-bottom: -70vh;
+  padding-top: 40px;
+
+  @include screen(laptop) {
+    padding-top: 80px
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    line-height: 45px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 40px;
+  }
+
+  &__form {
+    background: #fff;
+    box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.2);
+    border-radius: 8px;
+
+    @include screen(laptop) {
+      padding: 60px 142px;
+    }
+
+    padding: 40px 20px;
+
+    &--info {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 20px;
+      line-height: 27px;
+      color: #3A4166;
+      margin-bottom: 30px;
+    }
+
+    .select {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 18px;
+      line-height: 25px;
+      color: rgba(58, 65, 102, 0.7);
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid rgba(17, 26, 104, 0.3);
+
+      @include screen(laptop) {
+        width: 80%;
+      }
+    }
+
+    .styledSelect {
+      box-shadow: none;
+    }
+
+    .control-label {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      color: #3A4166;
+    }
+
+    .form-group {
+      margin-bottom: 40px;
+
+      .col-sm-8 {
+        width: 100% !important;
+
+        @include screen(laptop) {
+          width: 80% !important;
+          flex: inherit;
+          max-width: none;
+        }
+
+        .select {
+          width: 100%
+        }
+      }
+    }
+
+    .form-control {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 18px;
+      line-height: 25px;
+      color: rgba(58, 65, 102, 0.7);
+      border: 0;
+      border-radius: 0;
+      border-bottom: 2px solid rgba(17, 26, 104, 0.3);
+      padding: 0;
+    }
+
+    input[type="text"]:focus {
+      outline: 0px !important;
+      -webkit-appearance: none;
+      box-shadow: none !important;
+    }
+
+    &--submit {
+      border: 0;
+      display: block;
+      margin: 0 auto;
+    }
+
+
+    .options li {
+      height: 40px;
+    }
+  }
+}
+
+.transfer-modal {
+  .modal-content {
+    border-radius: 20px;
+  }
+
+  .modal-body {
+    text-align: center;
+
+    img {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    h4 {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 33px;
+      line-height: 45px;
+      text-align: center;
+      color: #3A4166;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 16px;
+      line-height: 177.32%;
+      text-align: center;
+      letter-spacing: 0.05em;
+      color: #3A4166;
+      margin-bottom: 24px;
+    }
+
+    .nh-btn {
+      display: inline-block;
+      margin-bottom: 40px
+    }
+  }
+}
+
+.pt-review {
+  background-color: #f6fbff;
+
+  @include screen(mobile) {
+    padding: 120px inherit 120px inherit;
+  }
+
+  padding: 68px 20px 40px 20px;
+
+  .card {
+    min-height: 388.95px;
+    box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.15);
+    border-radius: 8px;
+    border: 0;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .card-body {
+    padding: 32px 22px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    line-height: 45px;
+    color: #3A4166;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 18px;
+    line-height: 200%;
+    text-align: center;
+    color: rgba(58, 65, 102, 0.7);
+    margin-bottom: 50px;
+  }
+
+  &__profile {
+    width: 64px;
+    height: 64px;
+    border-radius: 64px;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: #3A4166;
+  }
+
+  &__job {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 16px;
+    line-height: 28px;
+    text-align: center;
+    color: #C4C4C4;
+    margin-bottom: 12px
+  }
+
+  &__web {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 16px;
+    line-height: 177.32%;
+    text-align: center;
+    color: #007AFF;
+    margin-bottom: 28px;
+  }
+
+  &__comment {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 14px;
+    line-height: 177.32%;
+    text-align: center;
+    color: rgba(58, 65, 102, 0.7);
+  }
+}
+
+.pt-features {
+  background-color: #fff;
+  text-align: center;
+  padding: 48px 20px 40px 20px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  @include screen(mobile) {
+    padding: 80px 0 100px 0;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    line-height: 45px;
+    color: #3A4166;
+    margin-bottom: 80px;
+  }
+
+  &__item {
+    margin-bottom: 57px;
+    text-align: left;
+
+    &--img {
+      margin-bottom: 30px;
+    }
+
+    &--title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 18px;
+      line-height: 32px;
+      color: #3A4166;
+      margin-bottom: 23px;
+    }
+
+    &--description {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 14px;
+      line-height: 177.32%;
+      color: rgba(58, 65, 102, 0.7);
+    }
+  }
+}
+
+.pt-garansi {
+  background: linear-gradient(20.57deg, #00349B -38.66%, rgba(0, 92, 255, 0.921875) 45.38%, #007AFF 125.99%);
+  padding: 60px 32px 52px;
+
+  @include screen(mobile) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    line-height: 45px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    color: #fff;
+  }
+
+  &__btn {
+    margin-top: 30px;
+
+    @include screen(laptop) {
+      margin-top: inherit;
+    }
+
+    text-align: center;
+  }
+}

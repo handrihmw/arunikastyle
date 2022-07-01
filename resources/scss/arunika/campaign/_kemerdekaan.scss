@@ -1,0 +1,88 @@
+@import "../helpers/bootstrap/bootstrap.scss";
+@import "../mixins/all";
+@import "../helpers/all";
+@import "../components/hero";
+@import "../components/belt";
+
+$bg-kemerdekaan: linear-gradient(180deg, #bb1e3e 0%, #9c0f2c 100%);
+
+// Header Custom
+.as-header {
+  background-image: $bg-kemerdekaan;
+}
+
+// Navbar Custom
+.as-navbar {
+  padding: .8rem;
+
+ @include screen(desktop) {
+    padding: 30px 50px;
+  }
+}
+
+// Hero Custom
+.as-hero__wrapper {
+  margin: 0;
+}
+
+.as-hero__image {
+  margin-top: 60px;
+  width: 100%;
+
+ @include screen(desktop) {
+    width: 120%;
+  }
+}
+
+.as-hero__description {
+  margin-bottom: 1rem;
+}
+
+.as-hero__description-md {
+  font-size: clamp(1rem, 5vw, 1.125rem);
+  letter-spacing: 0.005em;
+  line-height: 2.188rem;
+  padding-right: 1rem;
+}
+
+// Banner Custom
+.as-banner {
+  background: $bg-kemerdekaan;
+}
+
+// Section Soft Custom
+.as-section-center-blue {
+  align-items: center;
+  background-blend-mode: multiply;
+  background-image: url("../images/2021/arunika/banner/circle-red.svg"), $bg-kemerdekaan;
+}
+
+// Belt Custom
+.campaign-belt__wrapper {
+  background-image: $bg-kemerdekaan;
+}
+
+// Website Instan Badge
+.as-content-badge {
+  background: #a21230;
+  max-height: 84px;
+  max-width: 110px;
+  padding: 16px 16px;
+  position: absolute;
+
+  &__discount {
+    color: #ffffff;
+    font-size: clamp(0.75rem, 5vw, 0.75rem);
+    letter-spacing: 0.005em;
+    line-height: 0.75rem;
+  }
+
+  &__percentage {
+    color: #ffc721;
+    font-size: clamp(1.25rem, 5vw, 2.25rem);
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 0.005em;
+    line-height: 2.25rem;
+  }
+}

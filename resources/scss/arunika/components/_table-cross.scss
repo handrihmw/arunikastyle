@@ -1,0 +1,156 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-table-cross {
+  background: var(--as-color-white);
+  border: 1px solid var(--as-color-gray);
+  border-radius: 16px;
+  box-shadow: 0px 4px 24px rgba(0, 87, 178, 0.08);
+  margin-top: 48px;
+  overflow: hidden;
+  padding: 32px 24px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 32px 14px;
+  }
+
+  @include screen(desktop) {
+    margin-top: 60px;
+  }
+
+  &__section {
+    padding: 32px 0;
+
+    @include screen(desktop) {
+      padding: 60px 20px;
+    }
+  }
+
+  &__head-first {
+    display: none;
+    width: 90%;
+
+    @include screen(desktop) {
+      display: block;
+      width: 40%;
+    }
+  }
+
+  &__head {
+    padding: 0 12px;
+    text-align: center;
+
+    &--title {
+      @include font-size('20-semibold');
+      padding: 12px 0 12px 32px;
+
+      @include screen(desktop) {
+        min-width: 200px;
+        padding: 12px 16px;
+      }
+    }
+
+    &.active div {
+      background: var(--as-color-blue);
+      border-radius: 10px 10px 0px 0px;
+      color: var(--as-color-white);
+
+      @media (max-width: 768px) {
+        background: unset;
+        color: var(--as-color-secondary);
+        max-width: 200px;
+        text-align: left;
+      }
+    }
+
+    &:not(.active) {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
+
+  &__body-first {
+    &--wrapper {
+      display: flex;
+    }
+
+    &--icon {
+      cursor: pointer;
+      margin-right: 14px;
+      position: relative;
+
+      &:hover .tooltip {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+      }
+    }
+
+    &--text {
+      @include font-size('16');
+      color: var(--as-color-secondary);
+    }
+  }
+
+  &__body {
+    padding: 0 12px;
+    text-align: center;
+    width: 150px;
+
+    @include screen(desktop) {
+      width: auto;
+    }
+
+    &--content {
+      @include font-size('12');
+      border-bottom: 1px solid rgba(18, 18, 18, 0.12);
+      color: var(--as-color-secondary);
+      min-width: 50px;
+      padding: 24px 4px;
+
+      @include screen(desktop) {
+        font-size: 1rem;
+      }
+    }
+
+    &.active div {
+      background: var(--as-color-soft);
+      border-bottom: 1px solid var(--as-color-blue);
+
+      @media (max-width: 768px) {
+        padding: 22px 0;
+      }
+    }
+
+    &:not(.active) {
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
+
+  &__arrow {
+    &--left {
+      position: absolute;
+      top: 55px;
+      transform: scaleX(-1);
+
+      @include screen(desktop) {
+        display: none;
+      }
+    }
+
+    &--right {
+      position: absolute;
+      right: 14px;
+      top: 55px;
+
+      @include screen(desktop) {
+        display: none;
+      }
+    }
+  }
+}

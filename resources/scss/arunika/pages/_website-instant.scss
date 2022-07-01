@@ -1,0 +1,86 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero";
+
+/* Arunika Section */
+@import "../components/section-domain";
+@import "../components/section-white";
+@import "../components/section-center-blue";
+@import "../components/section-soft-blue";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-feature";
+@import "../components/card-color";
+@import "../components/card-list";
+@import "../components/card-icon";
+@import "../components/card-image";
+@import "../components/card-slider";
+@import "../components/card-website";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Header */
+@import "../components/header";
+@import "../helpers/background";
+@import "../components/table-winner";
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+@import "../components/button-sosmed";
+@import "../components//card-select";
+@import "../components/card-icon";
+
+/* Arunika Testimoni Tab */
+@import "../components/tab-testimoni";
+@import "../components/navigation-step";
+@import "../components/navigation-step-mobile";
+
+/* Arunika Search Website */
+@import "../components/search-website";
+@import "../components/modal-website";
+@import "../components/modal-website-mobile";
+@import "../components/banner";
+
+.website-instant {
+    &__card-image {
+        &--item {
+            flex-direction: column;
+            
+            @include screen(desktop) {
+                flex-direction: row;
+            }
+
+            .card-image__item--icon {
+                height: 69px;
+                margin: 0;
+                padding: 5px;
+                width: 65px;
+                
+                img {
+                    width: 100%;
+                }
+
+                @include screen(desktop) {
+                    height: auto;
+                    margin: auto 20px;
+                    padding: 20px;
+                    width: auto;
+
+                    img {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slick-disabled {
+    opacity: .08;
+    pointer-events: none;
+}

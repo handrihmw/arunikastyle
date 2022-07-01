@@ -1,0 +1,509 @@
+@import "../app";
+
+/* Owl Carousel */
+@import "../components/owl-carousel";
+
+/* Arunika Card */
+@import "../components/card";
+
+/* Arunika Feature */
+@import "../components/feature";
+
+/* Arunika Hero */
+@import "../components/hero";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Header */
+@import "../components/header";
+
+/* Arunika Section Blue */
+@import "../components/section-center-blue";
+
+/* Arunika Card Icon */
+@import "../components/card-icon";
+@import "../components/card-color";
+
+/* Arunika Modal */
+@import "../components/modal";
+
+/* Arunika Banner */
+@import "../components/banner";
+
+@import "../components/navigation-step";
+@import "../components/navigation-step-mobile";
+
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+
+@import "../components/tooltip";
+
+.as-hero__title {
+  font-size: clamp(1.75rem,4vw,3.5rem);
+  line-height: clamp(2.25rem, 5vw, 4rem);
+}
+
+.cloud-hosting {
+  &__title {
+    @include font-size('40');
+    margin: 32px 0;
+
+    @media screen and (max-width: 768px) {
+      margin: 16px 0px;
+      padding: 0;
+    }
+  }
+
+  &__subtitle {
+    @include font-size('16');
+    color: var(--as-color-secondary);
+
+    @media screen and (max-width: 768px) {
+      margin: 16px 0px;
+      padding: 0;
+    }
+  }
+
+  &__feature {
+    position: relative;
+
+    &-card {
+      cursor: pointer;
+      border-top: 2px solid #007aff;
+      box-shadow: 0px 8px 2rem rgba(0, 87, 178, 0.16);
+      box-sizing: border-box;
+      border-radius: 0.75rem;
+      display: flex;
+      padding: 1.5rem;
+      text-align: left;
+
+      @include screen(desktopMax) {
+        flex-direction: column;
+      }
+
+      &.collapsed {
+        border: 1px solid var(--as-color-divider);
+        box-shadow: unset;
+      }
+    }
+
+    &-icon {
+      background: var(--as-color-blue-light);
+      border-radius: 0.75rem;
+      max-height: 5rem;
+      padding: 0.75rem;
+
+      @include screen(desktopMax) {
+        max-width: 5rem
+      }
+    }
+
+    &-title {
+      @include font-size('20-semibold');
+    }
+
+    &-description {
+      @include font-size('16');
+      color: var(--as-color-secondary-two);
+      margin-top: 1.5rem;
+
+      @include screen(desktopMax) {
+        margin-top: 0.75rem;
+      }
+    }
+
+    &-banner {
+      display: none;
+      position: absolute;
+      top: 25%;
+      right: 0px;
+
+      @include screen(desktop) {
+        display: block;
+
+        img {
+          width: 31.25rem;
+        }
+      }
+
+      @include screen(desktopLarge) {
+        img {
+          width: 37.5rem;
+        }
+      }
+
+      @include screen(desktopExtra) {
+        img {
+          width: unset;
+        }
+      }
+    }
+  }
+}
+
+.cloud-hosting-items {
+  &__descriptions {
+    padding: 30px 100px;
+    text-align: center;
+  }
+
+  &__subtitle {
+    padding: 0 30px;
+  }
+
+  &__title {
+    padding: 10px 150px;
+  }
+
+  .as-card__card {
+    min-height: auto;
+  }
+
+  .as-card-base--best {
+    padding: 75px 15px 35px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .product {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__descriptions {
+      padding: 0;
+      text-align: left;
+    }
+
+    &__title {
+      padding: 0;
+    }
+
+    .as-card-base {
+      width: 255px;
+    }
+
+    &__subtitle {
+      margin-bottom: 100px;
+      padding: 0 1.5rem 0 0;
+    }
+  }
+}
+
+.cloud-hosting-use {
+
+  .cloud-hosting__title {
+    padding: 0 120px;
+  }
+
+  .cloud-hosting__subtitle {
+    padding: 30px 160px;
+  }
+
+  .as-card-base {
+    box-shadow: none;
+    min-height: auto;
+    width: 100%;
+  }
+
+  .as-card-base__title {
+    font-size: clamp(1.125rem, 5vw, 1.125rem);
+    text-transform: none;
+  }
+
+  .php-8 {
+    margin-top: 2.2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+
+    .cloud-hosting__title,
+    .cloud-hosting__subtitle,
+    .as-card-feature {
+      margin-top: 30px;
+      padding: 0;
+    }
+
+    .as-card-base {
+      padding: 0;
+    }
+
+    &__subtitle {
+      margin-bottom: 50px;
+    }
+
+  }
+}
+
+.cloud-hosting-what {
+  &__description {
+    text-align: left;
+    padding-right: 1.5rem;
+  }
+
+  .cloud-hosting__title {
+    text-align: left;
+  }
+
+  @media screen and (max-width: 768px) {
+    .as-hero__btn {
+      width: 70%;
+    }
+
+    &__description {
+      padding: 0;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .as-btn--md {
+      padding: 6px 18px;
+    }
+  }
+}
+
+.cloud-hosting-why {
+  &__title {
+    text-align: center;
+  }
+
+  &__subtitle {
+    @include font-size('18');
+    margin: 24px 0;
+    padding: 0 180px;
+    padding-bottom: 50px;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+  }
+
+  .hori-tabs {
+    text-align: left;
+
+    .navi-menu__title {
+      font-size: .875rem;
+    }
+  }
+
+  .navi-content {
+    grid-template-columns: auto auto auto;
+  }
+
+  .hori-tabs__link,
+  .verti-tabs__link,
+  .navi-mobile__wrapper {
+    box-shadow: none;
+    mix-blend-mode: multiply;
+  }
+
+  .hori-tabs__link.active,
+  .verti-tabs__link.active {
+    box-shadow: 0 8px 32px #0057b229;
+    mix-blend-mode: normal;
+  }
+
+  .navi-mobile__panel {
+    a[aria-expanded=true] {
+      box-shadow: 0 8px 32px #0057b229;
+      mix-blend-mode: normal;
+    }
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .dekstop {
+      display: none;
+    }
+
+    .mobile {
+      display: block;
+    }
+
+    .navi-content {
+      grid-template-columns: auto
+    }
+
+    &__title,
+    &__subtitle {
+      text-align: left;
+    }
+  }
+}
+
+.cloud-hosting-faq {
+  text-align: left;
+
+  .as-accordion__package-list--description {
+    @include font-size('16');
+  }
+}
+
+.cloud-hosting-feature {
+  .card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px #0057b229;
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 20px;
+    }
+  }
+
+  .as-card__feature {
+    margin: 0;
+  }
+
+  .as-card__feature-list {
+    text-align: left;
+  }
+}
+
+.navi-mobile__wrapper {
+  padding: 1rem;
+}
+
+#package {
+  .as-card-base__title {
+    text-transform: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .cloud-hosting-why .hori-tabs .navi-menu__title {
+    font-size: .685rem;
+  }
+}
+
+.as-header {
+  &--no-min-height {
+    min-height: unset;
+  }
+}
+
+.cloud-hosting-bizid {
+  a {
+    color: #007aff !important;
+    text-decoration: underline !important;
+  }
+
+  &__number {
+    @include font-size('20-semibold');
+    align-items: center;
+    background: var(--as-color-orange);
+    box-shadow: 0px 8px 10px #0057b229;
+    border-radius: 50px;
+    color: var(--as-color-white);
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+  }
+
+  &__item {
+    &-title {
+      min-height: 52px;
+    }
+  }
+
+  &__modal {
+    &-header {
+      padding: 32px;
+    }
+
+    &-body {
+      padding: 0px 72px 80px;
+    }
+
+    &-title {
+      @include font-size('24-semibold');
+      color: var(--as-color-primary);
+    }
+
+    &-list,
+    li {
+      @include font-size('16');
+      color: var(--as-color-secondary-two);
+      margin-top: 16px;
+    }
+  }
+}
+
+.as-banner__sub-title {
+  color: var(--as-color-blue-soft);
+}
+
+.as-card-color__description {
+  @include font-size('16');
+  color: var(--as-color-gray);
+}
+
+@include screen(mobile) {
+  .as-card-base__more {
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+.as-card-base__feature--icon:before {
+  content: url("https://niagaspace.sgp1.cdn.digitaloceanspaces.com/www/assets/images/2021/arunika/ico/ask.svg");
+}
+
+.as-tooltip__cloud-hosting {
+  transform: translate(-51.5%, -6%);
+}
+
+.as-tooltip__info.as-tooltip__info--auto{
+  left: -248px;
+  top: 20%;
+  transform: translateY(-50%);
+
+  &::after {
+    border: 5px solid transparent;
+    border-left-color: #22273c;
+    content: "";
+    left: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @include screen(desktop) {
+    left:50%;
+    top:100%;
+    transform:translateX(-50%);
+
+    &::after {
+      border-bottom:10px solid #22273c;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      content: "";
+      display: block;
+      left: 50%;
+      margin-left: -12px;
+      position: absolute;
+      top: -9px;
+    }
+  }
+}
+
+.optimize {
+  .navi-content-item__title {
+    @include font-size('16-semibold');
+  }
+  
+  .navi-content-item__description {
+    @include font-size('16');
+    color: var(--as-color-gray);
+  }
+}

@@ -1,0 +1,91 @@
+@use '../mixins/breakpoint' as *;
+
+.as-navigation-tab {
+  background: #f5faff;
+  border: none;
+  border-radius: 48px;
+  margin-bottom: 30px;
+  margin-top: 60px;
+  padding: 10px 8px;
+
+ @include screen(mobile) {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    &>.nav-item {
+      padding-bottom: 20px;
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    background: transparent;
+    border: none;
+    border-radius: 16px;
+    box-shadow: none;
+    justify-content: center;
+    margin: 0;
+
+    &>.nav-item {
+      padding-bottom: 20px;
+    }
+  }
+
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+    margin: 0 100px;
+
+    &>.nav-item {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__link {
+    background-color: transparent;
+    border-radius: 48px;
+    color: #535961;
+    display: block;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1rem, 5vw, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.002em;
+    line-height: 2rem;
+    margin: 0 0.5rem;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background: #f5faff;
+      mix-blend-mode: multiply;
+      text-decoration: none;
+    }
+
+   @include screen(mobile) {
+      background: #f5faff;
+      line-height: normal;
+      padding: 1rem;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      background: #f5faff;
+      padding: 0.5rem 1.5rem;
+    }
+
+    @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (orientation: portrait) {
+      background: #f5faff;
+    }
+
+    & span {
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.as-navigation-tab__link.active {
+  background-color: #ff992c;
+  box-shadow: 0px 8px 8px rgba(255, 176, 77, 0.32);
+  color: #fff;
+}

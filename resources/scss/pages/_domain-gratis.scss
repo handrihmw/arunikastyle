@@ -1,0 +1,389 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+.domain-gratis-header {
+  padding: 50px 10px;
+
+  @include screen(desktop) {
+    padding: 100px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 50px;
+    line-height: 68px;
+    color: #fff;
+
+    @include screen(desktop) {
+      text-align: center;
+      font-size: 50px;
+      line-height: 50px;
+    }
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    color: #fff;
+    padding: 20px 0;
+
+    @include screen(desktop) {
+      text-align: center;
+      margin: 60px 0;
+    }
+  }
+
+  &__button-position {
+    text-align: center;
+    padding: 50px 0 0;
+
+    @include screen(desktop) {
+      padding: 30px 0 0;
+    }
+  }
+}
+
+// JOIN NIAGAHOSTER PARTNER
+.gabung-partner {
+
+  &__button-position {
+    text-align: center;
+    padding: 0 0 30px;
+
+    @include screen(desktop) {
+      padding: 30px 0 0;
+    }
+  }
+
+  &__dropdown {
+    z-index: 1;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    text-align: center;
+
+    color: #3A4166;
+  }
+
+  &__description {
+    margin: 22px 0px;
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20.2866px;
+    line-height: 200%;
+    /* or 41px */
+
+    text-align: center;
+
+    color: rgba(58, 65, 102, 0.7);
+
+    @include screen(desktop) {
+      margin: 60px 0 40px;
+    }
+  }
+
+  &__link {
+    color: #007AFF;
+  }
+
+  background: #f6fbff;
+  padding: 30px 0;
+
+  @include screen(desktop) {
+    padding: 100px 0;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 30px;
+    padding: 10px 0;
+
+    @include screen(desktop) {
+      padding: 0 0 10px 0;
+    }
+  }
+
+  &__reasons {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0 !important;
+
+    @include screen(desktop) {
+      position: sticky;
+      top: 140px;
+    }
+
+    &-item {
+      position: relative;
+      padding: 30px 15px 30px 72px;
+      border-radius: 4px;
+      background: #fff;
+      height: 86px;
+      transition: box-shadow .6s;
+      margin-top: 40px;
+
+      @include screen(desktop) {
+        padding: 30px 20px 30px 94px;
+      }
+
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+
+      &-icon {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+
+        @include screen(desktop) {
+          left: 30px;
+        }
+      }
+
+      &-title {
+        font-size: 18px;
+      }
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(17, 26, 104, .15);
+        transition: box-shadow .6s;
+      }
+
+      &--selected {
+        box-shadow: 0 6px 20px rgba(17, 26, 104, .15);
+        -webkit-filter: grayscale(0%) !important;
+        /* Safari 6.0 - 9.0 */
+        filter: grayscale(0%) !important;
+        opacity: 1 !important;
+      }
+
+      &--disabled {
+        pointer-events: none;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__reason-details {
+    background: #fff;
+    box-shadow: 0px 6px 10px rgba(17, 26, 104, 0.1);
+    border-radius: 8px;
+    margin: 30px 10px;
+    padding: 0 20px 10px;
+
+    @include screen(desktop) {
+      margin: 40px 0 0;
+      padding: 0px 40px 40px;
+    }
+
+    &-like-btn {
+      display: inline-flex;
+    }
+
+    &-warning {
+      padding: 10px 20px 0;
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      text-align: center;
+      font-size: 14px;
+      color: #EE4957;
+
+      @include screen(desktop) {
+        padding-top: 30px;
+      }
+    }
+
+    &-input {
+      margin-top: 10px;
+      outline: 0 !important;
+      border-width: 0 0 2px !important;
+      width: 90%;
+      left: 15px;
+      padding: 0;
+
+      @include screen(desktop) {
+        width: 60%;
+        left: 15px;
+        margin-right: 20px;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      opacity: .7;
+      padding: 30px 0;
+      color: #3A4166;
+    }
+
+    &-steps {
+      color: #3a4166;
+      font-family: "NunitoSansRegular", sans-serif;
+      font-size: clamp(0.875rem, 4vw, 1rem);
+      letter-spacing: 0.02em;
+      line-height: 1.5rem;
+      opacity: 0.7;
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-size: 16px;
+      padding: 30px 0 5px;
+      color: #3A4166;
+
+      @include screen(desktop) {
+        padding: 50px 0 10px;
+      }
+    }
+
+    &-item {
+      margin-top: 15px;
+
+      &-title {
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: 18px;
+        font-weight: unset;
+        margin-top: 20px;
+      }
+
+      &-description {
+        font-size: 18px;
+        color: #3A4166;
+        opacity: .7;
+      }
+    }
+  }
+}
+
+// WHY CHOSE NIAGAHOSTER
+.kenapa-niaga {
+  padding: 32px 20px;
+  background: #F6FBFF;
+
+  @include screen(desktop) {
+    padding: 80px 0 100px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 32px;
+    line-height: 45px;
+    text-align: center;
+
+    color: #3A4166;
+  }
+
+  &__feature {
+    margin-top: 30px;
+
+    @include screen(desktop) {
+      margin-top: 80px;
+    }
+
+    &-image {
+      width: 60px;
+      height: 60px;
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: bolder;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    &-description {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 14px;
+      color: rgba(58, 65, 102, .7);
+      margin-top: 20px;
+    }
+  }
+}
+
+// NIAGAHOSTER RESPON
+.domain-gratis-modal {
+  &__modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background: #F6FBFF;
+    border-radius: 20px;
+    background-clip: padding-box;
+    padding: 40px 20px 30px;
+
+    @include screen(desktop) {
+      padding: 39px 20px 40px;
+    }
+  }
+
+  &__modal-line {
+    border-bottom: unset !important;
+  }
+
+  &__button-close {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    margin: -20px 0 0;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+    margin: 22px 0 12px;
+
+    @include screen(desktop) {
+      font-size: 33px;
+      margin: 25px 0 16px;
+    }
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 14px;
+    color: #3A4166;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @include screen(desktop) {
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__button-position {
+    text-align: center;
+  }
+}

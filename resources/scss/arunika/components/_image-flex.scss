@@ -1,0 +1,29 @@
+@use '../mixins/breakpoint' as *;
+
+.as-image-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 4.666%;
+
+ @include screen(desktop) {
+    column-gap: 5.666%;
+  }
+
+  &__item {
+    flex: 0 0 30%;
+    max-width: 30%;
+    margin-bottom: 42px;
+
+   @include screen(desktop) {
+      flex: 0 0 15%;
+      max-width: 15%;
+      filter: grayscale(100%);
+
+      &:hover {
+        filter: none;
+      }
+    }
+  }
+}

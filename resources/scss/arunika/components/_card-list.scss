@@ -1,0 +1,106 @@
+@use '../mixins/breakpoint' as *;
+@use "../helpers/card";
+
+.as-card-list {
+  @extend %card-placeholder;
+  width: 350px;
+
+  @media only screen and (max-width: 320px) {
+    width: 270px !important;
+  }
+
+  @media only screen and (min-width: 321px) and (max-width: 375px) {
+    width: 320px !important;
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    width: 300px;
+  }
+
+  &--best {
+    @extend %card-best-placeholder;
+  }
+
+  &__wrapper {
+    padding-top: 0 !important;
+  }
+
+  &__wrapper-top {
+    padding-top: 3rem;
+  }
+
+  &__title {
+    @extend %card-title-placeholder;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+
+    &--normal {
+      text-transform: none !important;
+    }
+  }
+
+  &__description {
+    @extend %card-description-placeholder;
+  }
+
+  &__description-center {
+    @extend %card-description-center-placeholder;
+  }
+
+  &__best-seller {
+    @extend %card-bestseller-placeholder;
+  }
+
+  &__label {
+    @extend %card-label-placeholder;
+
+    &--green {
+      @extend %card-label-green-placeholder;
+    }
+
+    &--orange {
+      @extend %card-label-orange-placeholder;
+    }
+  }
+
+  &__price {
+    @extend %card-price-placeholder;
+  }
+
+  &__button {
+    @extend %card-button-placeholder;
+    padding: 8px 60px;
+  }
+
+  &__ribbon {
+    @extend %card-ribbon-placeholder;
+
+    &--green {
+      @extend %card-ribbon-green-placeholder;
+    }
+
+    &--red {
+      @extend %card-ribbon-red-placeholder;
+    }
+  }
+
+  &__discount {
+    @extend %card-discount-placeholder;
+  }
+
+  &__feature {
+    @extend %card-feature-placeholder;
+
+    &--list {
+      @extend %card-feature-list-placeholder;
+    }
+
+    &--icon {
+      @extend %card-feature-icon-placeholder;
+    }
+  }
+
+  &__more {
+    @extend %card-more-placeholder;
+  }
+}

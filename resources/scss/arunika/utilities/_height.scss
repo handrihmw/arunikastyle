@@ -1,0 +1,9 @@
+$-sizes: 1500;
+
+@for $i from 1 through $-sizes {
+  $asheight: $i * 1px;
+
+  .as-height-#{$i} {
+    height: $asheight;
+  }
+}

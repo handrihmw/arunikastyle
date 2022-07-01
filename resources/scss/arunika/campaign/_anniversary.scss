@@ -1,0 +1,55 @@
+
+@use "../../mixins/breakpoints" as *;
+
+.as-header {
+  background-image: none;
+  background-color: var(--as-color-blue-soft);
+}
+
+.as-header--md {
+  min-height: 700px;
+}
+
+.as-hero__title,
+.as-hero__title--md,
+.as-hero__title--lg,
+.as-navbar__dropdown-button,
+.as-navbar__button,
+.as-counter__time {
+  color: var(--as-color-primary);
+}
+
+.as-hero__description,
+.as-hero__description--md {
+  color: var(--as-color-secondary-two);
+}
+
+.as-header__image {
+  margin-top: -2rem;
+
+  @include screen(desktop) {
+    margin-top: -8rem;
+  }
+}
+
+.as-counter__item {
+  background-color: var(--as-color-blue-soft);
+  color: var(--as-color-blue-dark);
+}
+
+.as-counter__colon {
+  &::after {
+    color: var(--as-color-secondary-two);
+  }
+}
+
+.as-dropdown-menu {
+  &::after {
+    background: var(--as-color-primary);
+  }
+}
+
+.as-navbar__button {
+  background: transparent;
+  border: 1px solid var(--as-color-primary);
+}

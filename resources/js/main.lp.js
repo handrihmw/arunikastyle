@@ -1,0 +1,5 @@
+import('./jquery.js')
+import('./bootstrap.js')
+import('./swiper.js')
+import('./axios.js')
+import('./lazy.js')

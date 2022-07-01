@@ -1,0 +1,8 @@
+@use '../mixins/breakpoint' as *;
+
+.as-header-soft {
+  background-color: var(--as-color-soft);
+  color: var(--as-color-primary);
+  height: auto;
+  position: relative;
+}

@@ -1,0 +1,25 @@
+.as-link {
+  color: var(--as-color-blue);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--as-color-blue-dark);
+    text-decoration: underline;
+  }
+}
+
+.as-link-red {
+  color: var(--as-color-red);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--as-color-red-dark);
+  }
+}
+
+.as-link-white {
+  color: var(--as-color-white);
+  text-decoration: underline;
+}

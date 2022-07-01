@@ -1,0 +1,70 @@
+@use "../../mixins/breakpoints"as *;
+
+.content {
+  padding: 40px 10px;
+
+  @include screen(desktop) {
+    padding: 100px 0 60px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    text-align: center;
+
+    color: #3A4166;
+  }
+
+  &__description {
+    margin: 32px 0px;
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+
+    text-align: center;
+
+    color: rgba(58, 65, 102, 0.7);
+  }
+
+  &__table {
+    width: 100%;
+    max-width: 600px;
+    margin: 25px auto 20px;
+
+
+    thead {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    th {
+      padding: 20px 15px;
+
+    }
+
+    td {
+      padding: 20px 10px;
+    }
+
+    &--text-bold {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-weight: 800;
+      font-size: 16px;
+      color: rgba(58, 65, 102, 0.7);
+    }
+
+    &--text-regular {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: rgba(58, 65, 102, 0.7);
+    }
+  }
+}

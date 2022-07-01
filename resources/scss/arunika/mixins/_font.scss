@@ -1,0 +1,25 @@
+@use '../variables/color' as *;
+@use '../variables/font-size' as *;
+@use 'sass:map';
+
+
+@mixin font-size($font-name) {
+  $fs: map.get($font-size, $font-name);
+
+  font-family: nth($fs, 1);
+  font-size: clamp(nth($fs, 2), 3vw, nth($fs, 3));
+  line-height: calc(2px + 2ex + 6px);
+  letter-spacing: 0.005rem;
+
+  @if $font-name == ('h1, h2, h3, h4, h5, h6, h7, h8') {
+    letter-spacing: normal;
+  }
+
+  @if $font-name == 'link' {
+    color: $as-color-blue;
+
+    &:hover {
+      color:  var(--as-color-blue-dark);
+    }
+  }
+}

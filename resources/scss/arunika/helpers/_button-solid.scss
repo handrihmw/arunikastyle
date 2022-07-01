@@ -1,0 +1,64 @@
+@use '../mixins/breakpoint'as *;
+@use '../variables/color'as *;
+@use '../mixins/font' as *;
+
+// Button Solid Helper
+%btn-solid-helper {
+  @include font-size('16-semibold');
+
+  -webkit-box-align: baseline;
+  align-items: baseline;
+  background: var(--as-color-white);
+  border: none;
+  border-radius: 1.875rem;
+  box-sizing: border-box;
+  color: var(--as-color-primary);
+  display: inline-block;
+  height: 3rem;
+  outline: none;
+  padding: 0.75rem 3rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+  white-space: nowrap;
+
+  &:hover {
+    background: var(--as-color-gray-soft);
+  }
+
+  &:focus,
+  &:hover {
+    background: var(--as-color-white);
+  }
+}
+
+// Button Size
+.as-btn--xs {
+  padding: 0.75rem 1rem;
+}
+
+.as-btn--sm {
+  font-size: clamp(0.75rem, 3vw, 0.875rem);
+  height: 2.5rem;
+  padding: 0.5rem 1.75rem;
+}
+
+.as-btn--md {
+  font-size: clamp(0.875rem, 3vw, 1rem);
+  padding: 0.75rem 3rem;
+}
+
+.as-btn--lg {
+  font-size: clamp(1rem, 3vw, 1.125rem);
+  height: 3rem;
+  padding: 0.5rem 4.5rem;
+}
+
+// Button State
+.as-btn--disabled {
+  background: var(--as-color-disable-state);
+  box-shadow: none;
+  color: var(--as-color-disable);
+  cursor: unset;
+  pointer-events: none;
+}

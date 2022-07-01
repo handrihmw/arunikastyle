@@ -1,0 +1,31 @@
+@import "../helpers/bootstrap/bootstrap.scss";
+@import "../mixins/all";
+@import "../helpers/all";
+@import "../components/hero";
+@import "../components/belt";
+
+.as-belt__wrapper {
+  gap: 6rem !important;
+}
+
+.as-belt__title {
+  font-size: 1rem !important;
+  margin: unset !important;
+  margin-bottom: 2.4rem !important;
+}
+
+.as-belt__countdown-item {
+
+  &--time {
+    font-size: 3.2rem !important;
+  }
+
+  &--title {
+    font-size: 1.2rem !important;
+  }
+
+  &::after {
+    font-size: 3.2rem !important;
+    top: -5px;
+  }
+}

@@ -1,0 +1,119 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-tab-event {
+  display: grid;
+  gap: 40px;
+  margin-bottom: 5rem;
+
+  @include screen(mobileSmall) {
+    display: grid;
+  }
+
+  @include screen(desktopLarge) {
+    display: flex;
+    gap: 350px;
+  }
+
+  &__list {
+    border-bottom: 0;
+    justify-content: center;
+    margin-bottom: 5rem;
+    padding: 10px 16px;
+
+    @include screen(desktopLarge) {
+      border-bottom: 2px solid var(--as-color-border);
+    }
+
+    &--item {
+      margin: 0;
+      padding: 5px 0;
+
+      @include screen(desktop) {
+        margin: 0 3rem;
+      }
+
+      @include screen(desktopLarge) {
+        margin: 0 10rem;
+      }
+    }
+  }
+
+  &__line {
+    border-bottom: 2px solid var(--as-color-gray-soft);
+  }
+
+  &__title {
+    @include font-size('20');
+    font-weight: 700;
+    margin-right: 2rem;
+    color: var(--as-color-gray);
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+
+    &:hover {
+      color: var(--as-color-gray);
+    }
+
+    &.active {
+      color: var(--as-color-primary);
+
+      &::before {
+        background: none repeat scroll 0 0 transparent;
+        background: var(--as-color-blue);
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 3px;
+        left: -10%;
+        position: absolute;
+        top: 150%;
+        transition: width 0.2s ease 0s, left 0.2s ease 0s;
+        width: 120%;
+
+        @include screen(desktopLarge) {
+          left: -165%;
+          width: 350%;
+        }
+      }
+    }
+
+    &-right {
+      &.active {
+        color: var(--as-color-primary);
+
+        &::before {
+          background: none repeat scroll 0 0 transparent;
+          background: var(--as-color-blue);
+          bottom: 0;
+          content: "";
+          display: block;
+          height: 3px;
+          left: -10%;
+          position: absolute;
+          top: 150%;
+          transition: width 0.2s ease 0s, left 0.2s ease 0s;
+          width: 120%;
+
+          @include screen(desktop) {
+            left: -25%;
+            width: 150%;
+          }
+
+          @include screen(desktopLarge) {
+            left: -119%;
+            width: 442%;
+          }
+        }
+      }
+    }
+  }
+
+  &__description {
+    @include font-size('20');
+    color: var(--as-color-secondary-two);
+    margin-bottom: 1.5rem;
+  }
+}

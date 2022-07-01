@@ -1,0 +1,78 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero-split";
+
+/* Arunika Header */
+@import "../components/header";
+
+/* Arunika Section */
+@import "../helpers/section";
+
+/* Arunika Headline Section */
+@import "../helpers/transition";
+@import "../components/headline-section";
+
+/* Arunika Video IFrame */
+@import "../components/iframe-video";
+
+/* Arunika Headline Checklist */
+@import "../components/headline-checklist";
+
+/* Arunika Card Grid Transparent */
+
+@import "../components/card-grid-transparent";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Form */
+@import "../helpers/button";
+@import "../helpers/button-helper";
+@import "../components/form";
+
+/* Arunika Accordion Table */
+@import "../components/tooltip";
+@import "../components/accordion-table";
+
+/* Arunika Accordion FAQ */
+@import "../components/tooltip";
+@import "../components/accordion-faq";
+
+/* Arunika Section Blue */
+@import "../components/section-center-blue";
+
+.nipa-headline-checklist {
+    text-align: left;
+
+    .as-headline-checklist__title {
+        @include font-size('24');
+        color: var(--as-color-primary);
+        margin-bottom: 1rem;
+    }
+}
+
+.nipa-card-grid-transparent {
+    &.as-card-grid-transparent {
+        padding-left: .5rem;
+        padding-right: .5rem;
+        text-align: left;
+    }
+}
+
+.nipa-accordion-table {
+    .as-accordion-table {
+        &__feature {
+            &-icon {
+            position: relative;
+            top: 3px;
+            }
+        }
+
+        &__arrow {
+            &-left, &-right {
+                top: 57px;
+            }
+        }
+    }
+}

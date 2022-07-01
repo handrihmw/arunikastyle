@@ -1,0 +1,76 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-hero {
+  background: var(--as-color-gradient-blue);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+  padding: 3.75rem 1.25rem;
+  width: 100%;
+
+  &__wrapper {
+    margin: 2rem 0;
+  }
+
+  &__title {
+    @include font-size('56');
+  }
+
+  &__title--md {
+    @include font-size('40');
+  }
+
+  &__title,
+  &__title--md {
+    color: var(--as-color-white);
+    margin-bottom: 2rem;
+    width: 100%;
+
+    @include screen(desktop) {
+      width: 80%;
+    }
+  }
+
+  &__description--sm {
+    @include font-size('14');
+  }
+
+  &__description {
+    @include font-size('16');
+  }
+
+  &__description--md {
+    @include font-size('18');
+  }
+
+  &__description--lg {
+    @include font-size('20');
+  }
+
+  &__description,
+  &__description--sm,
+  &__description--md,
+  &__description--lg {
+    color: var(--as-color-white)-soft;
+    margin-bottom: 2.5rem;
+    width: 100%;
+
+    @include screen(desktop) {
+      width: 90%;
+    }
+  }
+
+  &__button {
+    @include font-size('16-semibold');
+    margin-top: 1rem;
+  }
+
+  &__image {
+   
+    height: auto;
+    width: 100%;
+  }
+}

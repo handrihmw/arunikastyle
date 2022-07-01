@@ -1,0 +1,140 @@
+/* PRICE COMPARISON */
+.price-comparison {
+  padding: 65px 0;
+  background: #F6FBFF;
+
+  &__relative {
+    position: relative !important;
+  }
+
+  &__absolute {
+    position: absolute !important;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    margin-bottom: 40px;
+  }
+
+  &__accordion {
+    &-item {
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #fff;
+      }
+
+      &-header {
+
+        &-btn {
+          display: block;
+          font-family: 'NunitoSansBold', sans-serif;
+          font-size: 22px;
+          padding: 24px 20px;
+          background: #007AFF;
+          color: #fff;
+          position: relative;
+
+          &:hover {
+            color: #fff;
+          }
+
+          &::after {
+            content: '\f077';
+            font-family: "Font Awesome 5 Free", sans-serif;
+            font-size: 25px;
+            color: #fff;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all .6s;
+            font-weight: 900;
+          }
+
+          &--collapse {
+            &::after {
+              content: '\f078' !important;
+              transition: all .6s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__table {
+    margin-bottom: 0;
+    background: #fff;
+
+    tr th,
+    tr td {
+      vertical-align: middle;
+      padding-left: 20px;
+      padding-right: 20px;
+      width: 20%;
+      white-space: inherit;
+      min-width: 190px;
+    }
+
+    tr th:not(:first-child),
+    tr td:not(:first-child) {
+      text-align: center;
+    }
+
+    tr td:first-child {
+      width: 25%;
+      min-width: 250px !important;
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-badge {
+      position: relative;
+      min-width: 250px !important;
+
+      &-child {
+        margin-left: 20px;
+        width: 75px;
+        height: 30px;
+        background: red;
+        position: absolute;
+        -moz-border-radius: 7px;
+        -webkit-border-radius: 7px;
+        border-radius: 7px;
+        text-align: center;
+        display: table;
+        top: 7px;
+        left: 105px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          right: 95.7%;
+          top: 1px;
+          width: 0;
+          height: 0;
+          border-top: 14px solid transparent;
+          border-right: 19px solid red;
+          border-bottom: 14px solid transparent;
+        }
+
+        div {
+          display: table-cell;
+          vertical-align: middle;
+          font-family: 'NunitoSansRegular', sans-serif;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 12px;
+          line-height: 16px;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--as-color-white);
+  color: var(--as-color-primary);
+  font-family: var(--as-font-regular);
+  font-size: 1rem;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+button:not(:disabled),
+[role=button]:not(:disabled) {
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  hyphens: auto;
+  margin: 0;
+  overflow-wrap: break-word;
+  padding: 0;
+}

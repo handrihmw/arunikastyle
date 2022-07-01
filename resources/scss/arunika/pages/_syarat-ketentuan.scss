@@ -1,0 +1,28 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero";
+@import "../components/hero-center";
+
+/* Arunika Header */
+@import "../components/header";
+
+/* Arunika Section */
+@import "../components/section-white";
+@import "../components/section-center-blue";
+
+/* Arunika Filter */
+@import "../components/filter";
+
+/* Arunika Card */
+@import "../components/card-soft";
+
+.as-header--syarat-ketentuan {
+   @include screen(desktop) {
+        height: 600px;
+    }
+}
+
+.filter__list-link--active {
+    font-weight: 700;
+}

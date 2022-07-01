@@ -1,0 +1,52 @@
+@use '../variables/color'as *;
+@use '../variables/shadow'as *;
+@use '../helpers/button-outline'as *;
+
+// Button Variants
+$button-outline-outline-array: (
+  (dark $as-color-black $as-color-black $as-color-black $as-color-white $as-shadow-black-1 $as-shadow-black-2),
+  (success $as-color-green $as-color-green-hover $as-color-green-pressed $as-color-white $as-shadow-green-1 $as-shadow-green-2),
+  (danger $as-color-red $as-color-red-hover $as-color-red-pressed $as-color-white $as-shadow-red-1 $as-shadow-red-2),
+  (primary $as-color-orange $as-color-orange-hover $as-color-orange-pressed $as-color-white $as-shadow-orange-1 $as-shadow-orange-2),
+  (secondary $as-color-blue $as-color-blue-dark $as-color-blue-dark $as-color-white $as-shadow-blue-1 $as-shadow-blue-2),
+  (shade $as-color-divider $as-color-primary null null null null)
+);
+
+.as-btn-outline {
+  @extend %btn-outline-helper !optional;
+
+  &--fluid {
+    width: 100%;
+  }
+}
+
+@each $button-outline in $button-outline-outline-array {
+  .as-btn-outline--#{nth($button-outline, 1)} {
+    @extend %as-btn-outline-helper !optional;
+    background: transparent;
+    border: solid 1px #{nth($button-outline, 2)};
+    color: #{nth($button-outline, 2)};
+
+    @if nth($button-outline, 1)=='shade' {
+      color: #{nth($button-outline, 3)};
+    }
+
+    &:hover:not(.as-btn-outline--no-hover),
+    &:focus:not(.as-btn-outline--no-hover),
+    &.as-btn-outline--active:not(.as-btn-outline--no-hover) {
+      box-shadow: none;
+      color: #{nth($button-outline, 2)};
+      cursor: pointer;
+
+      @if nth($button-outline, 1)=='shade' {
+        background: var(--as-color-blue);
+        color: var(--as-color-white);
+      }
+    }
+
+    &:active:not(.as-btn-outline--no-hover) {
+      box-shadow: #{nth($button-outline, 4)};
+      color: #{nth($button-outline, 2)};
+    }
+  }
+}

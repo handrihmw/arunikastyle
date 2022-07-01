@@ -1,0 +1,716 @@
+@import "../app";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-icon";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Order Step */
+@import "../components/order-step";
+
+/* Arunika Summary Cart */
+@import "../components/summary-cart";
+
+/*
+ * NOTES TO DEVS: font-size use rem with base 10
+ * (e.g. If font-size in design 24px, then in CSS use 2.4rem)
+ */
+header {
+    background-image: none !important;
+}
+
+.as-card-base {
+    padding: 16px;
+
+    &__label {
+        border-left: 1px solid var(--as-color-gray-soft);
+        border-right: 1px solid var(--as-color-gray-soft);
+        border-top: 1px solid var(--as-color-gray-soft);
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: 0.005em;
+        line-height: 24px;
+        padding: 6px 0;
+        top: -35px;
+        width: calc(100% + 5px);
+    }
+
+    &__title {
+        font-family: "NunitoSansRegular", sans-serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        letter-spacing: 0.005em;
+        line-height: 24px;
+    }
+
+    & hr {
+        border-top: 1px solid var(--as-color-border);
+        margin: 8px 0px;
+    }
+
+    &--label {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin-top: 35px;
+    }
+
+    &--selected {
+        background: var(--as-color-blue);
+        border-color: var(--as-color-blue);
+        color: var(--as-color-white) !important;
+
+        & h3 {
+            color: var(--as-color-white) !important;
+        }
+
+        & .as-card-icon__list-item:before {
+            content: url("data:image/svg+xml,%3Csvg width='15' height='14' viewBox='0 0 15 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.49992 0.333008C6.18138 0.333008 4.89245 0.724001 3.79612 1.45654C2.69979 2.18909 1.84531 3.23028 1.34072 4.44845C0.836141 5.66663 0.704118 7.00707 0.961353 8.30028C1.21859 9.59348 1.85353 10.7814 2.78588 11.7137C3.71823 12.6461 4.90611 13.281 6.19932 13.5382C7.49253 13.7955 8.83297 13.6635 10.0511 13.1589C11.2693 12.6543 12.3105 11.7998 13.0431 10.7035C13.7756 9.60715 14.1666 8.31822 14.1666 6.99967C14.1646 5.23219 13.4615 3.53767 12.2117 2.28786C10.9619 1.03806 9.26741 0.33503 7.49992 0.333008ZM10.9713 5.40853L6.84625 9.53353C6.78437 9.59545 6.71089 9.64457 6.63001 9.67808C6.54913 9.71159 6.46245 9.72884 6.3749 9.72884C6.28736 9.72884 6.20067 9.71159 6.11979 9.67808C6.03892 9.64457 5.96544 9.59545 5.90355 9.53353L4.02859 7.65853C3.90487 7.53325 3.83575 7.36412 3.8363 7.18806C3.83685 7.01199 3.90703 6.8433 4.03152 6.7188C4.15602 6.5943 4.32471 6.52411 4.50078 6.52355C4.67684 6.52299 4.84597 6.59211 4.97125 6.71582L6.3749 8.11947L10.0286 4.46582C10.1539 4.34211 10.323 4.27299 10.4991 4.27355C10.6751 4.27411 10.8438 4.3443 10.9683 4.4688C11.0928 4.5933 11.163 4.76199 11.1635 4.93806C11.1641 5.11412 11.095 5.28325 10.9713 5.40853Z' fill='white'/%3E%3C/svg%3E%0A");
+        }
+
+        & .hosting-period__desc,
+        & .hosting-period__price-strikethrough,
+        & .hosting-period__price-year,
+        & .hosting-period__price-year::before {
+            color: var(--as-color-white) !important;
+        }
+    }
+}
+
+.as-card-icon__list-item {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 16px;
+    padding-left: 20px;
+
+    &::before {
+        content: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.99992 0.333008C5.68138 0.333008 4.39245 0.724001 3.29612 1.45654C2.19979 2.18909 1.34531 3.23028 0.840725 4.44845C0.336141 5.66663 0.204118 7.00707 0.461353 8.30028C0.718588 9.59348 1.35353 10.7814 2.28588 11.7137C3.21823 12.6461 4.40611 13.281 5.69932 13.5382C6.99253 13.7955 8.33297 13.6635 9.55114 13.1589C10.7693 12.6543 11.8105 11.7998 12.5431 10.7035C13.2756 9.60715 13.6666 8.31822 13.6666 6.99967C13.6646 5.23219 12.9615 3.53767 11.7117 2.28786C10.4619 1.03806 8.76741 0.33503 6.99992 0.333008ZM10.4713 5.40853L6.34625 9.53353C6.28437 9.59545 6.21089 9.64457 6.13001 9.67808C6.04913 9.71159 5.96245 9.72884 5.8749 9.72884C5.78736 9.72884 5.70067 9.71159 5.61979 9.67808C5.53892 9.64457 5.46544 9.59545 5.40355 9.53353L3.52859 7.65853C3.40487 7.53325 3.33575 7.36412 3.3363 7.18806C3.33685 7.01199 3.40703 6.8433 3.53152 6.7188C3.65602 6.5943 3.82471 6.52411 4.00078 6.52355C4.17684 6.52299 4.34597 6.59211 4.47125 6.71582L5.8749 8.11947L9.52859 4.46582C9.65387 4.34211 9.823 4.27299 9.99907 4.27355C10.1751 4.27411 10.3438 4.3443 10.4683 4.4688C10.5928 4.5933 10.663 4.76199 10.6635 4.93806C10.6641 5.11412 10.595 5.28325 10.4713 5.40853Z' fill='%2300BFA6'/%3E%3C/svg%3E%0A");
+        left: 0;
+    }
+}
+
+.hosting-product {
+    background: transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 32px;
+    text-align: left;
+
+    @include screen(desktop) {
+        padding: 20px 16px !important;
+    }
+
+    &__title {
+        color: var(--as-color-primary);
+        font-size: 2.4rem;
+        font-weight: 600;
+        letter-spacing: 0.005em;
+        line-height: 24px;
+        margin-bottom: 8px;
+    }
+
+    &__subtitle {
+        color: var(--as-color-primary);
+        font-family: "NunitoSansRegular", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: 0.005em;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+    &__information {
+        color: var(--as-color-secondary);
+        font-size: 1.2rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 16px;
+    }
+
+    &__swiper-container {
+        overflow: hidden;
+        position: relative;
+
+        & .swiper-slide {
+            overflow: hidden !important;
+        }
+    }
+
+    &__swiper-buttons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+
+    &__dot {
+        text-align: center;
+
+        & .swiper-pagination-bullet {
+            background: var(--as-color-gray);
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-block;
+            height: 12px;
+            margin: 0px 6px;
+            width: 12px;
+        }
+        
+        & .swiper-pagination-bullet-active {
+            background: var(--as-color-blue);
+        }
+    }
+}
+
+.hosting-period {
+    color: var(--as-color-primary);
+    font-family: "NunitoSansRegular", sans-serif;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
+    & p {
+        margin-bottom: 0px;
+    }
+
+    &__item {
+        margin-right: 20px;
+        overflow: hidden;
+        width: calc((100% / 4) - 20px);
+
+        &:last-child {
+            & .as-card-base__label {
+                background: var(--as-color-orange);
+            }
+
+            & .hosting-period__price-year {
+                color: var(--as-color-orange);
+            }
+        }
+    }
+
+    &__duration {
+        font-family: "NunitoSansBold", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 0.005em;
+        line-height: 26px;
+    }
+
+    &__desc {
+        color: var(--as-color-gray);
+        font-family: "NunitoSansRegular", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 0.005em;
+        line-height: 24px;
+    }
+
+    &__price {
+        font-family: "NunitoSansRegular", sans-serif;
+
+        &-month {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.005em;
+            line-height: 24px;
+
+            &::before {
+                @include font-size('12');
+                bottom: 24px;
+                content: "Rp";
+                right: 0;
+            }
+
+            &::after {
+                @include font-size('12');
+                bottom: 24px;
+                content: "/bln";
+                right: 0;
+            }
+        }
+
+        &-strikethrough {
+            color: var(--as-color-gray);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.005em;
+            line-height: 24px;
+            text-align: center;
+        }
+
+        &-year {
+            color: var(--as-color-blue);
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 0.005em;
+            line-height: 24px;
+
+            &::before {
+                @include font-size('12');
+                bottom: 24px;
+                content: "Rp";
+                right: 0;
+            }
+        }
+
+        &-renewal {
+            border-radius: 8px;
+            background-color: var(--as-color-blue-soft);
+            color: var(--as-color-blue);
+            font-family: "NunitoSansRegular", sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            padding: 8px 16px;
+        }
+    }
+
+    &__dot {
+        justify-content: space-around;
+        text-align: center;
+
+        @include screen(desktopExtra) {
+            display: none;
+        }
+
+        & .swiper-pagination-bullet {
+            background: var(--as-color-gray);
+            border-radius: 50%;
+            cursor: pointer;
+            display: inline-block;
+            height: 12px;
+            margin: 0px 6px;
+            width: 12px;
+        }
+        
+        & .swiper-pagination-bullet-active {
+            background: var(--as-color-blue);
+        }
+    }
+
+    & .as-card-base__label {
+        top: -35px;
+        width: calc(100% + 5px);
+    }    
+}
+
+.button-disabled {
+    cursor: not-allowed;
+}
+
+.as-tooltip {
+    &__info {
+        font-size: clamp(1.125rem,4vw,1.25rem) !important;
+        padding: 1.25rem 1.5rem;
+    }
+
+    &__domain {
+        left: 60px;
+
+        &::after {
+            left: 70px
+        }
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-button-pagination {
+    background-color: var(--as-color-white);
+    border: 1px solid var(--as-color-gray);
+    border-radius: 8px;
+    display: inline-block;
+    font-family: "NunitoSansRegular", sans-serif;
+    height: 32px;
+    margin: 0 5px;
+    padding: 5px 8px;
+    position: relative;
+    width: 32px;
+
+    & span {
+        background-color: transparent;
+        border: solid 3px var(--as-color-primary);
+        border-bottom: 0;
+        border-left: 0;
+        height: 0.75rem;
+        position: absolute;
+        top: 12px;
+        transition: all 0.1s ease;
+        width: 0.75rem;
+    }
+}
+
+.swiper-button-active {
+    background-color: var(--as-color-blue);
+    border-color: var(--as-color-blue);
+    color: var(--as-color-white);
+
+    & span {
+        border-color: var(--as-color-white);
+    }
+}
+
+.swiper-button-disabled {
+    & span {
+        border-color: var(--as-color-gray);
+    }
+}
+
+.swiper-button-prev span {
+    right: 9px;
+    transform: rotate(-135deg);
+}
+
+.swiper-button-next span {
+    left: 9px;
+    transform: rotate(45deg);
+}
+
+.orderflow {
+    &-wrapper {
+       @include screen(desktop) {
+            overflow: unset;
+
+            & section#summary-cart-wrapper {
+                position: -webkit-sticky;
+                position: sticky;
+                top: 24px;
+            }
+        }
+
+    }
+    &-custom-checkbox {
+        &--highlight+label {
+            font-size: 2.4rem;
+            font-weight: 700;
+
+            & .fas {
+                font-size: 18px;
+            }
+        }
+
+        &+label:before,
+        &+p:before {
+            border: 2px solid var(--as-color-gray);
+            border-radius: 6px;
+            font-size: 11px;
+            opacity: 1;
+        }
+
+        &:checked {
+            &+label:before,
+            &+p:before {
+                background-color: var(--as-color-blue);
+                border-color: var(--as-color-blue);
+                color: var(--as-color-white);
+                opacity: 1;
+            }
+        }
+    }
+    &-domain {
+        background: transparent;
+        box-shadow: none;
+        border-radius: 8px;
+        padding: 32px;
+
+        &__title {
+            color: var(--as-color-primary);
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 0.005em;
+            line-height: 24px;
+            margin-bottom: 8px;
+
+            & .badge-orange {
+                font-family: "NunitoSansRegular", sans-serif;
+                font-size: 1.2rem;
+                padding: 8px 12px;
+                vertical-align: top;
+            }
+        }
+
+        &__subtitle {
+            color: var(--as-color-primary);
+            font-family: "NunitoSansRegular", sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.005em;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+
+        &__container {
+            background: #fff;
+            box-shadow: 0px 7px 10px rgb(77 88 114 / 10%);
+            border-radius: 8px;
+            padding: 32px;
+        }
+
+        &__tab {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0;
+            padding: 1rem 0;
+            width: 100%;
+
+            @include screen(desktop) {
+                background-color: initial;
+                flex-direction: column;
+            }
+
+            &-register,
+            &-owndomain {
+                border-radius: 48px;
+                margin: 0 1rem;
+                width: 50%;
+
+                @include screen(desktop) {
+                    background-color: var(--as-color-blue-soft);
+                    margin: .5rem 0;
+                    width: 100%;
+                }
+            }
+        }
+
+        &__register {
+            &-box {
+                border-radius: 24px !important;
+                height: 48px !important;
+
+                &:focus {
+                    border-color: #007aff;
+                }
+            }
+        }
+
+        &__result {
+            &-success {
+                color: $as-green;
+                font-family: "NunitoSansBold", sans-serif;
+                font-size: 1.6rem;
+                font-weight: 700;
+                letter-spacing: 0.005em;
+                line-height: 24px;
+            }
+        }
+
+        &__result, &__suggestion {
+            margin-top: 30px;
+
+            &-title {
+                font-family: "NunitoSansRegular", sans-serif;
+                font-size: 1.6rem;
+                font-weight: 600;
+                letter-spacing: 0.005em;
+                line-height: 24px;
+                margin-bottom: 8px;
+            }
+
+            &-container {
+                background-color: var(--as-color-soft);
+                border-radius: 10px;
+                margin-left: 0;
+                margin-right: 0;
+                padding: 16px 0 0 0;
+
+                &-footer {
+                    background-color: var(--as-color-blue);
+                    border-bottom-left-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                    color: var(--as-color-white);
+                    font-size: 1.2rem;
+                    margin-top: 16px;
+                    padding: 10px 12px;
+
+                    & .as-card-base__feature {
+                        color: var(--as-color-white);
+
+                        &--icon {
+                            left: 0;
+                            position: relative;
+                        }
+                    }
+                }
+            }
+
+            &-duration {
+                @include screen(desktop) {
+                    margin-left: 30px;
+                    text-align: left;
+                }
+            }
+
+            &-price {
+                &-wrapper {
+                    text-align: right;
+
+                    @include screen(desktop) {
+                        margin-left: 30px;
+                        text-align: left;
+                    }
+                }
+
+                & p {
+                    color: var(--as-color-blue);
+                    font-family: "NunitoSansRegular", sans-serif;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+
+                & s {
+                    color: var(--as-color-gray);
+                    font-family: "NunitoSansRegular", sans-serif;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
+            }
+
+            &-pill {
+                background-color: #ffeacc !important;
+                color: #ff9800 !important;
+                font-size: 12px !important;
+                font-weight: normal !important;
+                margin-left: 30px;
+                padding: 5px 10px !important;
+            }
+
+            &--period {
+                & select {
+                    height: initial;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &__not-available {
+            & .fas {
+                font-size: 18px;
+            }
+        }
+    }
+    &-toast {
+        align-items: center;
+        background: var(--as-color-primary);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: fixed;
+        top: 13%;
+        left: 50%;
+        padding: 16px;
+        transform: translate(-50%, -13%);
+        width: 50%;
+        z-index: 10;
+
+        @include screen(desktop) {
+            width: 80%;
+        }
+
+       @include screen(mobile) {
+            width: 90%;
+        }
+
+        & p {
+            align-self: center;
+            color: var(--as-color-white);
+            font-family: "NunitoSansRegular", sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 24px;
+            margin: 0 20px;
+            text-align: left;
+            overflow-wrap: break-word;
+
+            @include screen(desktop) {
+                font-size: 15px !important;
+            }
+
+           @include screen(mobile) {
+                font-size: 13px !important;
+            }
+        }
+
+        & button, & button:hover {
+            align-self: center;
+            color: var(--as-color-white);
+            font-family: "NunitoSansRegular", sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 20px;
+            padding: 0;
+        }
+    }
+}
+
+.free-domain-list {
+    & p {
+        color: var(--as-color-gray);
+        font-family: "NunitoSansRegular", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: 0.005em;
+        line-height: 24px;
+    }
+}
+
+.additional-feature {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 8px;
+    margin-top: 24px;
+    padding: 32px;
+
+    &__container {
+        background: #fff;
+        box-shadow: 0px 7px 10px rgb(77 88 114 / 10%);
+        border-radius: 8px;
+        padding: 32px;
+    }
+
+    &__addon {
+        &-price {
+            font-family: "NunitoSansRegular", sans-serif;
+            font-size: 1.2rem;
+
+            & span {
+                font-size: 1.6rem;
+                font-weight: 600;
+            }
+        }
+
+        &-button {
+            border: 0;
+            font-family: "NunitoSansBold", sans-serif;
+            font-size: 1.4rem;
+            height: initial;
+            padding: 12px 24px;
+        }
+    }
+}
+
+.button {
+    &-default {
+        border-width: 1px;
+        padding: 12px 40px;
+    }
+    &-blue-bordered {
+        background-color: #fff;
+        border: 1px solid #007aff;
+        color: #007aff !important;
+    
+        &:hover {
+            background-color: #fff;
+            border: 1px solid #003eff !important;
+            color: #003eff !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 693px) {
+    .register-button,
+    .existing-button {
+        text-align: left;
+    }
+}

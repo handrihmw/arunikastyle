@@ -1,0 +1,47 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero";
+
+/* Arunika Section */
+@import "../components/section-domain";
+@import "../components/section-white";
+@import "../components/section-center-blue";
+@import "../components/section-soft-blue";
+
+/* Arunika Card */
+@import "../components/card";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Header */
+@import "../components/header";
+@import "../helpers/background";
+@import "../components/table-winner";
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+@import "../components/button-sosmed";
+@import "../components//card-select";
+@import "../components/card-icon";
+
+/* Arunika Testimoni Tab */
+@import "../components/tab-testimoni";
+@import "../components/navigation-step";
+@import "../components/navigation-step-mobile";
+
+.free-themes {
+    @include font-size('24-semibold');
+    background-color: var(--as-color-orange);
+    border-radius: 16px 16px 0px 0px;
+    color: var(--as-color-white);
+    text-align: center;
+
+    &-border {
+        border: 1px solid var(--as-color-orange);
+        border-radius: 0px 0px 16px 16px;
+    }
+}

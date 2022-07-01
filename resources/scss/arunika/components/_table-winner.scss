@@ -1,0 +1,77 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-table-winner {
+  display: none;
+  height: auto;
+  width: 100%;
+
+  @include screen(desktop) {
+    display: inline;
+  }
+
+  &--mobile {
+    display: inline-table;
+
+    @include screen(desktop) {
+      display: none;
+    }
+  }
+
+  thead {
+    @include font-size('24');
+    background: var(--as-color-gradient-blue);
+    color: var(--as-color-white);
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--as-color-soft);
+  }
+
+  tbody {
+    tr {
+      border: 1px solid var(--as-color-divider);
+      box-sizing: border-box;
+    }
+
+    th {
+      @include font-size('24-semibold');
+    }
+
+    td {
+      @include font-size('16');
+      color: var(--as-color-secondary);
+
+      @include screen(desktop) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  th,
+  td {
+    padding: 24px 50px;
+  }
+
+  &-no-border {
+    &--right {
+      border: none;
+    }
+  }
+
+  &-rounded {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+
+    &-top {
+      &--left {
+        border-top-left-radius: 12px;
+      }
+
+      &--right {
+        border-top-right-radius: 12px;
+      }
+    }
+  }
+}

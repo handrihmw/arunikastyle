@@ -1,0 +1,71 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+.hero {
+  &__title--wall-of-fame {
+    text-align: center;
+    margin: 0 0 20px;
+  }
+
+  &__description--wall-of-fame {
+    text-align: center;
+    margin: 0
+  }
+}
+
+.famous-people {
+  padding: 100px 0;
+
+  &__name {
+    margin: .6em 1.2em;
+    font-size: 18px;
+    line-height: 26px;
+
+    &::before {
+      content: "\f091";
+      font-family: "Font Awesome 5 Free", sans-serif;
+      font-weight: 400;
+      font-size: 22px;
+      padding-right: 25px;
+      opacity: .85;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #007bff;
+    }
+  }
+}
+
+.pay-for-real-hosting {
+  padding: 100px 0;
+  background: #f7f7f7;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    text-align: center;
+
+    @include screen(desktop) {
+      font-size: 48px;
+      line-height: 48px;
+    }
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(58, 65, 102, .7);
+    text-align: center;
+    max-width: 800px;
+    margin: 20px auto 40px;
+
+    @include screen(desktop) {
+      margin-top: 40px;
+    }
+  }
+
+  &__icon {
+    margin-bottom: 10px;
+    margin-top: 20px !important;
+  }
+}

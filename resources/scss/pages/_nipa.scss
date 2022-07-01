@@ -1,0 +1,590 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+.hero {
+  &--nipa {
+    padding: 130px 0 160px;
+  }
+
+  &__description--nipa {
+    margin-bottom: 50px;
+  }
+
+  @include screen(desktop) {
+    &__description--nipa {
+      padding-right: 55px;
+    }
+
+    &__image--nipa {
+      top: 0px;
+    }
+  }
+
+  @include screen(desktopLarge) {
+    &__image--nipa {
+      top: -15px;
+    }
+  }
+}
+
+/* MANAGEMENT */
+.management {
+  padding: 65px 0;
+  text-align: center;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 200%;
+    margin-bottom: 60px;
+  }
+
+  &__image {
+    &-wrapper {
+      margin-bottom: 60px;
+    }
+
+    &-tag {
+      position: absolute;
+      left: 17%;
+      top: 69%;
+      z-index: 1;
+      width: 28%;
+    }
+  }
+
+  &__feature {
+    text-align: left;
+
+    &-title {
+      font-family: NunitoSansBold, sans-serif;
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    &-items {
+      list-style: none;
+    }
+
+    &-item {
+      &:before {
+        content: "\f058";
+        /* FontAwesome Unicode */
+        font-family: Font Awesome\ 5 Free;
+        margin: 0 5px 0 -30px;
+        color: #007AFF;
+        font-size: 16px;
+      }
+
+      &-title {
+        font-family: NunitoSansBold, sans-serif;
+        font-size: 18px;
+        margin-bottom: 20px;
+        margin-top: -21px;
+      }
+
+      &-description {
+        font-size: 14px;
+        line-height: 200%;
+        opacity: .7;
+        margin-bottom: 30px;
+      }
+
+      &--content-none {
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 32px;
+        margin-left: 35px;
+        position: relative;
+
+        &::before {
+          font-size: 20px;
+          margin-left: -35px;
+          position: absolute;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    &-management:last-child {
+      .about-pricing__feature-item-description {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include screen(laptop) {
+    &__image-tag {
+      left: 21%;
+      width: auto;
+    }
+  }
+
+  @include screen(desktop) {
+    &__image {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+
+      &-tag {
+        left: 14%;
+        top: 57%;
+      }
+    }
+  }
+
+  @include screen(desktopLarge) {
+    &__image-tag {
+      top: 61%;
+      left: 15%;
+      width: 28%;
+    }
+  }
+}
+
+/* ABOUT PRICING */
+.about-pricing {
+  padding: 65px 0;
+  text-align: center;
+  background: #F6FBFF;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 200%;
+    margin-bottom: 60px;
+  }
+
+  &__image-wrapper {
+    margin-bottom: 50%;
+    text-align: left;
+  }
+
+  &__image {
+    &-markup {
+      max-width: 80%;
+      height: auto;
+    }
+
+    &-tag {
+      position: absolute;
+      right: 38px;
+      top: 18%;
+      z-index: 1;
+      width: 28%;
+    }
+
+    &-invoice {
+      max-width: 80%;
+      height: auto;
+      position: absolute;
+      z-index: 2;
+      right: 15px;
+      bottom: -77%;
+    }
+  }
+
+  &__feature {
+    text-align: left;
+
+    &-title {
+      font-family: NunitoSansBold, sans-serif;
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    &-items {
+      list-style: none;
+    }
+
+    &-item {
+      &:before {
+        content: "\f058";
+        /* FontAwesome Unicode */
+        font-family: Font Awesome\ 5 Free;
+        margin: 0 5px 0 -30px;
+        color: #007AFF;
+        font-size: 16px;
+      }
+
+      &-title {
+        font-family: NunitoSansBold, sans-serif;
+        font-size: 18px;
+        margin-bottom: 20px;
+        margin-top: -21px;
+      }
+
+      &-description {
+        font-size: 14px;
+        line-height: 200%;
+        opacity: .7;
+        margin-bottom: 30px;
+      }
+    }
+
+    &-item:last-child {
+      .about-pricing__feature-item-description {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @include screen(laptop) {
+    &__image-tag {
+      right: 100px;
+      top: 25%;
+      width: auto;
+    }
+  }
+
+  @include screen(desktop) {
+    &__image {
+      &-markup {
+        position: absolute;
+        top: 50%;
+      }
+
+      &-tag {
+        right: 20px;
+        top: 72%;
+        width: 28%;
+      }
+
+      &-invoice {
+        bottom: -85%;
+      }
+    }
+  }
+
+  @include screen(desktopLarge) {
+    &__image {
+      &-tag {
+        top: 144%;
+        right: 30px;
+        width: 28%;
+      }
+
+      &-invoice {
+        bottom: -566%;
+      }
+    }
+  }
+}
+
+/* NIPA INTRO */
+.nipa-intro {
+  padding: 65px 0 0;
+
+  &__video-wrapper {
+    margin-bottom: 40px;
+  }
+
+  &__image-wrapper {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+    border-radius: 6px;
+    transition: all 1s;
+
+    &:hover {
+      background: rgba(0, 0, 0, .1);
+      transition: all 1s;
+
+      &::after {
+        box-shadow: 2px 6px 20px rgba(0, 0, 0, .6);
+        background: #007AFF;
+        transition: all 1s;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: url('../images/2019/client-testimony/icon-play.svg');
+      width: 74px;
+      height: 74px;
+      padding-top: 20px;
+      padding-left: 28px;
+      background: #007AFF;
+      border-radius: 50%;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 1s;
+    }
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 200%;
+    margin-bottom: 40px;
+  }
+
+  @include screen(desktop) {
+    &__video-wrapper {
+      margin-bottom: 0;
+    }
+
+    &__wrapper {
+      margin-top: auto;
+      margin-bottom: auto;
+      padding-left: 50px;
+    }
+  }
+
+  @include screen(desktopLarge) {
+    &__wrapper {
+      padding-left: 70px;
+    }
+  }
+}
+
+/* NIPA SCROLL TO FORM */
+#nipa-register-scroll {
+  margin-top: -39px;
+  padding-bottom: 269px;
+
+  @include screen(desktop) {
+    margin-top: 0;
+    padding-bottom: 105px;
+  }
+}
+
+/* NIPA REGISTRATION */
+.nipa-registration {
+  padding: 65px 0;
+  background: linear-gradient(81.71deg, #00349B -38.66%, rgba(0, 92, 255, 0.921875) 45.38%, #007AFF 125.99%);
+
+  &__form-wrapper {
+    margin-top: -230px;
+    margin-bottom: 60px;
+  }
+
+  &__wrapper {
+    color: #fff;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 49px;
+    line-height: 67px;
+    margin-bottom: 50px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 200%;
+  }
+
+  &__form-wrapper .form>.nh-btn {
+    margin: 20px 0;
+  }
+
+  @include screen(desktop) {
+    &__form-wrapper {
+      margin-top: 0px;
+      margin-bottom: -230px;
+    }
+
+    &__wrapper {
+      color: #fff;
+      padding: 65px 0;
+    }
+
+    &__form-wrapper .form>.nh-btn {
+      margin: 30px 0;
+    }
+  }
+}
+
+
+
+
+
+/*NIPA FAQ*/
+.nipa-faq {
+  padding: 100px 0;
+
+  @include screen(desktop) {
+    padding: 250px 0 100px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    text-align: center;
+  }
+
+  &__question-list {
+    max-width: 770px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__question-wrapper {
+    position: relative;
+    padding: 30px;
+    text-align: left;
+    border-bottom: 1px solid rgba(17, 26, 104, .15);
+
+    &::before {
+      position: absolute;
+      content: url('../../images/2019/hosting-faq/icon-ellipse.svg');
+      top: 30px;
+      left: 0;
+    }
+
+    >a::after {
+      position: absolute;
+      content: url('../../images/2019/hosting-faq/icon-minus.svg');
+      top: 30px;
+      right: 0;
+    }
+
+    >a.collapsed::after {
+      position: absolute;
+      content: url('../../images/2019/hosting-faq/icon-plus.svg');
+      top: 30px;
+      right: 0;
+    }
+  }
+
+  &__question {
+    display: block;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 18px;
+    font-weight: unset;
+    text-align: left;
+    color: #3A4166;
+
+    &:hover {
+      color: #1b1e21;
+    }
+  }
+
+  &__answer {
+    font-size: 16px;
+    opacity: .7;
+    line-height: 2em;
+    text-align: left;
+    margin-top: 20px;
+  }
+}
+
+/* SERVICES SUPPORT */
+.service-support {
+  padding: 70px 0 65px;
+  background: linear-gradient(20.57deg, #00349B -38.66%, rgba(0, 92, 255, 0.921875) 45.38%, #007AFF 125.99%);
+
+  &__text-wrapper {
+    color: #fff;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 40px;
+  }
+
+  &__btn-wrapper {
+    text-align: center;
+  }
+
+  @include screen(laptop) {
+    &__text-wrapper {
+      text-align: left;
+    }
+
+    &__description {
+      margin-bottom: 0;
+    }
+
+    &__btn-wrapper {
+      text-align: right;
+    }
+
+    &__btn-wrapper>.nh-btn {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+/*GREETING NIPA*/
+.greeting-nipa {
+  padding: 80px 0 105px;
+
+  &__wrapper {
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__banner {
+    max-width: 436px;
+    height: auto;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    line-height: 45px;
+    color: #FFF;
+    margin-bottom: 30px;
+  }
+
+  &__description {
+    font-size: 20px;
+    line-height: 35px;
+    letter-spacing: 0.05em;
+    color: #FFF;
+    margin-bottom: 50px;
+  }
+}

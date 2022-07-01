@@ -1,0 +1,271 @@
+@import "../app";
+
+/* Arunika Header */
+@import "../components/header";
+
+/* Arunika Hero */
+@import "../components/hero";
+
+/* Arunika Section */
+@import "../helpers/section";
+@import "../components/section-center-blue";
+
+/* Owl Carousel */
+@import "../components/owl-carousel";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-feature";
+@import "../components/card-color";
+@import "../components/card-list";
+@import "../components/card-icon";
+@import "../components/card-image";
+
+/* Arunika Table List */
+@import "../components/table-list";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Navigation Tab */
+@import "../components/tab-navigation";
+
+/* Arunika Feature */
+@import "../components/feature";
+
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+
+.as-navigation-tab {
+  margin: 0;
+  width: 100%;
+
+  @include screen(mobile) {
+    margin: 0 auto 5rem auto;
+    width: 67%;
+  }
+
+  @include screen(desktopLarge) {
+    margin: 0 auto 5rem auto;
+    width: 36%;
+  }
+
+  &__link {
+    & > span {
+      margin-left: 0.75rem;
+      position: relative;
+      top: -2px;
+    }
+  }
+}
+
+.datacenter-worldmap {
+  margin-bottom: 80px;
+  &__svg {
+    max-width: 100%;
+    svg {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.worldmap-tooltip {
+  background: #22273c;
+  border-radius: 8px;
+  display: none;
+  padding: 12px 28px 28px;
+  position: absolute;
+  width: 322px;
+
+  &::before {
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    content: "";
+    height: 0; 
+    left: 131px;
+    position: absolute;
+    width: 0; 
+  }
+
+  &:not(&--bottom)::before {
+    border-top: 30px solid #22273c;
+    bottom: -16px;
+  }
+
+  &--bottom {
+    &::before {
+      border-bottom: 30px solid #22273c;
+      top: -16px;
+    }
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__title {
+    color: #fff;
+    text-align: center;
+  }
+
+  &__location {
+    @include font-size('24-semibold');
+    margin-bottom: 4px;
+    text-transform: capitalize;
+  }
+
+  &__country {
+    @include font-size('16');
+  }
+
+  &__icon {
+    margin-bottom: 12.5px;
+  }
+
+  &__details {
+    color: #fff;
+    @include font-size('14');
+    letter-spacing: 0.005em;
+  }
+}
+
+.as-feature__list-item:before {
+  top: -5px;
+}
+
+.as-comparation {
+  background: #fff;
+  border: 1px solid #f3f4f6;
+  border-radius: 16px;
+  box-shadow: 0px 4px 24px rgba(0, 87, 178, 0.08);
+  box-sizing: border-box;
+  margin-top: 48px;
+  overflow-y: unset;
+  padding: 32px 26px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 32px 0px 32px 12px;
+  }
+
+  @include screen(desktop) {
+    margin-top: 0;
+  }
+
+  th.zero {
+    @media (min-width: 992px) {
+        width: 50%;
+    }
+}
+
+  th.context {
+    color: #29384e;
+    font-size: 1.429em;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.005em;
+    line-height: 26px;
+    padding: 0 12px;
+    text-align: center;
+  }
+
+  th.context div {
+    padding: 21px 10px;
+
+    @include screen(desktop) {
+      min-width: 300px;
+    }
+  }
+
+  th:not(.active) {
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  td .zero-value-wrapper {
+    display: flex;
+  }
+
+  td .zero-value-icon {
+    cursor: pointer;
+    margin-right: 14px;
+    position: relative;
+  }
+
+  td .zero-value-text {
+    color: #546071;
+    font-size: 1.143em;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.005em;
+    line-height: 24px;
+  }
+
+  td.context-value {
+    padding: 0 12px;
+    text-align: center;
+  }
+
+  td.context-value div {
+    border-bottom: 1px solid rgba(18, 18, 18, 0.12);
+    color: #546071;
+    font-size: 1.143em;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0.005em;
+    line-height: 24px;
+    min-width: 68px;
+    padding: 26px 0;
+  }
+
+  td.context-value:not(.active) {
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    &-left {
+      position: absolute;
+      left: 30px;
+      top: 55px;
+
+      @include screen(desktop) {
+        display: none;
+      }
+
+      img {
+        width: 10px;
+      }
+    }
+
+    &-right {
+      position: absolute;
+      right: 30px;
+      top: 55px;
+
+      @include screen(desktop) {
+        display: none;
+      }
+
+      img {
+        width: 10px;
+      }
+    }
+  }
+}
+
+.tooltip-inner {
+  min-width: 250px;
+}
+
+.as-nav-col:before {
+  right: -52px;
+}

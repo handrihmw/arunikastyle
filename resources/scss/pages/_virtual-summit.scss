@@ -1,0 +1,100 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+.virtual-summit {
+  &__hero {
+    @include screen(mobileSmall) {
+      padding: 70px 0 !important;
+    }
+
+    @include screen(desktop) {
+      padding: 0 0 90px 0 !important;
+    }
+
+    &-title {
+      color: #fff;
+      font-style: normal;
+      font-weight: 800;
+
+      @include screen(mobileSmall) {
+        font-size: 2.143em;
+        line-height: 41px;
+        padding-right: 100px;
+      }
+
+      @include screen(desktop) {
+        font-size: 3.571em;
+        line-height: 72px;
+        padding-right: 170px;
+      }
+    }
+
+    &-description {
+      color: #fff;
+      font-style: normal;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+      margin-bottom: 26px;
+
+      @include screen(mobileSmall) {
+        font-size: 1.286em;
+        line-height: 30px;
+        padding-right: unset;
+      }
+
+      @include screen(desktop) {
+        font-size: 1.429em;
+        line-height: 32px;
+        padding-right: 100px;
+      }
+    }
+
+    &-date {
+      display: flex;
+      margin-bottom: 26px;
+
+      @include screen(mobileSmall) {
+        align-items: flex-start;
+      }
+
+      @include screen(desktop) {
+        align-items: center;
+      }
+
+      &-icon {
+        img {
+          aspect-ratio: 1/1;
+        }
+
+        @include screen(mobileSmall) {
+          margin-right: 16px;
+        }
+
+        @include screen(mobileSmall) {
+          margin-right: 21px;
+        }
+      }
+
+      &-text {
+        color: #fff;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.143em;
+        line-height: 177.32%;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    &-row {
+      &-right {
+        @include screen(mobileSmall) {
+          margin-top: 32px;
+        }
+
+        @include screen(mobile) {
+          margin-top: unset;
+        }
+      }
+    }
+  }
+}

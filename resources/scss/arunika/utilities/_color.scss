@@ -1,0 +1,73 @@
+@use '../variables/color' as *;
+@use '../variables/shade' as *;
+@use '../variables/shadow' as *;
+
+$colorpalletes: (
+  primary: $as-color-primary,
+  secondary: $as-color-secondary,
+  secondary-2: $as-color-secondary-2,
+  disable: $as-color-disable,
+  white: $as-color-white,
+  black: $as-color-black,
+  soft: $as-color-soft,
+  blue-darken: $as-color-blue-darken,
+  blue-bright: $as-color-blue-bright,
+  pink-soft: $as-color-pink-soft,
+  blue-soft: $as-color-blue-soft,
+  gray-soft: $as-color-gray-soft,
+  gray-soft-2: $as-color-gray-soft-2,
+  blue: $as-color-blue,
+  blue-light: $as-color-blue-light,
+  blue-dark: $as-color-blue-dark,
+  orange: $as-color-orange,
+  orange-light: $as-color-orange-light,
+  orange-dark: $as-color-orange-dark,
+  orange-hover: $as-color-orange-hover,
+  orange-pressed: $as-color-orange-pressed,
+  red: $as-color-red,
+  red-light: $as-color-red-light,
+  red-dark: $as-color-red-dark,
+  red-hover: $as-color-red-hover,
+  red-pressed:$as-color-red-pressed,
+  green: $as-color-green,
+  green-light: $as-color-green-light,
+  green-dark: $as-color-green-dark,
+  green-hover: $as-color-green-hover,
+  green-pressed: $as-color-green-pressed,
+  yellow: $as-color-yellow,
+  yellow-light: $as-color-yellow-light,
+  yellow-dark: $as-color-yellow-dark,
+  text-hover: $as-color-text-hover,
+  text-pressed:$as-color-text-pressed,
+  disable-state: $as-color-disable-state,
+  neutral-hover: $as-color-neutral-hover,
+  neutral-pressed:$as-color-neutral-pressed,
+  divider: $as-color-divider,
+  border: $as-color-border,
+  backdrop: $as-color-backdrop,
+  gray: $as-color-gray,
+  gray-dark: $as-color-gray-dark,
+  miscellaneous: $as-color-miscellaneous,
+
+  shadow-1: $as-shadow-black-1,
+  shadow-2: $as-shadow-black-2,
+  shadow-3: $as-shadow-black-3,
+
+  shade-80: $as-shade-80,
+  shade-64: $as-shade-64,
+  shade-32: $as-shade-32,
+  shade-18: $as-shade-18,
+  shade-12: $as-shade-12,
+);
+
+@each $name, $value in $colorpalletes {
+  .as-color-#{"" + $name} {
+    color: $value;
+  }
+}
+
+@each $name, $value in $colorpalletes {
+  .as-background-#{"" + $name} {
+    background: $value;
+  }
+}

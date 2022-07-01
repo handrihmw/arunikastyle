@@ -1,0 +1,199 @@
+@use '../mixins/breakpoint' as *;
+
+.as-modal-order {
+  &__header {
+    border-bottom: none;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top-left-radius: calc(1rem - 1px);
+    border-top-right-radius: calc(1rem - 1px);
+  }
+
+  &__body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0 2rem;
+    margin-bottom: 30px;
+
+   @include screen(mobile) {
+      margin-bottom: 0;
+      padding: 0 8px;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 1rem;
+    outline: 0;
+    padding-bottom: 20px;
+  }
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: clamp(1.25rem, 5vw, 1.375rem);
+    font-weight: unset;
+    line-height: 177.32%;
+    text-align: center;
+
+    @media only screen and (max-width: 375px) {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__description {
+    color: rgba(58, 65, 102, .7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: clamp(.75rem, 5vw, .875rem);
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @media only screen and (max-width: 375px) {
+      font-size: 0.75rem;
+    }
+  }
+
+  &__domain {
+    margin: 24px 24px 0;
+    min-width: 245px;
+    overflow: auto;
+    position: relative;
+    width: 75%;
+
+   @include screen(mobile) {
+      margin: 12px 24px;
+      width: 90%;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      width: 100%;
+    }
+
+    &-input {
+      background-color: #fff;
+      border-radius: 8px 0 0 8px;
+      border: 1px solid #ccc;
+      border-right-width: 0;
+      color: rgba(58, 65, 102, .7);
+      display: block;
+      float: left;
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: clamp(.75rem, 5vw, .875rem);
+      font-weight: 400;
+      height: 64px;
+      line-height: 19px;
+      padding: 20px 24px;
+      width: 64%;
+
+      @media only screen and (max-width: 375px) {
+        font-size: 0.75rem;
+        height: 50px;
+        padding: 12px 8px !important;
+      }
+
+     @include screen(mobile) {
+        padding: 16px;
+        width: 60%;
+      }
+    }
+
+    &-select {
+      background: url(data:image/svg+xml;utf8;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJjaGV2cm9uLWRvd24iIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1jaGV2cm9uLWRvd24gZmEtdy0xNCIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGQ9Ik0yMDcuMDI5IDM4MS40NzZMMTIuNjg2IDE4Ny4xMzJjLTkuMzczLTkuMzczLTkuMzczLTI0LjU2OSAwLTMzLjk0MWwyMi42NjctMjIuNjY3YzkuMzU3LTkuMzU3IDI0LjUyMi05LjM3NSAzMy45MDEtLjA0TDIyNCAyODQuNTA1bDE1NC43NDUtMTU0LjAyMWM5LjM3OS05LjMzNSAyNC41NDQtOS4zMTcgMzMuOTAxLjA0bDIyLjY2NyAyMi42NjdjOS4zNzMgOS4zNzMgOS4zNzMgMjQuNTY5IDAgMzMuOTQxTDI0MC45NzEgMzgxLjQ3NmMtOS4zNzMgOS4zNzItMjQuNTY5IDkuMzcyLTMzLjk0MiAweiI+PC9wYXRoPjwvc3ZnPg==) no-repeat;
+      background-color: #ececec;
+      background-position: calc(100% - 10px) 50%;
+      background-repeat: no-repeat;
+      background-size: 12px;
+      border: 1px solid #ccc;
+      border-left-width: 0;
+      border-radius: 0 8px 8px 0;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      color: #3a4166;
+      cursor: pointer;
+      display: block;
+      float: left;
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: clamp(1.125rem, 5vw, 1.125rem);
+      font-weight: unset;
+      height: 64px;
+      line-height: 22px;
+      margin: 0;
+      padding: 20px 15px;
+      position: relative;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      @media only screen and (max-width: 375px) {
+        font-size: 0.875rem;
+        height: 50px;
+        padding: 10px;
+      }
+    }
+  }
+
+  &__website {
+    margin: 24px 24px 0;
+    min-width: 245px;
+    overflow: auto;
+    position: relative;
+    width: 75%;
+
+   @include screen(mobile) {
+      width: 100%;
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      width: 100%;
+    }
+
+    &-input {
+      background-color: #fff;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      color: rgba(58, 65, 102, .7);
+      display: block;
+      float: left;
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: clamp(.875rem, 5vw, .875rem);
+      font-weight: 400;
+      height: 64px;
+      line-height: 19px;
+      padding: 20px 24px;
+      width: 65%;
+
+      @media only screen and (max-width: 375px) {
+        font-size: 0.75rem;
+        height: 50px;
+        padding: 12px;
+      }
+    }
+  }
+
+  &__footer {
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 50px;
+    position: relative;
+
+   @include screen(mobile) {
+      margin-bottom: 15px;
+      padding: 0 30px;
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@import "../app";
+
+
+/* Arunika Hero */
+@import "../components/hero";
+@import "../components/hero-center";
+
+/* Arunika Section */
+@import "../components/section-domain";
+@import "../components/section-white";
+@import "../components/section-center-blue";
+@import "../components/section-soft-blue";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-color";
+@import "../components/card-icon";
+@import "../components/card-tips";
+@import "../components/card-list";
+@import "../components/card-no-list";
+@import "../components/card-color-dark";
+@import "../components/card-table";
+
+/* Arunika Search Domain */
+@import "../components/search-domain";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Banner */
+@import "../components/banner";
+
+/* Arunika Feature */
+@import "../components/feature";
+
+/* Arunika Spinner */
+@import "../components/spinner";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Header */
+@import "../components/header";
+
+@import "../components/table";
+@import "../components/search-result";
+
+.domain-murah {
+    &__header {
+        &--title {
+            text-align: center;
+
+           @include screen(mobile) {
+                text-align: left;
+            }
+        }
+
+        &--description {
+            line-height: 1.5rem;
+            text-align: center;
+
+           @include screen(mobile) {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.as-feature {
+    padding: 32.5px 30px 32.5px 30px;
+}
+
+@media screen and (max-width: 360px) {
+    .as-headline {
+        &__title, &__description {
+            text-align: left;
+        }
+
+        &__title {
+            font-size: clamp(1.6rem,5vw,2.5rem);
+        }
+
+        &__description {
+            font-size: clamp(.9rem,5vw,.8rem);
+        }
+    }
+
+    .as-hero-center {
+        padding: 20px 0;
+    }
+
+    .as-banner-soft__action {
+        .as-banner-soft__button {
+            width: 100%;
+        }
+    }
+}
+
+.domain-info {
+    .as-card-color {
+        padding: 1.313rem;
+    }
+
+    .as-card-color__description {
+        @include font-size('16');
+        color: var(--as-color-gray);
+    }
+}

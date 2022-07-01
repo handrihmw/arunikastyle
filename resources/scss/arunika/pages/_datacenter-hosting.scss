@@ -1,0 +1,75 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero";
+
+/* Arunika Section */
+@import "../components/section-domain";
+@import "../components/section-white";
+@import "../components/section-center-blue";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-color";
+@import "../components/card-icon";
+@import "../components/card-tips";
+@import "../components/card-list";
+@import "../components/card-no-list";
+@import "../components/card-color-dark";
+@import "../components/card-table";
+@import "../components/card-slider";
+@import "../components/card-feature";
+@import "../components/card-widget";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Banner */
+@import "../components/banner";
+
+/* Arunika Feature */
+@import "../components/feature";
+
+/* Arunika Spinner */
+@import "../components/spinner";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Header */
+@import "../components/header";
+
+@import "../components/table";
+
+/* Arunika Section Blue */
+@import "../components/section-soft-blue";
+
+@import "../components/table-noborder";
+@import "../components/step";
+
+.datacenter-hosting-details {
+    opacity: .6;
+}
+
+.as-card-slider__content-title {
+    font-size: clamp(.875rem, 5vw, 1rem);
+}
+
+.as-card-slider__content-details {
+    color: var(--as-color-secondary-two);
+}
+
+.dot {
+    &::before {
+        content: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9'%3E%3Ccircle cx='4.5' cy='4.5' r='3.5'/%3E%3C/svg%3E");
+        margin-right: 10px;
+    }
+}
+
+.why-section-left {
+    padding-right: 8rem;
+
+    @include screen(desktop) {
+        padding-right: 0;
+    }
+}

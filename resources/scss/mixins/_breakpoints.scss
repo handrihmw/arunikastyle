@@ -1,0 +1,87 @@
+@mixin screen ($breakpoint) {
+  @if $breakpoint==mobileSmall {
+    @media only screen and (max-width: 576px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==mobile {
+    @media only screen and (min-width: 576px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==tablet {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==laptop {
+    @media only screen and (min-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktop {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktopLarge {
+    @media only screen and (min-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint==desktopExtra {
+    @media only screen and (min-width: 1400px) {
+      @content;
+    }
+  }
+}
+
+/* ipad Portrait */
+@mixin ipadPortrait {
+  @media only screen 
+    and (min-device-width: 1024px) 
+    and (max-device-width: 768px) 
+    and (orientation: portrait) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+      @content;
+  }
+}
+
+/* ipad Landscape */
+@mixin ipadLandscape {
+  @media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) 
+    and (orientation: landscape) 
+    and (-webkit-min-device-pixel-ratio: 1.5) {
+      @content;
+  }
+}
+
+/* ipadPro Portrait */
+@mixin ipadProPortrait {
+  @media only screen 
+    and (min-device-width: 1024px) 
+    and (max-device-height: 1366px) 
+    and (-webkit-min-device-pixel-ratio: 2)  
+    and (orientation: portrait)  {
+      @content;
+  }
+}
+
+/* ipadPro Landscape*/
+@mixin ipadProLandscape {
+  @media only screen 
+    and (min-device-width: 1366px) 
+    and (max-device-height: 1024px) 
+    and (-webkit-min-device-pixel-ratio: 2)  
+    and (orientation: landscape)  {
+      @content;
+  }
+}

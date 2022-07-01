@@ -1,0 +1,90 @@
+@use "../../mixins/breakpoints"as *;
+
+.success-online {
+  background-image: linear-gradient(45deg, rgba(0, 52, 155, 1), rgba(0, 92, 255, .9219), rgba(0, 122, 255, 1));
+  color: #fff;
+  font-family: 'NunitoSansBold', sans-serif;
+  padding: 75px 0;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: unset;
+    max-width: 524px;
+    text-align: center;
+
+    @include screen(desktop) {
+      font-size: 2rem;
+      margin-left: auto;
+      text-align: left;
+    }
+
+    &--black-friday {
+      margin: 20px 0;
+      max-width: 100%;
+
+      @include screen(desktop) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__description {
+    &--black-friday {
+      font-size: .8rem;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-align: center;
+
+      @include screen(desktop) {
+        text-align: left;
+      }
+
+      @include screen(desktop) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__img-wrapper {
+    &--black-friday {
+      padding-top: 20px;
+      text-align: center;
+
+      @include screen(desktop) {
+        text-align: left;
+      }
+
+      @include screen(desktop) {
+        text-align: left;
+      }
+    }
+  }
+
+  &__btn-wrapper {
+    margin-top: 40px;
+    text-align: center;
+
+    &--black-friday {
+      margin-bottom: 20px;
+
+      @include screen(desktop) {
+        margin-bottom: 0;
+      }
+    }
+
+    @include screen(desktop) {
+      margin-top: 0;
+    }
+  }
+
+  &--black-friday {
+    background-image: none;
+    background-color: #111130;
+    padding: 0;
+  }
+
+  &--black-friday20 {
+    background-image: linear-gradient(147deg, #0B87D7 0%, #01152F 74%);
+    padding: 75px 0;
+  }
+}

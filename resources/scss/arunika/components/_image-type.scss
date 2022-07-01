@@ -1,0 +1,205 @@
+@use '../mixins/breakpoint' as *;
+
+.as-image {
+  &__client {
+    height: 110px !important;
+    width: 200px !important;
+
+    @media only screen and (max-width: 320px) {
+      height: 80px !important;
+      /* use important to replace size from slick */
+      width: 150px !important;
+      /* use important to replace size from slick */
+    }
+
+   @include screen(mobile) {
+      height: 100px !important;
+      /* use important to replace size from slick */
+      width: 170px !important;
+      /* use important to replace size from slick */
+    }
+
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      width: 20%;
+    }
+  }
+}
+
+/* Browser Window */
+$bottomColor: #95bffe;
+$topColor: lighten($bottomColor, 2%);
+$border: $bottomColor;
+
+.as-browser-window {
+  border: 1px solid darken($bottomColor, 1%);
+  margin: 20px;
+  height: auto;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: lighten($topColor, 1%);
+
+  &__top {
+    height: 30px;
+    border-radius: 5px 5px 0 0;
+    border-top: thin solid lighten($topColor, 1%);
+    border-bottom: thin solid darken($bottomColor, 1%);
+    background: linear-gradient($topColor, $bottomColor);
+  }
+
+  &__circles {
+    margin: 5px 11px;
+  }
+
+  &__circle {
+    height: 8px;
+    width: 8px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #fff;
+  }
+
+  &__preview {
+    border-radius: 0 0 5px 5px;
+  }
+
+  &__content {
+    padding: 8px 20px;
+
+   @include screen(mobile) {
+      padding: 16px 0;
+    }
+  }
+
+  &__content--flex {
+    display: flex;
+    justify-content: space-between;
+
+   @include screen(mobile) {
+      padding: 0;
+    }
+  }
+
+  &__title {
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.125rem, 5vw, 1.125rem);
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1.625rem;
+  }
+
+  &__gimmick-pricing {
+    color: #535961;
+    font-size: clamp(0.75rem, 5vw, 0.75rem);
+    letter-spacing: 0.005em;
+    line-height: 1.750rem;
+  }
+
+  &__pricing {
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(0.875rem, 5vw, 0.875rem);
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 1.750rem;
+  }
+
+  &__description {
+    color: #535961;
+    font-size: clamp(1rem, 5vw, 1rem);
+    letter-spacing: 0.005em;
+    line-height: 1.5rem;
+  }
+
+  &--no-margin {
+    margin: 0;
+  }
+}
+
+.as-content {
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+
+  .as-content-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: auto;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+  }
+
+  &:hover {
+    .as-content-overlay {
+      opacity: 1;
+    }
+
+    .as-content-details {
+      left: 40%;
+      opacity: 1;
+      top: 50%;
+    }
+  }
+}
+
+.as-content-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  left: 40%;
+  width: 100%;
+  top: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+
+  &__preview {
+    margin-bottom: 16px;
+    transform: translate(13%);
+  }
+
+  &__more {
+    background-color: #fff;
+    color: #fb8c00;
+    transform: translate(13%);
+  }
+}
+
+.fadeIn-bottom {
+  top: 80%;
+}
+
+// Website Instan Badge
+.as-content-badge {
+  background: #a21230;
+  max-height: 84px;
+  max-width: 110px;
+  padding: 16px 16px;
+  position: absolute;
+
+  &__discount {
+    color: #ffffff;
+    font-size: clamp(0.75rem, 5vw, 0.75rem);
+    letter-spacing: 0.005em;
+    line-height: 0.75rem;
+  }
+
+  &__percentage {
+    color: #ffc721;
+    font-size: clamp(1.25rem, 5vw, 2.25rem);
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 0.005em;
+    line-height: 2.25rem;
+  }
+}

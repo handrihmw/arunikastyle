@@ -1,0 +1,249 @@
+@use "../mixins/breakpoints" as *;
+
+@mixin orderflow-modal-dialog {
+  max-width: 540px;
+
+  @include screen(mobile) {
+    margin: 0.5rem auto;
+  }
+}
+
+@mixin orderflow-modal-content {
+  border-radius: 8px;
+  border: 1px solid #c4c4c4;
+  box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.2);
+  box-sizing: border-box;
+  padding: 32px 48px;
+
+  @include screen(mobile) {
+    padding: 32px 20px 31.54px;
+  }
+}
+
+@mixin orderflow-modal-title {
+  color: #3a4166;
+  font-family: 'NunitoSansBold', sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+@mixin orderflow-modal-button {
+  font-size: 1em;
+  letter-spacing: 0.05em;
+  line-height: 16px;
+  position: relative;
+
+  &--save {
+    background: #fb8c00;
+    border-radius: 100px;
+    border: 0;
+    color: #fff;
+    display: block;
+    margin: 24px auto 0;
+    padding: 16px 48px;
+  }
+
+  @include screen(mobile) {
+    padding: 16px 27.5px;
+  }
+}
+
+.profile-modal {
+
+  &.show {
+    opacity: inherit;
+  }
+
+  &__button {
+    @include orderflow-modal-button;
+  }
+
+  &__content {
+    @include orderflow-modal-content;
+  }
+
+  &__dialog {
+    @include orderflow-modal-dialog;
+    transform: translate(0, 12%) !important;
+  }
+
+  &__form {
+    margin: 32px 0;
+
+    &-label {
+      color: #3a4166;
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 0.750em;
+      line-height: 16px;
+      margin-bottom: 16px;
+    }
+
+    &-group {
+      margin-bottom: 8px;
+      min-height: 88px;
+    }
+
+    &-control {
+      border-left: 0 !important;
+      border-radius: 0 !important;
+      border-right: 0 !important;
+      border-top: 0 !important;
+      padding: 0 0 8px;
+
+      &::placeholder {
+        color: rgba(58, 65, 102, 0.4);
+      }
+
+      &:focus {
+        border-color: #007aff;
+        box-shadow: none;
+      }
+
+      &--error {
+        border-color: #ff0000 !important;
+        font-family: 'NunitoSansRegular', sans-serif;
+        margin-bottom: 5px;
+        padding: 0;
+
+        &:focus {
+          border-color: #ff0000 !important;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    color: rgba(58, 65, 102, 0.7);
+    font-size: 0.875em;
+    line-height: 16px;
+    text-align: center;
+  }
+
+  &__title {
+    @include orderflow-modal-title;
+  }
+}
+
+.select-os {
+  &.show {
+    opacity: inherit;
+  }
+
+  &__button {
+    @include orderflow-modal-button;
+  }
+
+  &__content {
+    @include orderflow-modal-content;
+  }
+
+  &__dialog {
+    @include orderflow-modal-dialog;
+    transform: translate(0, 50%) !important;
+  }
+
+  &__form {
+    &-group {
+      position: relative;
+    }
+
+    &--error {
+      border-color: #ff0000 !important;
+      margin-bottom: 5px;
+      padding: 0;
+    }
+  }
+
+  &__os-options,
+  &__select {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__os-options {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 7px 10px 0 rgba(77, 88, 114, 0.1);
+    list-style: none;
+    margin: 0;
+    overflow: auto;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+    li {
+      color: #4d5872;
+      cursor: pointer;
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 1.6rem;
+      line-height: 25px;
+      padding: 20px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+      }
+
+      &:hover {
+        background: #e5f2ff;
+        color: #4d5872;
+      }
+
+      strong {
+        font-family: 'NunitoSansBold', sans-serif;
+      }
+
+      @include screen(desktop) {
+        line-height: 19px;
+      }
+    }
+  }
+
+  &__select {
+    padding: 16px 20px;
+
+    &::after {
+      content: "\f078";
+      float: right;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      position: absolute;
+      right: 20px;
+      top: 16px;
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 1.6rem;
+      line-height: 22px;
+      margin-bottom: 0;
+    }
+
+    &--show {
+      &::after {
+        content: "\f077";
+      }
+    }
+  }
+
+  &__title {
+    @include orderflow-modal-title;
+  }
+
+  &__wrapper {
+    border-bottom: 1px solid #ccc;
+    border-radius: 8px;
+    height: 500px;
+    overflow: overlay;
+    position: absolute;
+    width: 100%;
+  }
+}

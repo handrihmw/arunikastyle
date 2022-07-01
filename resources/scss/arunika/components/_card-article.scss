@@ -1,0 +1,59 @@
+.as-card-article {
+  margin-top: 80px;
+
+  &__thumbnail {
+    border-radius: 8px;
+    margin-bottom: 24px;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      display: block;
+      content: "";
+      padding-bottom: 56.25%;
+    }
+
+    img {
+      border-radius: 8px;
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: #29384e;
+    font-family: NunitoSansBold, sans-serif;
+    font-size: clamp(1.125rem, 10vw, 1.125rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 27px;
+    margin-bottom: 12px;
+  }
+
+  &__summary {
+    color: #535961;
+    font-family: NunitoSansRegular, sans-serif;
+    font-size: clamp(.875rem, 10vw, 1rem);
+    font-weight: normal;
+    letter-spacing: 0.005em;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__readmore {
+    color: #007aff;
+    display: block;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+
+  &__title,
+  &__summary,
+  &__readmore {
+    text-align: left;
+  }
+}

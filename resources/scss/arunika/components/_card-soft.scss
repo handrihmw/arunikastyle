@@ -1,0 +1,49 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-card-soft {
+  &__content {
+    background: var(--as-color-soft);
+    padding: 24px 20px;
+    text-align: left;
+  }
+
+  &__title {
+    @include font-size('20-semibold');
+    color: var(--as-color-primary);
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    @include font-size('16');
+    border-top: 1px solid var(--as-color-blue-soft);
+    color: var(--as-color-secondary);
+    padding-top: 24px;
+
+    & p {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    & a {
+      color: var(--as-color-blue);
+    }
+
+    & ol,
+    ul {
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      padding: 0 0 0 24px;
+    }
+
+    & li {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

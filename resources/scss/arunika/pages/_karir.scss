@@ -1,0 +1,45 @@
+@import "../pages/all-component";
+
+.as-header {
+    background-image: url(/assets/images/2021/karir/header-bg.svg);
+    background-position: center right 25%;
+    background-repeat: no-repeat;
+    background-size: 744px 744px, cover;
+
+    &--engineer-campaign {
+        background: #000912;
+        background-image: none;
+    }
+
+    .as-hero {
+        &__wrapper {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            left: unset;
+            margin: unset;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            position: unset;
+            top: unset;
+            transform: unset;
+
+            &-info {
+                top: unset;
+            }
+
+            &-image {
+                left: unset;
+                transform: unset;
+                text-align: center;
+                top: unset;
+            }
+        }
+    }
+}
+
+.as-hero {
+    &__button {
+        margin-top: 0;
+    }
+}

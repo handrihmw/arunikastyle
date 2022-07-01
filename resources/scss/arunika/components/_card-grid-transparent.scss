@@ -1,0 +1,27 @@
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-card-grid-transparent {
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+
+  &__image {
+   
+    aspect-ratio: 1/1;
+    height: 48px;
+    margin-bottom: 1.5rem;
+    width: 48px;
+  }
+
+  &__title {
+    @include font-size('16');
+    color: var(--as-color-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    @include font-size('12');
+    color: var(--as-color-secondary-two);
+  }
+}

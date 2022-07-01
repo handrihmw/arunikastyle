@@ -1,0 +1,99 @@
+@import "../app";
+
+/*  Arunika Header  */
+@import "../components/header";
+
+/*  Arunika Color  */
+
+
+/*  Arunika Hero  */
+@import "../components/hero";
+@import "../components/hero-center";
+
+/* Owl Carousel */
+@import "../components/owl-carousel";
+
+/*  Arunika Section  */
+@import "../components/section-domain";
+@import "../helpers/section";
+@import "../components/section-center-blue";
+
+/*  Arunika Card  */
+@import "../components/card";
+@import "../components/card-feature";
+@import "../components/card-color";
+@import "../components/card-list";
+@import "../components/card-icon";
+@import "../components/card-image";
+
+/* Arunika Headline */
+@import "../components/headline-center";
+@import "../components/headline-checklist-green";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+@import "../helpers/button";
+@import "../helpers/button-helper";
+
+@import "../components/comparations";
+
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+
+.as-hero__title {
+  font-size: clamp(1.75rem,4vw,3.5rem);
+  line-height: clamp(2.25rem, 5vw, 4rem);
+}
+
+.as-headline-iconcolor {
+  &__description {
+    margin-bottom: 1rem;
+  }
+  
+  &__button {
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+
+    @include screen(tablet) {
+      margin-bottom: 0;
+      margin-top: 1rem;
+      width: auto;
+    }
+  }
+}
+
+.section-easy-cpanel {
+  background: var(--as-color-blue);
+  background-image: unset;
+  padding: 0 20px;
+
+  &__image {
+    display:block;
+    margin:auto;
+    text-align: center;
+  }
+
+  &__wrapper {
+    padding-bottom: 31.5px;
+    padding-top: 31.5px;
+    text-align: left;
+
+    h3, p, button {
+      color: var(--as-color-white);
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+
+    button {
+      text-align: center;
+      width: 100%;
+
+      @include screen(tablet) {
+        width: auto;
+      }
+    }
+  }
+}

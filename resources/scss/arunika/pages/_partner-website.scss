@@ -1,0 +1,76 @@
+@import "../app";
+
+/* Arunika Header */
+@import "../components/header";
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+
+/* Arunika Section */
+@import "../components/section-soft-blue";
+
+/* Arunika Filter */
+@import "../components/filter";
+
+/* Arunika Search */
+@import "../components/search";
+
+/* Arunika Card */
+@import "../components/card";
+@import "../components/card-website";
+@import "../components/card-feature";
+@import "../components/card-icon";
+@import "../components/card-image";
+@import "../components/card-slider";
+@import "../components/card-website-explore";
+@import "../components/card-website-partner";
+
+/* Arunika Modal */
+@import "../components/modal-website";
+@import "../components/modal-website-mobile";
+
+@import "../components/breadcrumb";
+
+/* Arunika Navigation Tab */
+@import "../components/tab-navigation";
+
+/* Arunika Feature */
+@import "../components/feature";
+
+@import "../components/section-center-blue";
+
+@import "../components/table";
+
+.nav-tabs {
+    border-bottom: 2px solid var(--as-color-divider);
+}
+
+.nav {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+
+    @include screen(desktop) {
+        overflow-x: hidden;
+    }
+}
+
+.as-navigation-tab__link {
+    @include font-size('20-semibold');
+    background-color: #fff !important;
+    border-radius: 0px;
+    color: var(--as-color-gray);
+    min-width: 200px;
+    padding: 0;
+}
+
+.as-navigation-tab__link.active{
+    background-color: #fff !important;
+    border-bottom: 4px solid var(--as-color-blue);
+    box-shadow: none;
+    color: var(--as-color-primary);
+    margin: 0;
+}
+
+.slick-disabled {
+    opacity: .08;
+    pointer-events: none;
+}

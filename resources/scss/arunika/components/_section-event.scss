@@ -1,0 +1,108 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-section-event {
+  color: var(--as-color-primary);
+  padding: 60px 20px;
+  position: relative;
+
+  @include screen(desktop) {
+    padding: 90px;
+  }
+
+  &--top {
+    margin-top: 200px;
+
+    @include screen(laptop) {
+      margin-top: 600px;
+    }
+
+    @include screen(desktop) {
+      margin-top: 400px;
+    }
+  }
+
+  &__title {
+    @include font-size('24');
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    @include font-size('20');
+    color: var(--as-color-secondary-two);
+    margin-bottom: 1rem;
+  }
+
+  &__speaker {
+    display: flex;
+    padding: 1rem 0 2rem 0;
+
+    &--left {
+      padding-right: 8px;
+    }
+
+    &--right {
+      padding-left: 8px;
+    }
+
+    &--image {
+      align-self: center;
+      border-radius: 50%;
+      height: 48px;
+      width: 48px;
+    }
+
+    &--name {
+      @include font-size('20');
+      font-weight: 700;
+    }
+
+    &--position,
+    &--company {
+      @include font-size('18');
+      color: var(--as-color-secondary-two);
+      margin-bottom: 4px;
+    }
+  }
+
+  &__line {
+    border-bottom: 1px solid var(--as-color-border);
+  }
+
+  &__action {
+    align-items: center;
+    display: grid;
+    margin-top: 2rem;
+    text-align: center;
+
+    @include screen(desktop) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+    }
+
+    &--text {
+      @include font-size('20');
+      color: var(--as-color-primary);
+      font-weight: 700;
+      margin-top: 1rem;
+
+      @include screen(desktop) {
+        margin-top: 0;
+      }
+    }
+
+    &--button {
+      padding: 0.5rem 2.25rem;
+
+      @include screen(mobileSmall) {
+        padding: .5rem 2rem;
+      }
+
+      @include screen(desktop) {
+        padding: 0.75rem 4.5rem;
+      }
+    }
+  }
+}

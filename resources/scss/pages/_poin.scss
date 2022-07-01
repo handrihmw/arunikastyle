@@ -1,0 +1,235 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+/* Helper */
+@import "../arunika/helpers/all";
+@import "../arunika/components/hero";
+
+/* Section */
+@import "../arunika/components/section-white";
+
+/* Arunika Card Point */
+@import "../arunika/components/card-point";
+
+/* Owl Carousel */
+@import "../arunika/components/owl-carousel";
+
+/* Mixins */
+@import "../arunika/mixins/space";
+
+.benefit-points {
+  padding: 100px 0;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    text-align: center;
+    color: #3A4166;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 200%;
+    text-align: center;
+    color: rgba(58, 65, 102, 0.7);
+    margin: 20px 0px 80px;
+  }
+
+  &__benefit-items {
+    box-shadow: 0px 8px 32px rgba(0, 87, 178, 0.16);
+    box-sizing: border-box;
+    border-radius: 20px;
+    min-height: 360px;
+    height: 100%;
+    margin: 0 auto;
+
+    &--mb-30 {
+      margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-down(xs) {
+      width: 90%;
+    }
+
+    &:hover {
+      box-shadow: 0px 6px 30px rgba(17, 26, 104, 0.1);
+    }
+
+    &-title {
+      color: #29384e;
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-weight: bold;
+      font-style: normal;
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      line-height: 150%;
+      padding: 0px 70px 30px;
+      text-align: center;
+    }
+
+    &-desc {
+      padding: 0 40px 30px;
+
+      &-text {
+        color: #7f8895;
+        font-family: 'NunitoSansRegular', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        letter-spacing: 0.005em;
+        line-height: 150%;
+        text-align: center;
+      }
+    }
+
+    &-image {
+      text-align: center;
+
+      &--kupon-diskon {
+        padding: 22px 82.5px 40px;
+      }
+
+      &--kupon-merch {
+        padding: 22px 85px 40px;
+      }
+
+      &--kupon-pulsa {
+        padding: 22px 82px 40px;
+      }
+    }
+
+    .img-fluid {
+      max-height: 200px !important;
+    }
+  }
+
+  &__button {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+
+.how-to-get-points {
+  padding: 100px 0;
+  background: #F6FBFF;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    text-align: center;
+    color: #3A4166;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 200%;
+    text-align: center;
+    color: rgba(58, 65, 102, 0.7);
+    margin: 20px 0px 80px;
+  }
+
+  &__list-items {
+    background: #fff;
+    box-shadow: 0px 6px 30px rgba(17, 26, 104, 0.1);
+    border-radius: 10px;
+    padding: 32px;
+    margin-bottom: 40px;
+
+    &-title {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 32px;
+      color: #3A4166;
+    }
+
+    &-description {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 200%;
+      color: rgba(58, 65, 102, 0.7);
+    }
+  }
+
+  &__image {
+    text-align: center;
+  }
+}
+
+.how-to-change-points {
+  padding: 100px 0;
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    text-align: center;
+    color: #3A4166;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 200%;
+    text-align: center;
+    color: rgba(58, 65, 102, 0.7);
+    margin: 20px 0px 80px;
+  }
+
+  &__list-steps {
+    &-title {
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-weight: unset;
+      font-size: 18px;
+      line-height: 27px;
+      text-align: center;
+      color: #3A4166;
+      margin-top: 30px;
+    }
+
+    &-image {
+      text-align: center;
+    }
+  }
+}
+
+.faq-poin {
+  background: #F6FBFF;
+}
+
+.excellent-support {
+  padding: 80px 0;
+  background-image: linear-gradient(45deg, rgba(0, 52, 155, 1), rgba(0, 92, 255, .9219), rgba(0, 122, 255, 1));
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+    font-size: 33px;
+    line-height: 45px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  &__description {
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    color: #fff;
+  }
+
+  &__btn-wrapper {
+    text-align: center;
+  }
+}

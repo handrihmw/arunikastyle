@@ -1,0 +1,136 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-hero {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  overflow: hidden;
+  padding: 2rem 0;
+  width: 100%;
+
+  @include screen(desktop) {
+    padding: 3.75rem 1.25rem;
+  }
+
+  &-center {
+    display: grid;
+    height: auto;
+    overflow: hidden;
+    padding: 0;
+    width: 100%;
+  }
+
+  &__wrapper {
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  &__title,
+  &__title--lg {
+    @include font-size('56');
+  }
+
+  &__title--md {
+    @include font-size('40');
+  }
+
+  &__title,
+  &__title--md,
+  &__title--lg {
+    color: var(--as-color-white);
+    margin-bottom: 2rem;
+    width: 100%;
+
+    @include screen(desktop) {
+      width: 80%;
+    }
+  }
+
+  &__title--lg {
+    @include screen(desktop) {
+      width: 90%;
+    }
+  }
+
+  &__description--sm {
+    @include font-size('14');
+  }
+
+  &__description {
+    @include font-size('16');
+  }
+
+  &__description--md {
+    @include font-size('18');
+  }
+
+  &__description--lg {
+    @include font-size('20');
+  }
+
+  &__description,
+  &__description--sm,
+  &__description--md,
+  &__description--lg {
+    color: var(--as-color-white)-soft;
+    margin-bottom: 2.5rem;
+    width: 100%;
+
+    @include screen(desktop) {
+      width: 90%;
+    }
+  }
+
+  &__button {
+    @include font-size('16-semibold');
+    display: block;
+    margin-top: 1rem;
+
+    @include screen(desktop) {
+      display: inline-block;
+    }
+  }
+
+  &__image {
+   
+    height: auto;
+    left: 0;
+    position: relative;
+    width: 100%;
+
+    @include screen(desktop) {
+      left: -8%;
+    }
+
+    @media only screen and (min-width: 1920px) {
+      left: 0;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+    list-style-type: none;
+    margin: 1rem 1.5rem;
+
+    @include screen(desktop) {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &-item {
+      @include font-size('16');
+      color: var(--as-color-white);
+      position: relative;
+
+      &::before {
+        content: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 0C6.51664 0 5.0666 0.439867 3.83323 1.26398C2.59986 2.08809 1.63856 3.25943 1.07091 4.62987C0.50325 6.00032 0.354725 7.50832 0.644114 8.96318C0.933503 10.418 1.64781 11.7544 2.6967 12.8033C3.7456 13.8522 5.08197 14.5665 6.53683 14.8559C7.99168 15.1453 9.49968 14.9968 10.8701 14.4291C12.2406 13.8614 13.4119 12.9001 14.236 11.6668C15.0601 10.4334 15.5 8.98336 15.5 7.5C15.4977 5.51157 14.7068 3.60524 13.3008 2.19921C11.8948 0.793181 9.98843 0.00227483 8 0ZM11.9053 5.70996L7.26463 10.3506C7.195 10.4202 7.11234 10.4755 7.02135 10.5132C6.93037 10.5509 6.83284 10.5703 6.73436 10.5703C6.63587 10.5703 6.53834 10.5509 6.44736 10.5132C6.35637 10.4755 6.27371 10.4202 6.20408 10.3506L4.09475 8.24121C3.95558 8.10028 3.87781 7.91 3.87843 7.71193C3.87905 7.51386 3.958 7.32408 4.09806 7.18401C4.23811 7.04395 4.42789 6.96499 4.62597 6.96436C4.82404 6.96373 5.01431 7.04149 5.15525 7.18067L6.73436 8.75977L10.8448 4.64942C10.9857 4.51024 11.176 4.43248 11.374 4.43311C11.5721 4.43374 11.7619 4.5127 11.9019 4.65276C12.042 4.79283 12.121 4.98261 12.1216 5.18068C12.1222 5.37875 12.0444 5.56903 11.9053 5.70996Z' fill='white'/%3E%3C/svg%3E%0A");
+        position: absolute;
+        left: -30px;
+        top: 2px;
+      }
+    }
+  }
+}

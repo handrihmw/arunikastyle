@@ -1,0 +1,23 @@
+@import "../helpers/bootstrap/bootstrap.scss";
+
+.as-counter__time {
+  font-size: 14px !important;
+}
+
+.as-btn--sm {
+  font-size: 12px !important;
+}
+
+.campaign-ramadhan-belt--top-title {
+  font-size: 14px !important;
+}
+
+.as-counter__item {
+  font-size: 16px !important;
+}
+
+.as-counter__colon {
+  &::after {
+    font-size: 16px !important;
+  }
+}

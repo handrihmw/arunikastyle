@@ -1,0 +1,124 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-form-step {
+  &__group {
+    margin-bottom: 1.5rem;
+
+    &-label {
+      display: block;
+      @include font-size('16-semibold');
+      margin-bottom: .5rem;
+      width: fit-content;
+    }
+
+    &-input {
+      border: none;
+      border-radius: 2.5rem;
+      @include font-size('16');
+      height: 3rem;
+      outline: 1px solid #c4c4c4;
+      padding: .75rem 2rem;
+      transform-style: preserve-3d;
+      transition: all 250ms ease-in-out;
+      width: 100%;
+
+      &::placeholder {
+        color: #a9afb8;
+        opacity: 1;
+      }
+
+      &:-ms-input-placeholder {
+        color: #a9afb8;
+      }
+
+      &::-ms-input-placeholder {
+        color: #a9afb8;
+      }
+
+      &:active,
+      &:focus,
+      &:focus-visible,
+      &:hover {
+        outline: 2px solid #007aff;
+      }
+
+      &:focus,
+      &:active {
+        color: #29384e;
+      }
+
+      &-durasi-hosting-title {
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        overflow: hidden;
+        padding: .75rem 2rem;
+        text-overflow: ellipsis;
+        user-select: none;
+        white-space: nowrap;
+      }
+    }
+
+    &-select {
+      appearance: none;
+      backface-visibility: hidden;
+      background-color: #fff;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+      background-position: 92% center;
+      background-repeat: no-repeat;
+      background-size: .8rem .8rem;
+      border: none;
+      color: #29384e;
+      cursor: pointer;
+
+      @include screen(desktop) {
+        background-position: 95.5% center;
+      }
+
+      &::-ms-expand {
+        display: none;
+      }
+    }
+
+    &-dropdown {
+      &-content {
+        background-color: #f9f9f9;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        display: none;
+        margin-top: 2px;
+        overflow: auto;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+
+        & li {
+          border-bottom: 1px solid #eaeaea;
+          color: black;
+          display: block;
+          padding: 12px 16px;
+          text-decoration: none;
+        }
+
+        &--show {
+          display: block;
+        }
+      }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  @include screen(desktop) {
+    margin-bottom: 2rem;
+  }
+}

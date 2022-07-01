@@ -1,0 +1,35 @@
+@use 'sass:map';
+
+$-selected-utilities: (
+  'display',
+  'flex',
+  'flex-direction',
+  'flex-grow',
+  'flex-shrink',
+  'flex-wrap',
+  'gap',
+  'justify-content',
+  'align-items',
+  'align-content',
+  'align-self',
+  'position',
+); 
+
+@each $breakpoint in map.keys($grid-breakpoints) {
+
+  // Generate media query if needed
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    // Loop over each utility property
+    @each $key in $-selected-utilities {
+      // The utility can be disabled with `false`, thus check if the utility is a map first
+      // Only proceed if responsive media queries are enabled or if it's the base media query
+      $utility:  map.get($utilities, $key);
+
+      @if type-of($utility) == "map" and (map.get($utility, responsive) or $infix == "") {
+        @include generate-utility($utility, $infix);
+      }
+    }
+  }
+}

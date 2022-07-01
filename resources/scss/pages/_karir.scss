@@ -1,0 +1,654 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+/* Arunika Design System */
+@import "../arunika/pages/karir";
+
+.career-who {
+  padding-top: 80px;
+  padding-bottom: 66.52px;
+
+  .carousel {
+    z-index: 1;
+
+    &.slide {
+      background: inherit;
+      height: inherit;
+      left: inherit;
+      position: inherit;
+      top: inherit;
+      transition: inherit;
+      width: inherit;
+    }
+  }
+
+  .carousel-indicators {
+    bottom: -32px;
+
+    li {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #007aff;
+      border-radius: 20px;
+
+      &.active {
+        background: #007aff;
+      }
+    }
+  }
+
+  &__video {
+    margin: 0;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &-embed {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+      border-radius: 10px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      img {
+        cursor: pointer;
+        height: auto;
+        left: 0;
+        opacity: 0.7;
+        position: absolute;
+        top: -16.82%;
+        width: 100%;
+      }
+
+      iframe {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    &-play {
+      width: 90px;
+      height: 60px;
+      background-color: #333;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      z-index: 1;
+      opacity: 0.8;
+      border-radius: 6px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+
+      &:before {
+        content: "";
+        border-style: solid;
+        border-width: 15px 0 15px 26px;
+        border-color: transparent transparent transparent #fff;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+      }
+    }
+  }
+}
+
+.career-company-value {
+  &__control-slide {
+    line-height: 3.5rem;
+
+    .fas {
+      cursor: pointer;
+      font-size: clamp(1.625rem, 10vw, 1.625rem);
+
+      &.active {
+        color: #d9dde3;
+        pointer-events: none;
+      }
+    }
+
+    .fa-arrow-left {
+      margin-right: 36px;
+    }
+
+    @include media-breakpoint-down(md) {
+      display: block;
+      margin-top: 53.99px;
+    }
+  }
+
+  &__content {
+    margin-top: 76.09px;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: 102px;
+    }
+  }
+
+  &__card {
+    &-icon {
+      margin-bottom: 26px;
+    }
+
+    &-title {
+      color: #29384e;
+      font-family: NunitSansBold, sans-serif;
+      font-size: clamp(1.125rem, 10vw, 1.125rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 27px;
+      margin-bottom: 12px;
+    }
+
+    &-details {
+      color: #29384e;
+      font-family: "NunitoSansRegular", sans-serif;
+      font-size: clamp(0.875rem, 10vw, 0.875rem);
+      font-weight: normal;
+      letter-spacing: 0.005em;
+      line-height: 24px;
+      padding-left: 18px;
+    }
+  }
+}
+
+.career-ribbon {
+  background: #fff;
+  position: relative;
+
+  &--absolute {
+    left: 0;
+    right: 0;
+    background: #007aff;
+    position: absolute;
+    border-radius: 12px;
+  }
+
+  &__thumbnail {
+    width: 100%;
+    height: auto;
+  }
+
+  &__content {
+    @include media-breakpoint-up(lg) {
+      padding-left: 40px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__title {
+    font-family: "NunitoSansBold", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.25rem, 10vw, 2.5rem);
+    line-height: 56px;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    font-family: "NunitoSansRegular", sans-serif;
+    font-weight: normal;
+    font-size: clamp(0.875rem, 10vw, 1rem);
+    line-height: 24px;
+    letter-spacing: 0.005em;
+    color: #fff;
+  }
+}
+
+.career-referral-detail {
+  &__title {
+    color: #29384e;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.75rem, 10vw, 2rem);
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 64px;
+
+    &-item {
+      color: #546071;
+      font-family: "NunitoSansRegular", sans-serif;
+      font-size: clamp(0.875rem, 10vw, 1rem);
+      letter-spacing: 0.005em;
+      line-height: 24px;
+      text-align: left;
+
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      >span {
+        background: #e0efff;
+        border-radius: 7.5px;
+        color: #007aff;
+        font-family: "NunitoSansBold", sans-serif;
+        font-size: clamp(1.094rem, 10vw, 1.094rem);
+        font-weight: 700;
+        height: 40px;
+        left: -64px;
+        line-height: 40px;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+      }
+    }
+
+    a {
+      color: #007aff;
+    }
+  }
+}
+
+.career-referral-info {
+  background: #007aff;
+  padding: 48px;
+  border-radius: 8px;
+  max-width: 920px;
+  margin: 64px auto 120px;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    margin-right: 24px;
+  }
+
+  &__text {
+    color: #fff;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(0.875rem, 10vw, 1rem);
+    letter-spacing: 0.005em;
+    line-height: 24px;
+    text-align: left;
+    max-width: 467px;
+    margin-right: 80px;
+  }
+
+  &__link {}
+}
+
+.career-position {
+  .card {
+    border: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  .card-header {
+    background: #f5faff;
+    border: 0;
+    border-radius: 12px !important;
+    padding: 28px;
+  }
+
+  .card-body {
+    padding: 28px;
+  }
+
+  &__team {
+    color: #007aff;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.25rem, 10vw, 1.25rem);
+    font-weight: 700;
+    line-height: 26px;
+    padding: 0 56px 0 0;
+    position: relative;
+
+    &--icon {
+      color: #007aff;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &:hover {
+      color: #007aff;
+    }
+
+    &:focus {
+      box-shadow: none !important;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: clamp(1.75rem, 10vw, 2rem);
+      line-height: 42px;
+    }
+  }
+
+  &__title {
+    color: #29384e;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(1.25rem, 10vw, 1.25rem);
+    font-weight: 600;
+    letter-spacing: 0.005em;
+    line-height: 24px;
+    text-align: left;
+    margin-bottom: 32px;
+
+    @include media-breakpoint-up(lg) {
+      margin-bottom: inherit;
+    }
+  }
+}
+
+.career-gallery {
+  padding-bottom: 100px;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    grid-template-areas:
+      "item1 item1"
+      "item2 item2"
+      "item3 item3"
+      "item4 item4"
+      "item5 item6"
+      "item7 item7";
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+        "item1 item4 item4 item7 item7"
+        "item2 item4 item4 item7 item7"
+        "item3 item5 item6 item7 item7";
+    }
+  }
+
+  &__item {
+    grid-area: item1;
+
+    &:nth-child(2) {
+      grid-area: item2;
+    }
+
+    &:nth-child(3) {
+      grid-area: item3;
+    }
+
+    &:nth-child(4) {
+      grid-area: item4;
+    }
+
+    &:nth-child(5) {
+      grid-area: item5;
+    }
+
+    &:nth-child(6) {
+      grid-area: item6;
+    }
+
+    &:nth-child(7) {
+      grid-area: item7;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.career-how {
+  padding-left: 11.5px;
+  padding-right: 11.5px;
+
+  &__ilustration {
+    margin-left: -36px;
+    margin-right: -36px;
+    margin-bottom: 41.38px;
+  }
+
+  &__icon {
+    margin-bottom: 29.38px;
+  }
+
+  &__title {
+    color: #29384e;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.25rem, 10vw, 1.25rem);
+    font-weight: 700;
+    letter-spacing: 0.005em;
+    line-height: 26px;
+    margin-bottom: 12px;
+  }
+
+  &__description {
+    color: #7f8895;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(1.125rem, 10vw, 1.125rem);
+    letter-spacing: 0.005em;
+    line-height: 28px;
+  }
+
+  &__info {
+    background: #f5faff;
+    border-radius: 16px;
+    margin-top: 80px;
+    padding: 48px;
+
+    &-icon {}
+
+    &-title {
+      color: #29384e;
+      font-family: "NunitoSansBold", sans-serif;
+      font-size: clamp(1.75rem, 10vw, 1.75rem);
+      line-height: 36px;
+      margin-bottom: 16px;
+    }
+
+    &-text {
+      color: #546071;
+      font-family: "NunitoSansRegular", sans-serif;
+      font-size: clamp(0.875rem, 10vw, 1rem);
+      letter-spacing: 0.005em;
+      line-height: 24px;
+    }
+  }
+}
+
+.career-perks {
+  margin-top: 60px;
+
+  &--shadow {
+    box-shadow: none;
+
+    &:hover {
+      @extend .shadow;
+    }
+  }
+
+  &__list-item {
+    width: 100%;
+  }
+}
+
+.career-snipets {
+  margin-top: 80px;
+
+  &__thumbnail {
+    border-radius: 8px;
+    margin-bottom: 24px;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      display: block;
+      content: "";
+      /* 16:9 aspect ratio */
+      padding-bottom: 56.25%;
+    }
+
+    img {
+      border-radius: 8px;
+      height: 100%;
+      left: 0;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: #29384e;
+    font-family: "NunitoSansBold", sans-serif;
+    font-size: clamp(1.125rem, 10vw, 1.125rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    line-height: 27px;
+    margin-bottom: 12px;
+  }
+
+  &__summary {
+    color: #7f8895;
+    font-family: "NunitoSansRegular", sans-serif;
+    font-size: clamp(0.875rem, 10vw, 1rem);
+    font-weight: normal;
+    letter-spacing: 0.005em;
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__readmore {
+    color: #007aff;
+    display: block;
+    text-decoration: underline;
+  }
+
+  &__title,
+  &__summary,
+  &__readmore {
+    text-align: left;
+  }
+}
+
+.career-faq {
+  .card {
+    background: #f5faff;
+    border-radius: 16px !important;
+    border: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .card-header,
+  .card-body {
+    font-size: clamp(0.875rem, 10vw, 1rem);
+    line-height: 24px;
+    letter-spacing: 0.005em;
+  }
+
+  .card-header {
+    background: #f5faff;
+    border-radius: 16px !important;
+    border: 0;
+    color: #29384e;
+    font-family: "NunitoSansBold", sans-serif;
+    padding: 32px;
+
+    &--radius-none {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      border-bottom: 1px solid;
+    }
+  }
+
+  .card-body {
+    color: #29384e;
+    font-family: "NunitoSansRegular", sans-serif;
+    padding: 0 32px 32px;
+
+    &::before {
+      background: #d9dde3;
+      content: "";
+      display: block;
+      height: 1px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+  }
+
+  &__toggle {
+    position: relative;
+    padding: 0 56px 0 0;
+
+    &:focus {
+      box-shadow: none !important;
+    }
+
+    &--icon {
+      color: #007aff;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__card {
+    &--more {}
+  }
+}
+
+.career-partner {
+  &__client {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 4.666%;
+
+    @include media-breakpoint-up(md) {
+      column-gap: 5.666%;
+    }
+
+    img {
+      flex: 0 0 30%;
+      max-width: 30%;
+      margin-bottom: 42px;
+
+      @include media-breakpoint-up(md) {
+        flex: 0 0 15%;
+        max-width: 15%;
+      }
+    }
+  }
+}
+
+.career-icon-angle {
+  content: url("/assets/images/2021/karir/icon-angle.svg");
+
+  &--up {
+    transform: none;
+  }
+
+  &--down {
+    transform: rotate(180deg);
+  }
+}

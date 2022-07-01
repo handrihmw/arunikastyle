@@ -1,0 +1,11 @@
+@use '../mixins/breakpoint' as *;
+
+.as-header-transparent {
+  background-image: linear-gradient(249.77deg, #0094ff -1.99%, #007dff 43.52%, #026ce8 95.86%);
+  height: auto;
+  position: relative;
+
+  @include screen(laptop) {
+    height: 760px;
+  }
+}

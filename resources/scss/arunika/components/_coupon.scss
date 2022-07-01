@@ -1,0 +1,167 @@
+@use '../mixins/breakpoint' as *;
+@use '../variables/font-size' as *;
+@use '../mixins/font' as *;
+
+.as-coupon {
+  display: flex;
+  margin-bottom: 2rem;
+
+  &__left {
+    border: 2px solid var(--as-color-border);
+    border-right-style: dashed;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    height: auto;
+    padding: 1rem;
+    position: relative;
+    width: 10px;
+
+    @include screen(desktop) {
+      height: 220px;
+      padding: 20px 15px 20px 35px;
+      width: 90px;
+    }
+
+    &::before {
+      border-bottom-right-radius: 75px;
+      border-top-right-radius: 75px;
+      border: 2px solid var(--as-color-border);
+      border-left: 0;
+      background-color: var(--as-color-white);
+      content: '';
+      height: 30px;
+      left: -2px;
+      position: absolute;
+      top: 40%;
+      width: 20px;
+    }
+
+    &--barcode {
+      display: none;
+      height: 190px;
+      margin-top: -5px;
+      width: 0;
+
+      @include screen(desktop) {
+        display: block;
+        width: 20px;
+      }
+    }
+  }
+
+  &__right {
+    border: 2px solid var(--as-color-border);
+    border-left: none;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    height: auto;
+    padding: 1rem;
+    position: relative;
+    width: 100%;
+
+    @include screen(desktop) {
+      height: 220px;
+      width: 920px;
+    }
+
+    &::before {
+      background-color: var(--as-color-white);
+      border-bottom-left-radius: 75px;
+      border-bottom-right-radius: 75px;
+      border: 2px solid var(--as-color-border);
+      border-top: 0;
+      content: '';
+      height: 10px;
+      left: -10px;
+      position: absolute;
+      top: -2px;
+      width: 17px;
+    }
+
+    &::after {
+      content: '';
+      height: 10px;
+      left: -10px;
+      background-color: var(--as-color-white);
+      border-top-left-radius: 75px;
+      border-top-right-radius: 75px;
+      border: 2px solid var(--as-color-border);
+      border-bottom: 0;
+      bottom: -2px;
+      position: absolute;
+      width: 17px;
+    }
+  }
+
+  &__top {
+    border-bottom: 1px solid var(--as-color-border);
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+    @include screen(desktop) {
+      height: 93px;
+    }
+
+    &--title {
+      @include font-size('24');
+      font-weight: 700;
+    }
+
+    &--price {
+      @include font-size('20');
+      text-transform: uppercase;
+    }
+  }
+
+  &__bottom {
+    align-items: center;
+    display: grid;
+    height: auto;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+
+    @include screen(desktop) {
+      display: flex;
+      height: 106px;
+    }
+
+    &--button {
+      margin-top: 1.5rem;
+      padding: 12px 36px;
+
+      @include screen(desktop) {
+        margin-top: 0;
+        padding: 12px 48px;
+      }
+    }
+  }
+
+  &__bottom-info {
+    display: grid;
+
+    &--description {
+      @include font-size('14');
+      color: var(--as-color-secondary-two);
+    }
+
+    &--speaker {
+      display: flex;
+      margin-top: 10px;
+
+      &-image {
+        aspect-ratio: 1/1;
+        height: 28px;
+        margin-right: 8px;
+        width: 28px;
+      }
+
+      &-name {
+        @include font-size('16');
+        color: var(--as-color-blue);
+        font-weight: 700;
+      }
+    }
+  }
+}

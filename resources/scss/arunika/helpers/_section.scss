@@ -1,0 +1,60 @@
+@use '../mixins/breakpoint' as *;
+
+.as-section {
+  background: var(--as-color-white);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 40px 20px;
+  width: 100%;
+
+  &--soft {
+    background: var(--as-color-soft);
+  }
+
+  &--blue {
+    background: var(--as-color-blue);
+  }
+
+  &--dark-blue {
+    background: var(--as-color-dark-blue);
+  }
+
+  @include screen(desktop) {
+    padding: 60px 20px;
+  }
+}
+
+.as-section-top {
+  margin-top: 0;
+
+  @include screen(desktop) {
+    margin-top: 150px;
+  }
+}
+
+.as-section-left {
+  align-items: start;
+}
+
+.as-section-center {
+  align-items: start;
+  text-align: start;
+
+  @include screen(desktop) {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+$section-images: ("solid", "line");
+
+@each $bg-image in $section-images {
+  .as-section-#{$bg-image} {
+    background-blend-mode: overlay;
+    background-image: url("../images/2021/arunika/accent/#{$bg-image}.svg"),
+    linear-gradient(249.77deg, #0094ff -1.99%, #007dff 43.52%, #026ce8 95.86%);
+    background-position: 50%;
+    background-repeat: no-repeat, repeat;
+  }
+}

@@ -1,0 +1,1065 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+.vps-header {
+  padding: 80px 0;
+
+  @include screen(desktop) {
+    padding: 100px 0 180px;
+  }
+}
+
+.vps-price {
+  background: #f6fbff;
+  padding: 30px 0 20px;
+  overflow: hidden;
+
+  @include screen(desktop) {
+    padding: 120px 0;
+  }
+
+  &--desktop {
+    display: none;
+
+    @include screen(desktop) {
+      display: unset;
+    }
+  }
+
+  &--mobile {
+    background: #f6fbff;
+    display: unset;
+    padding: 30px 0 40px;
+
+    @include screen(desktop) {
+      display: none;
+    }
+  }
+
+  &__niagahoster-point {
+    color: rgba(58, 65, 102, 0.7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: .875rem;
+    line-height: 16px;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.875rem;
+    text-align: center;
+
+    @include screen(desktop) {
+      font-size: 2rem;
+    }
+  }
+
+  &__description {
+    color: rgba(58, 65, 102, 0.7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 1.125rem;
+    line-height: 150%;
+    padding: 10px;
+    text-align: center;
+
+    @include screen(desktop) {
+      line-height: 177%;
+      margin-top: 20px;
+    }
+  }
+
+  &__table {
+    padding: 30px 30px 0;
+
+    @include screen(desktop) {
+      padding: 60px 0 0;
+    }
+  }
+
+  &__card {
+    &-desktop {
+      padding-top: 50px;
+
+      @include screen(desktop) {
+        padding: 100px 0 0;
+      }
+
+      table {
+        border-radius: 8px;
+        border-collapse: separate;
+        border-spacing: 0 30px;
+        width: 100%;
+
+        th {
+          padding: 0px 0px 32px 30px;
+        }
+
+        td {
+          padding: 45px 10px 0px 30px;
+          vertical-align: initial;
+        }
+      }
+
+      tbody {
+        tr {
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.15);
+          /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+          -webkit-appearance: none !important;
+          /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+          -webkit-box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.15) !important;
+          /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+          -moz-box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.15);
+          /* Firefox 3.5 - 3.6 */
+
+          &:hover {
+            .vps-price__tooltip {
+              display: block !important;
+            }
+          }
+
+          td {
+            &:first-child {
+              border-top-left-radius: 10px;
+              border-bottom-left-radius: 10px;
+            }
+
+            &:last-child {
+              border-top-right-radius: 10px;
+              border-bottom-right-radius: 10px;
+            }
+          }
+        }
+      }
+    }
+
+    &-mobile {
+      background: #fff;
+      box-shadow: 0px 6px 20px rgba(17, 26, 104, 0.15);
+      border-radius: 8px;
+      border-collapse: separate;
+      border-spacing: 0 1em;
+      margin-bottom: 20px;
+      padding: 30px;
+    }
+
+    &__title {
+      color: #3a4166;
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 1.875rem;
+      margin-bottom: 30px;
+
+      @include screen(desktop) {
+        color: rgba(58, 65, 102, 0.7);
+        font-size: 1.25rem;
+      }
+    }
+
+    &__list {
+      color: #3a4166;
+      font-family: 'NunitoSansRegular', sans-serif;
+      font-size: 1.125rem;
+      margin-bottom: 20px;
+      text-align: left;
+
+      @include screen(desktop) {
+        font-size: 1.25rem;
+      }
+
+      &--mini {
+        color: #757a94;
+        font-size: .875rem;
+      }
+    }
+
+    &__button-position {
+      padding: 10px 0 0;
+      text-align: center;
+    }
+
+    &--label {
+      &-best {
+        background: #00bfa5;
+        border-radius: 8px 8px 0 0;
+        color: #fff;
+        font-family: NunitoSansBold, sans-serif;
+        font-size: 24px;
+        margin: -40px -30px;
+        position: relative;
+        padding: 10px 0;
+        z-index: 1;
+
+        &::before {
+          content: "Best Seller";
+        }
+
+        @include screen(desktop) {
+          transform: rotate(-90deg);
+          font-size: .875rem;
+          padding: 5px 0;
+          right: 24px;
+          text-align: center;
+          top: 500px;
+          width: 138px;
+        }
+
+        /* ipad portrait */
+        @include ipadPortrait {
+          right: 0;
+          top: 0;
+        }
+
+        /* ipad landscape */
+        @include ipadLandscape {
+          margin: -40px -55px;
+          top: 440px;
+          width: 190px;
+        }
+
+        /* ipadPro Portrait */
+        @include ipadProPortrait {
+          right: 50px;
+          top: 660px;
+          width: 190px;
+        }
+
+        /* ipadPro Landscape */
+        @include ipadProLandscape {
+          margin-left: -55px;
+          right: 0;
+          width: 140px;
+        }
+      }
+
+      &-discount {
+        background: #ee4957;
+        border-radius: 5px;
+        bottom: -23px;
+        color: #fff;
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: .875rem;
+        padding: 2px 4px;
+        position: relative;
+        right: 76px;
+        transform: translateX(-50%);
+        width: 100px;
+
+        @include screen(desktop) {
+          bottom: 130px;
+          right: -50%;
+        }
+
+        @include screen(desktopLarge) {
+          bottom: 95px;
+          right: -50%;
+        }
+
+        &::after {
+          border: 12px solid transparent;
+          border-top-color: #ee4957;
+          content: "";
+          left: 97%;
+          position: absolute;
+          top: 5%;
+          transform: rotate(-90deg);
+
+          @include screen(desktop) {
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.cloud-vps-feature {
+  background: linear-gradient(155.7deg, #007aff 18.24%, #00349b 165%, #0040ac 165%);
+  padding: 50px 0 50px 0;
+
+  @include screen(desktop) {
+    padding: 100px 0;
+  }
+
+  &__box {
+    background: #fff;
+    box-shadow: 0px 6px 15px rgba(17, 26, 104, 0.3);
+    border-radius: 8px;
+    padding: 20px 20px;
+
+    @include screen(desktop) {
+      padding: 80px 70px;
+    }
+  }
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: normal;
+    margin-bottom: 15px;
+  }
+
+  &__line {
+    border: 5px solid #007aff;
+    margin: 28px 48px 28px 0px;
+    width: 90px;
+  }
+
+  &__list {
+    &>ul {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+      margin: 0 0 0 -65px;
+
+      @include screen(desktop) {
+        flex-wrap: wrap;
+        height: 280px;
+      }
+
+      & li {
+        color: rgba(58, 65, 102, 0.7);
+        font-size: 1rem;
+        min-height: 60px;
+        margin-bottom: 10px;
+        margin-left: 65px;
+        position: relative;
+        max-width: 270px;
+
+        &::before {
+          color: #007aff;
+          content: "\f058";
+          font-family: "Font Awesome 5 Free";
+          font-size: 1.0625rem;
+          font-weight: 700;
+          left: -35px;
+          padding: 0px;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
+  }
+}
+
+.vps-tips {
+  background: #f6fbff;
+  padding: 30px 0 40px;
+
+  @include screen(desktop) {
+    padding: 120px 0;
+  }
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.875rem;
+    text-align: center;
+
+    @include screen(desktop) {
+      font-size: 2rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 50px;
+    overflow-x: auto;
+    padding: 0 5px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include screen(desktopLarge) {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &-break {
+        flex-basis: 100%;
+        height: 0;
+      }
+    }
+
+    &-item {
+      height: 242px;
+      min-width: 300px;
+      position: relative;
+
+      &:not(:first-child) {
+        margin-left: 25px;
+      }
+
+      @include screen(desktop) {
+        height: 200px;
+        margin: 0 20px;
+        min-width: 464px;
+      }
+
+      &-number {
+        color: rgba(58, 65, 102, 0.1);
+        display: inline-block;
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: 100px;
+        left: -10px;
+        line-height: 100px;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
+
+      &-card {
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 6px 30px rgba(17, 26, 104, 0.1);
+        height: 184px;
+        padding: 15px;
+        position: absolute;
+        right: 20px;
+        top: 30px;
+        width: 245px;
+        z-index: 2;
+
+        @include screen(desktop) {
+          align-items: center;
+          display: flex;
+          height: 147px;
+          padding: 30px;
+          width: 410px;
+        }
+
+        &-icon {
+          aspect-ratio: 1/1;
+          height: 40px;
+          width: 40px;
+        }
+
+        &-description {
+          color: rgba(58, 65, 102, 0.7);
+          font-family: 'NunitoSansRegular', sans-serif;
+          font-size: .875rem;
+          line-height: 200%;
+          margin-top: 12px;
+
+          @include screen(desktop) {
+            margin-left: 30px;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__indicator {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 70px;
+    padding-left: 0;
+
+    @include screen(laptop) {
+      display: none;
+    }
+
+    &-item {
+      padding: 5px;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &::before {
+        content: "\f111";
+        color: rgba(0, 122, 255, 0.3);
+        font-family: "Font Awesome 5 Free", sans-serif;
+        font-weight: 900;
+        height: 10px;
+        transition: all 0.6s;
+        width: 10px;
+      }
+
+      &--active {
+        &::before {
+          content: "\f111";
+          color: #007aff;
+          font-family: "Font Awesome 5 Free", sans-serif;
+          font-weight: 900;
+          height: 10px;
+          transition: all 0.6s;
+          width: 10px;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    margin-top: 42px;
+    text-align: center;
+
+    @include screen(desktop) {
+      margin-top: 60px;
+    }
+
+    &>a {
+      font-size: 1rem;
+      height: 50px;
+      text-transform: capitalize;
+      width: 265px;
+    }
+  }
+}
+
+.why-vps {
+  padding: 120px 0 0;
+  margin-bottom: 80px;
+
+  @include screen(desktop) {
+    margin-bottom: 120px;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  &__description {
+    color: #3a4166;
+    font-size: 1.25rem;
+    margin: 30px 0 40px;
+    opacity: 0.7;
+    text-align: center;
+  }
+}
+
+.priority-vps {
+  padding: 70px 0 100px;
+  background: #f6fbff;
+
+  @include screen(desktop) {
+    padding: 100px 0;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 68px;
+    text-align: center;
+
+    @include screen(desktop) {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__image-wrapper {
+    margin-bottom: 60px;
+    position: relative;
+    padding: 0 20px 0 20px;
+
+    @include screen(desktop) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+
+    &--intercom-logo,
+    &--icon-online {
+      box-shadow: 0px 6px 30px rgba(17, 26, 104, 0.1);
+      position: absolute;
+
+      @media (max-width: 576px) {
+        max-width: 42%;
+      }
+    }
+
+    &--intercom-logo {
+      left: 8%;
+      top: -50px;
+
+      @include screen(desktop) {
+        top: -15px;
+      }
+    }
+
+    &--icon-online {
+      bottom: -50px;
+      right: 0;
+    }
+
+    &--graphic {
+      left: -64px;
+      position: absolute;
+      top: 65%;
+      z-index: 2;
+
+      @media (max-width: 576px) {
+        left: -58px;
+        top: 72%;
+      }
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+        left: -58px;
+        top: 68%;
+      }
+    }
+
+    &--imunify,
+    &--lite-speed,
+    &--grpahic {
+      @media (max-width: 576px) {
+        max-width: 42%;
+      }
+    }
+
+    &--imunify {
+      position: absolute;
+      left: -64px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+
+    &--lite-speed {
+      position: absolute;
+      right: -64px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+  }
+
+  &__feature-wrapper {
+    padding-left: 26px;
+
+    @include screen(desktop) {
+      padding-left: 110px;
+    }
+  }
+
+  &__feature {
+    position: relative;
+    margin-bottom: 40px;
+
+    &::before {
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    &:nth-child(1)::before {
+      content: url('../images/2019/feature/icons_full-root-access.svg');
+    }
+
+    &:nth-child(2)::before {
+      content: url('../images/2019/feature/icons_dedicated-ip-address.svg');
+    }
+
+    &:nth-child(3)::before {
+      content: url('../images/2019/feature/icons_upgrade-resource-mudah.svg');
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    &-description {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    @include screen(desktop) {
+      &::before {
+        left: -94px;
+        position: absolute;
+        top: -10px;
+      }
+    }
+  }
+}
+
+.monitoring-vps {
+  padding: 60px 0 70px;
+
+  @include screen(desktop) {
+    padding: 100px 0;
+  }
+
+  &__btn {
+    margin-top: 42px;
+    text-align: center;
+
+    @include screen(desktop) {
+      margin-top: 60px;
+    }
+
+    &>a {
+      font-size: 1rem;
+      height: 50px;
+      text-transform: capitalize;
+      width: 265px;
+    }
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 68px;
+    text-align: center;
+
+    @include screen(desktop) {
+      margin-bottom: 90px;
+    }
+  }
+
+  &__image-wrapper {
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+
+  &__image {
+
+    &--man,
+    &--woman1,
+    &--woman2,
+    &--intercom-logo,
+    &--icon-online {
+      position: absolute;
+      box-shadow: 0px 6px 30px rgba(17, 26, 104, 0.1);
+
+      @media (max-width: 576px) {
+        max-width: 42%;
+      }
+    }
+
+    &--man {
+      bottom: -50px;
+      left: 16%;
+    }
+
+    &--woman1 {
+      bottom: -20px;
+      right: 10px;
+
+      @include screen(desktop) {
+        right: 360px;
+      }
+    }
+
+    &--woman2 {
+      left: 40px;
+      top: -30px;
+
+      @include screen(desktop) {
+        left: 470px;
+      }
+    }
+
+    &--intercom-logo {
+      left: 8%;
+      top: -50px;
+    }
+
+    &--icon-online {
+      bottom: -50px;
+      right: 0;
+    }
+  }
+
+  &__feature-wrapper {
+    padding-left: 26px;
+
+    @include screen(desktop) {
+      padding-left: 110px;
+    }
+  }
+
+  &__feature {
+    position: relative;
+    margin-bottom: 40px;
+
+    &::before {
+      display: block;
+      margin-bottom: 28px;
+    }
+
+    &:nth-child(1)::before {
+      content: url('../images/2019/feature/icons_monitoring-server.svg');
+    }
+
+    &:nth-child(2)::before {
+      content: url('../images/2019/feature/icons_weekly-auto-backup.svg');
+    }
+
+    &:nth-child(3)::before {
+      content: url('../images/2019/feature/icons_backup-one-click-snapshoot.svg');
+    }
+
+    &-title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    &-description {
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+    @include screen(desktop) {
+      &::before {
+        position: absolute;
+        top: -10px;
+        left: -94px;
+      }
+    }
+  }
+}
+
+.vps-os {
+  background: #f6fbff;
+  padding: 30px 0;
+
+  @include screen(desktop) {
+    padding: 100px 0;
+  }
+
+  &__title {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.875rem;
+    padding: 10px 0;
+
+    @include screen(desktop) {
+      padding: 0 0 30px 0;
+    }
+  }
+
+  &__reasons {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0 !important;
+
+    @include screen(desktop) {
+      position: sticky;
+      top: 140px;
+    }
+
+    &-item {
+      background: #fff;
+      border-radius: 4px;
+      position: relative;
+      padding: 30px 15px 30px 86px;
+      height: 86px;
+      transition: box-shadow 0.6s;
+      opacity: 0.4;
+      -webkit-filter: grayscale(100%);
+      /* Safari 6.0 - 9.0 */
+      filter: grayscale(100%);
+
+      @include screen(desktop) {
+        padding: 30px 20px 30px 94px;
+      }
+
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+
+      &-icon {
+        position: absolute;
+        top: 50%;
+        left: 28px;
+        transform: translateY(-50%);
+      }
+
+      &-title {
+        font-size: 1.125rem;
+      }
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(17, 26, 104, 0.15);
+        transition: box-shadow 0.6s;
+      }
+
+      &--selected {
+        box-shadow: 0 6px 20px rgba(17, 26, 104, 0.15);
+        filter: grayscale(0%) !important;
+        opacity: 1 !important;
+        -webkit-filter: grayscale(0%) !important;
+        /* Safari 6.0 - 9.0 */
+      }
+    }
+  }
+
+  &__reason-details {
+    &-description {
+      font-size: 1rem;
+      margin-top: 15px;
+      opacity: 0.7;
+
+      @include screen(desktop) {
+        margin-top: 50px;
+      }
+    }
+
+    &-item {
+      margin-top: 15px;
+
+      &-title {
+        font-family: 'NunitoSansBold', sans-serif;
+        font-size: 1.125rem;
+        font-weight: unset;
+        margin-top: 20px;
+      }
+
+      &-description {
+        color: #3a4166;
+        font-size: 1.125rem;
+        opacity: 0.7;
+
+        &--list {
+          color: #3a4166;
+          font-size: 1rem;
+          list-style: none;
+          margin: 0;
+          opacity: 0.7;
+          padding: 0;
+
+          li {
+            padding: 5px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.popular-vps {
+  padding: 40px 0;
+
+  @include screen(desktop) {
+    padding: 100px 0;
+  }
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 1.875rem;
+    text-align: center;
+
+    @include screen(desktop) {
+      font-size: 2rem;
+    }
+  }
+
+  &--margin {
+    margin-bottom: 40px;
+  }
+
+  &__description {
+    color: rgba(58, 65, 102, 0.7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 1.125rem;
+    line-height: 150%;
+    margin-top: 30px;
+    text-align: center;
+
+    @include screen(desktop) {
+      line-height: 177.3%;
+    }
+  }
+
+  &__card-wrapper {
+    margin: auto;
+    margin-bottom: 20px;
+    text-align: center;
+
+    @include screen(desktop) {
+      margin: 0;
+      margin-right: 10%;
+      margin-bottom: 20px;
+
+      &:nth-child(3) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__card {
+    aspect-ratio: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(17, 26, 104, 0.15);
+    display: inline-block;
+    min-height: 423px;
+    padding: 70% 5% 5%;
+    position: relative;
+    text-align: left;
+
+    @include screen(desktop) {
+      padding-top: 85%;
+      width: 120%;
+    }
+
+    &__title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 1.125rem;
+      margin-bottom: 15px;
+    }
+
+    &__text {
+      color: rgba(58, 65, 102, 0.7);
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 26px;
+      margin-bottom: 15px;
+    }
+
+    &--link {
+      color: #007aff;
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: .9375rem;
+      margin-bottom: 15px;
+    }
+
+    &__label {
+      background: #e5e5e5;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      color: #fff;
+      display: inline-block;
+      font-family: 'NunitoSansBold', sans-serif;
+      font-size: 1.125rem;
+      font-weight: unset;
+      left: 50%;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      transform: translateX(-50%);
+      width: 100.4%;
+
+      &--green {
+        background: #00bfa5;
+      }
+
+      &--yellow {
+        background: #fb8c00;
+      }
+    }
+  }
+}

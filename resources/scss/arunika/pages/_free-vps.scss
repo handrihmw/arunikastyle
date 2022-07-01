@@ -1,0 +1,56 @@
+@import "../app";
+
+/* Arunika Hero */
+@import "../components/hero";
+
+/* Arunika Section */
+@import "../components/section-domain";
+@import "../components/section-white";
+@import "../components/section-center-blue";
+@import "../components/section-soft-blue";
+
+/* Arunika Card */
+@import "../components/card";
+
+/* Arunika Tooltip */
+@import "../components/tooltip";
+
+/* Arunika Accordion */
+@import "../components/accordion";
+
+/* Arunika Header */
+@import "../components/header";
+@import "../helpers/background";
+@import "../components/table-winner";
+@import "../components/navigation-column";
+@import "../components/navigation-column-mobile";
+@import "../components/button-sosmed";
+@import "../components//card-select";
+
+.winner-form {
+    &--mobile {
+        display: flex;
+
+        @include screen(desktop) {
+            display: none;
+        }
+    }
+
+    &--dekstop {
+        display: none;
+
+        @include screen(desktop) {
+            display: flex;
+        }
+    }
+}
+
+.as-hero {
+    background: url("data:image/svg+xml,%0A%3Csvg width='221' height='344' viewBox='0 0 221 344' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M207.999 56.8908C124.259 56.8908 56.3733 124.776 56.3733 208.517C56.3733 292.258 124.259 360.143 207.999 360.143C291.74 360.143 359.626 292.258 359.626 208.517C359.626 124.776 291.74 56.8908 207.999 56.8908ZM55.8873 208.517C55.8873 124.508 123.99 56.4048 207.999 56.4048C292.009 56.4048 360.112 124.508 360.112 208.517C360.112 292.526 292.009 360.629 207.999 360.629C123.99 360.629 55.8873 292.526 55.8873 208.517Z' fill='%232199FA'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M208 1.00307C93.3932 1.00307 0.485981 93.9103 0.485981 208.517C0.485981 323.124 93.3932 416.031 208 416.031C322.607 416.031 415.514 323.124 415.514 208.517C415.514 93.9103 322.607 1.00307 208 1.00307ZM0 208.517C0 93.6419 93.1248 0.51709 208 0.51709C322.875 0.51709 416 93.6419 416 208.517C416 323.392 322.875 416.517 208 416.517C93.1248 416.517 0 323.392 0 208.517Z' fill='%232199FA'/%3E%3C/svg%3E%0A");
+    background-position: 110% 100%;
+    background-repeat: no-repeat;
+    
+    @include screen(desktop){
+        background: none;
+    }
+}

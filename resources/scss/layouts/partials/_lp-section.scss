@@ -1,0 +1,43 @@
+@use "../../mixins/breakpoints" as *;
+
+.lp-section {
+  background-color: #fff;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  &__title {
+    color: #3a4166;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-size: 33px;
+    line-height: 45px;
+  }
+
+  &__description {
+    color: rgba(58, 65, 102, 0.7);
+    font-family: 'NunitoSansRegular', sans-serif;
+    font-size: 20px;
+    line-height: 41px;
+    letter-spacing: 0.05em;
+    margin-top: 32px;
+  }
+
+  &--bg-alice-blue {
+    background-color: #f6fbff;
+  }
+
+  &--bg-dodger-blue {
+    background-color: #007aff;
+  }
+
+  &--bg-gradient-blue {
+    background: linear-gradient(17.2deg,
+        #00349b -38.66%,
+        rgba(0, 92, 255, 0.921875) 45.38%,
+        #007aff 125.99%);
+  }
+
+  @include screen(desktop) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}

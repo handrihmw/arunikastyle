@@ -1,0 +1,364 @@
+@use '../mixins/breakpoint'as *;
+@import "../pages";
+
+/* HERO */
+.hero {
+  padding-top: inherit;
+  margin-top: 0;
+
+  &__image--ebook {
+    border-radius: 10px 10px 10px 10px;
+    max-height: 650px;
+    width: auto;
+    left: 0;
+  }
+
+  &__text-wrapper--ebook {
+    padding-left: 55px;
+  }
+
+  &__description--ebook {
+    line-height: 35px;
+  }
+
+  .nh-btn--transparent {
+    color: $white;
+  }
+}
+
+@include screen(desktopExtra) {
+  .hero {
+    padding-top: 80px;
+    margin-top: 30px;
+
+    &__image--ebook {
+      top: -100px;
+      margin-left: 30px;
+      min-width: 85%;
+    }
+  }
+}
+
+@media(max-width: 1200px) {
+  .hero--ebook {
+    padding-top: 0 !important;
+  }
+}
+
+@media(max-width: 992px) {
+  .hero--ebook {
+    .nh-btn {
+      width: 100%;
+    }
+  }
+}
+
+/* EBOOK LIST */
+.ebook-list {
+  margin-top: 200px;
+
+  &__header {
+    text-align: center;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+  }
+
+  & .search {
+    &__category {
+      border: 1px solid #DFDFDF;
+      border-radius: 5px;
+      font-family: NunitoSans, sans-serif;
+      font-size: 15px;
+      height: 100%;
+      padding: 11px 25px 11px 25px;
+      transition: all 1s;
+      width: 100%;
+    }
+
+    &__input {
+      border: 1px solid #DFDFDF;
+      border-radius: 5px;
+      font-family: NunitoSans, sans-serif;
+      font-size: 15px;
+      padding: 11px 25px;
+      transition: all 1s;
+      width: 100%;
+    }
+
+    &__input[value=""] {
+      color: #AFAFAF;
+    }
+  }
+
+  & .book {
+    &__link {
+      padding: 0;
+      text-transform: unset;
+    }
+
+    &__cover {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    &__title {
+      text-align: center;
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-size: 18px;
+      margin-top: 15px;
+    }
+  }
+
+  & .page-selector {
+    @media(max-width: 992px) {
+      &__page {
+        display: block;
+      }
+    }
+
+    &__item.active {
+      border-bottom: 1px solid $blue;
+    }
+
+    &__item:not(.active):hover {
+      color: $blue;
+      cursor: pointer;
+    }
+
+    .prev-next {
+      li {
+        color: $blue;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+/* EBOOK DETAIL */
+.ebook-article {
+  &__title {
+    h1 {
+      font-weight: unset;
+      font-family: 'NunitoSansBold', sans-serif;
+    }
+  }
+
+  &__cover {
+    img {
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__synopsis {
+    &-content {
+      font-family: NunitoSans, sans-serif !important;
+      font-weight: 300 !important;
+      font-size: 18px !important;
+      line-height: 32px !important;
+    }
+
+    @media (max-width: 992px) {
+      &-download {
+        margin-bottom: 50px;
+        text-align: center;
+      }
+    }
+  }
+
+  & .author {
+    border: 1px solid #DFDFDF;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+
+    &__header {
+      font-size: 20px;
+      font-weight: unset;
+      font-family: 'NunitoSansBold', sans-serif;
+    }
+
+    &__image {
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      img {
+        border-radius: 50%;
+        max-width: 150px;
+        width: 50%;
+      }
+    }
+
+    &__name {
+      font-size: 18px;
+      font-weight: unset;
+      font-family: 'NunitoSansBold', sans-serif;
+    }
+
+    &__title {
+      font-size: 14px;
+      font-weight: 400;
+      font-family: NunitoSans, sans-serif;
+    }
+
+    &__description {
+      margin-top: 20px;
+      font-size: 14px;
+      font-weight: 300;
+      font-family: NunitoSans, sans-serif;
+      text-align: center;
+    }
+  }
+}
+
+.ebook-highlight {
+  .container-fluid {
+    background: #F6FBFF;
+  }
+
+  &__header {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+  }
+
+  &__wrapper {
+    .icon-wrapper {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      border: 2px solid #007aff;
+      color: #00BFA5;
+      margin-right: 20px;
+      position: relative;
+
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+  }
+
+  &__content {
+    font-size: 14px;
+    font-family: NunitoSans, sans-serif;
+    font-weight: 300;
+    padding-top: 15px;
+  }
+
+  &__item {
+    margin-bottom: 50px;
+
+    &-caption {
+      font-size: 14px;
+      font-family: NunitoSans, sans-serif;
+      font-weight: 300;
+      padding-top: 15px;
+      text-align: center;
+
+      a,
+      .emphasis {
+        color: #007aff;
+        font-weight: unset;
+        font-family: 'NunitoSansBold', sans-serif;
+      }
+    }
+  }
+}
+
+.ebook-recommendation {
+  &__header {
+    font-family: 'NunitoSansBold', sans-serif;
+    font-weight: unset;
+  }
+
+  & .book {
+    &__link {
+      padding: 0;
+      text-transform: unset;
+    }
+
+    &__cover {
+      border-radius: 10px;
+    }
+
+    &__title {
+      font-family: 'NunitoSansBold', sans-serif;
+      font-weight: unset;
+      font-size: 18px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+  }
+}
+
+/* EBOOK THANKS */
+.ebook-thanks {
+  &__title {
+    text-align: center;
+
+    h1 {
+      font-weight: unset;
+      font-family: 'NunitoSansBold', sans-serif;
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-weight: 300;
+    font-family: NunitoSans, sans-serif;
+    font-size: 18px;
+
+    a {
+      color: #007aff;
+      font-weight: unset;
+      font-family: 'NunitoSansBold', sans-serif;
+    }
+  }
+
+  &__cover {
+    text-align: center;
+
+    img {
+      max-width: 450px;
+      width: 50%;
+      border-radius: 10px;
+    }
+  }
+}
+
+/* EBOOK MODAL */
+.ebook-modal {
+  .content-box {
+    border-radius: 10px;
+
+    & .modal-body {
+      padding: 50px;
+    }
+
+    &__header {
+      font-size: 18px;
+      font-weight: unset;
+      font-family: 'NunitoSansBold', sans-serif;
+    }
+
+    input {
+      width: 100%;
+      padding: 11px 25px;
+      border-radius: 5px;
+      font-family: NunitoSans, sans-serif;
+      font-size: 15px;
+      transition: all 1s;
+      border: 1px solid #DFDFDF;
+    }
+  }
+}
